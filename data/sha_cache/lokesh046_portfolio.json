@@ -1,0 +1,20 @@
+{
+    "README.md": "7dbf7ebf3b2a3d84ad526bc47810d1d211331b8b",
+    "eslint.config.js": "ef614d25c11dd1e89a8df0b2eaf934170b44daa8",
+    "package.json": "21c916a5bd94b350887673a00b582c8d12463079",
+    "postcss.config.js": "1c8784688c2d54ef45063be7ccd612dcab316151",
+    "src/App.tsx": "f79e7308f28ea43434744bfd4ab65cc150309158",
+    "src/components/Contact.tsx": "b10d20ed6e5665584723a6f6eb95bae2bbc50567",
+    "src/components/Hero.tsx": "404b12642e4b2f8f7a1eefcbb678451accc7e6df",
+    "src/components/Navbar.tsx": "c493d357e2c9c88e5fc2ffbfdd50686385459411",
+    "src/components/ParticleBackground.tsx": "5cdc9f61d2d72fcc1067eaf26a3bd66a5f42b78a",
+    "src/components/ProblemSolving.tsx": "9aceb294c79a962be4f88cdc7f279b88107611c5",
+    "src/components/Projects.tsx": "c1fa2b2fb0de16e46c552bbf47d4ac4ef2636b95",
+    "src/components/Resume.tsx": "15b12d0dae3efc9c18cbadfb2dc027486b672a74",
+    "src/components/Skills.tsx": "cb11d474413ef6b48b2cb81c63ac61f0ff30859f",
+    "src/main.tsx": "bef5202a32cbd0632c43de40f6e908532903fd42",
+    "tsconfig.app.json": "7f42e5f7cd2e79c7b5a25b753e56b1bcf94e1381",
+    "tsconfig.json": "1ffef600d959ec9e396d5a260bd3f5b927b2cef8",
+    "tsconfig.node.json": "d3c52ea64c6cd6bad118474410f5322f48e257a6",
+    "vite.config.ts": "8b0f57b91aeb45c54467e29f983a0893dc83c4d9"
+}
