@@ -1,0 +1,2109 @@
+{
+  "files": {
+    "README.md": {
+      "file": "README.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "app/__init__.py": {
+      "file": "app/__init__.py",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "app/cache.py": {
+      "file": "app/cache.py",
+      "imports": [
+        "hashlib",
+        "typing",
+        "cachetools",
+        "threading"
+      ],
+      "functions": [
+        "set_cached",
+        "get_cached",
+        "make_cache_key",
+        "clear_cache"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "TTLCache"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Lock"
+        },
+        {
+          "caller": "make_cache_key",
+          "callee": "hexdigest"
+        },
+        {
+          "caller": "make_cache_key",
+          "callee": "sha256"
+        },
+        {
+          "caller": "make_cache_key",
+          "callee": "encode"
+        },
+        {
+          "caller": "get_cached",
+          "callee": "get"
+        },
+        {
+          "caller": "clear_cache",
+          "callee": "clear"
+        }
+      ]
+    },
+    "app/config.py": {
+      "file": "app/config.py",
+      "imports": [
+        "pydantic_settings"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "SettingsConfigDict"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Settings"
+        }
+      ]
+    },
+    "app/main.py": {
+      "file": "app/main.py",
+      "imports": [
+        "ntextlib i",
+        "rtexai\nf",
+        "stapi.responses i",
+        "stapi.staticfiles i",
+        "p.config i",
+        "gging\nf",
+        "ping i",
+        "p.routers.products i",
+        "stapi i",
+        "p.routers.chat i",
+        "stapi.middleware.cors i"
+      ],
+      "functions": [
+        "alth_check()",
+        "fespan(a",
+        "rve_frontend()"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "sicConfig(\n"
+        },
+        {
+          "caller": "<global>",
+          "callee": "tLogger(\""
+        },
+        {
+          "caller": "fespan(a",
+          "callee": "it(\n"
+        },
+        {
+          "caller": "fespan(a",
+          "callee": "fo(\n"
+        },
+        {
+          "caller": "fespan(a",
+          "callee": "fo(\""
+        },
+        {
+          "caller": "<global>",
+          "callee": "stAPI(\n"
+        },
+        {
+          "caller": "<global>",
+          "callee": "d_middleware(\n"
+        },
+        {
+          "caller": "<global>",
+          "callee": "clude_router(c"
+        },
+        {
+          "caller": "<global>",
+          "callee": "clude_router(p"
+        },
+        {
+          "caller": "<global>",
+          "callee": "unt(\""
+        },
+        {
+          "caller": "<global>",
+          "callee": "aticFiles(d"
+        },
+        {
+          "caller": "<global>",
+          "callee": "t(\""
+        },
+        {
+          "caller": "<global>",
+          "callee": "t(\""
+        },
+        {
+          "caller": "rve_frontend()",
+          "callee": "leResponse(\""
+        }
+      ]
+    },
+    "app/models.py": {
+      "file": "app/models.py",
+      "imports": [
+        "pydantic"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "Field"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Field"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Field"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Field"
+        }
+      ]
+    },
+    "app/routers/__init__.py": {
+      "file": "app/routers/__init__.py",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "app/routers/chat.py": {
+      "file": "app/routers/chat.py",
+      "imports": [
+        "p.services.gemini i",
+        "p.models i",
+        "p.services.firestore i",
+        "stapi i",
+        "gging\n\n"
+      ],
+      "functions": [
+        "at(r"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "tLogger(\""
+        },
+        {
+          "caller": "<global>",
+          "callee": "IRouter(p"
+        },
+        {
+          "caller": "<global>",
+          "callee": "st(\""
+        },
+        {
+          "caller": "at(r",
+          "callee": "fo(\n"
+        },
+        {
+          "caller": "at(r",
+          "callee": "n(r"
+        },
+        {
+          "caller": "at(r",
+          "callee": "rse_intent(r"
+        },
+        {
+          "caller": "at(r",
+          "callee": "ception(\""
+        },
+        {
+          "caller": "at(r",
+          "callee": "rsedIntent(r"
+        },
+        {
+          "caller": "at(r",
+          "callee": "ery_products(i"
+        },
+        {
+          "caller": "at(r",
+          "callee": "ception(\""
+        },
+        {
+          "caller": "at(r",
+          "callee": "TPException(s"
+        },
+        {
+          "caller": "at(r",
+          "callee": "nerate_explanations(\n"
+        },
+        {
+          "caller": "at(r",
+          "callee": "ception(\""
+        },
+        {
+          "caller": "at(r",
+          "callee": "oductResult(\n"
+        },
+        {
+          "caller": "at(r",
+          "callee": "n(r"
+        },
+        {
+          "caller": "at(r",
+          "callee": "n(r"
+        },
+        {
+          "caller": "at(r",
+          "callee": "fo(\n"
+        },
+        {
+          "caller": "at(r",
+          "callee": "n(r"
+        },
+        {
+          "caller": "at(r",
+          "callee": "atResponse(\n"
+        }
+      ]
+    },
+    "app/routers/products.py": {
+      "file": "app/routers/products.py",
+      "imports": [
+        "ing\n\nfr",
+        "models imp",
+        "services.firestore imp",
+        "api imp"
+      ],
+      "functions": [
+        "_products(\n  ",
+        "product(pro"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "ogger(\"sh"
+        },
+        {
+          "caller": "<global>",
+          "callee": "outer(pre"
+        },
+        {
+          "caller": "<global>",
+          "callee": "\"/p"
+        },
+        {
+          "caller": "_products(\n  ",
+          "callee": "y(def"
+        },
+        {
+          "caller": "_products(\n  ",
+          "callee": "all_products(lim"
+        },
+        {
+          "caller": "_products(\n  ",
+          "callee": "(\"Li"
+        },
+        {
+          "caller": "_products(\n  ",
+          "callee": "pro"
+        },
+        {
+          "caller": "<global>",
+          "callee": "\"/p"
+        },
+        {
+          "caller": "product(pro",
+          "callee": "product_by_id(pro"
+        },
+        {
+          "caller": "product(pro",
+          "callee": "Exception(sta"
+        }
+      ]
+    },
+    "app/services/__init__.py": {
+      "file": "app/services/__init__.py",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "app/services/firestore.py": {
+      "file": "app/services/firestore.py",
+      "imports": [
+        "app.models",
+        "google.cloud",
+        "app.config",
+        "typing",
+        "asyncio",
+        "logging"
+      ],
+      "functions": [
+        "_sync_get_all_products",
+        "_sync_get_product_by_id",
+        "query_products",
+        "_get_db",
+        "_sync_query_products",
+        "get_all_products",
+        "get_product_by_id"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "getLogger"
+        },
+        {
+          "caller": "_get_db",
+          "callee": "Client"
+        },
+        {
+          "caller": "_get_db",
+          "callee": "info"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "_get_db"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "collection"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "where"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "FieldFilter"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "where"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "FieldFilter"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "where"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "FieldFilter"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "list"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "stream"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "limit"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "info"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "list"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "stream"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "limit"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "collection"
+        },
+        {
+          "caller": "_sync_query_products",
+          "callee": "to_dict"
+        },
+        {
+          "caller": "_sync_get_all_products",
+          "callee": "_get_db"
+        },
+        {
+          "caller": "_sync_get_all_products",
+          "callee": "list"
+        },
+        {
+          "caller": "_sync_get_all_products",
+          "callee": "stream"
+        },
+        {
+          "caller": "_sync_get_all_products",
+          "callee": "limit"
+        },
+        {
+          "caller": "_sync_get_all_products",
+          "callee": "collection"
+        },
+        {
+          "caller": "_sync_get_all_products",
+          "callee": "to_dict"
+        },
+        {
+          "caller": "_sync_get_product_by_id",
+          "callee": "_get_db"
+        },
+        {
+          "caller": "_sync_get_product_by_id",
+          "callee": "get"
+        },
+        {
+          "caller": "_sync_get_product_by_id",
+          "callee": "document"
+        },
+        {
+          "caller": "_sync_get_product_by_id",
+          "callee": "collection"
+        },
+        {
+          "caller": "_sync_get_product_by_id",
+          "callee": "to_dict"
+        },
+        {
+          "caller": "query_products",
+          "callee": "to_thread"
+        },
+        {
+          "caller": "query_products",
+          "callee": "append"
+        },
+        {
+          "caller": "query_products",
+          "callee": "Product"
+        },
+        {
+          "caller": "query_products",
+          "callee": "warning"
+        },
+        {
+          "caller": "query_products",
+          "callee": "get"
+        },
+        {
+          "caller": "query_products",
+          "callee": "info"
+        },
+        {
+          "caller": "query_products",
+          "callee": "len"
+        },
+        {
+          "caller": "get_all_products",
+          "callee": "to_thread"
+        },
+        {
+          "caller": "get_all_products",
+          "callee": "append"
+        },
+        {
+          "caller": "get_all_products",
+          "callee": "Product"
+        },
+        {
+          "caller": "get_all_products",
+          "callee": "warning"
+        },
+        {
+          "caller": "get_all_products",
+          "callee": "get"
+        },
+        {
+          "caller": "get_product_by_id",
+          "callee": "to_thread"
+        },
+        {
+          "caller": "get_product_by_id",
+          "callee": "Product"
+        },
+        {
+          "caller": "get_product_by_id",
+          "callee": "warning"
+        }
+      ]
+    },
+    "app/services/gemini.py": {
+      "file": "app/services/gemini.py",
+      "imports": [
+        "ing\nfro",
+        "cache imp",
+        "ng imp",
+        "exai.generative_models imp",
+        "cio\nimp",
+        "models imp",
+        "\nimp"
+      ],
+      "functions": [
+        "e_intent(que",
+        "_model() -",
+        "c_call_gemini(sys",
+        "rate_explanations(\n  ",
+        "an_json_response(tex"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "ogger(\"sh"
+        },
+        {
+          "caller": "_model() -",
+          "callee": "rativeModel(\"ge"
+        },
+        {
+          "caller": "an_json_response(tex",
+          "callee": "p()\n "
+        },
+        {
+          "caller": "an_json_response(tex",
+          "callee": "tswith(\"``"
+        },
+        {
+          "caller": "an_json_response(tex",
+          "callee": "tswith(\"``"
+        },
+        {
+          "caller": "an_json_response(tex",
+          "callee": "with(\"``"
+        },
+        {
+          "caller": "an_json_response(tex",
+          "callee": "p()\n\n"
+        },
+        {
+          "caller": "c_call_gemini(sys",
+          "callee": "_model()\n "
+        },
+        {
+          "caller": "c_call_gemini(sys",
+          "callee": "rationConfig(\n  "
+        },
+        {
+          "caller": "c_call_gemini(sys",
+          "callee": "rate_content(\n  "
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "_cache_key(f\"i"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "cached(cac"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "(\"Ca"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "que"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "hread(\n  "
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "an_json_response(raw"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "s(cle"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "edIntent(\n  "
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "\"ca"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "\"co"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "\"ma"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "\"oc"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "\"ke"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "cached(cac"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "(\"In"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "ing(\"Ge"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "(exc"
+        },
+        {
+          "caller": "e_intent(que",
+          "callee": "edIntent(\n  "
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "(sor"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "ed(p.i"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "_cache_key(f\"e"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "cached(cac"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "(\"Ca"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "que"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "pro"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "s(pro"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "hread(\n  "
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "an_json_response(raw"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "s(cle"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "\"pr"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "nd(Pro"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "uctResult(\n  "
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "1.0"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "0.0"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "t(ite"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "\"re"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "\"ex"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "(key"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "cached(cac"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "(\"Ge"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "res"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "pro"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "ing(\"Ge"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "(exc"
+        },
+        {
+          "caller": "rate_explanations(\n  ",
+          "callee": "uctResult(\n  "
+        }
+      ]
+    },
+    "client/README.md": {
+      "file": "client/README.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "client/eslint.config.js": {
+      "file": "client/eslint.config.js",
+      "imports": [
+        "@eslint/js",
+        "eslint-plugin-react-refresh",
+        "globals",
+        "eslint-plugin-react-hooks",
+        "eslint/config"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "defineConfig"
+        },
+        {
+          "caller": "<global>",
+          "callee": "globalIgnores"
+        }
+      ]
+    },
+    "client/package.json": {
+      "file": "client/package.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "client/src/App.jsx": {
+      "file": "client/src/App.jsx",
+      "imports": [
+        "./assets/vite.svg",
+        "react",
+        "./assets/react.svg",
+        "./App.css",
+        "./assets/hero.png"
+      ],
+      "functions": [
+        "App"
+      ],
+      "calls": [
+        {
+          "caller": "App",
+          "callee": "useState"
+        },
+        {
+          "caller": "App",
+          "callee": "setCount"
+        }
+      ]
+    },
+    "client/src/main.jsx": {
+      "file": "client/src/main.jsx",
+      "imports": [
+        "./index.css",
+        "react",
+        "react-dom/client",
+        "./App.jsx"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "render"
+        },
+        {
+          "caller": "<global>",
+          "callee": "createRoot"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getElementById"
+        }
+      ]
+    },
+    "client/vite.config.js": {
+      "file": "client/vite.config.js",
+      "imports": [
+        "@vitejs/plugin-react",
+        "vite"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "defineConfig"
+        },
+        {
+          "caller": "<global>",
+          "callee": "react"
+        }
+      ]
+    },
+    "frontend-react/README.md": {
+      "file": "frontend-react/README.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "frontend-react/eslint.config.js": {
+      "file": "frontend-react/eslint.config.js",
+      "imports": [
+        "@eslint/js",
+        "eslint-plugin-react-refresh",
+        "globals",
+        "eslint-plugin-react-hooks",
+        "eslint/config"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "defineConfig"
+        },
+        {
+          "caller": "<global>",
+          "callee": "globalIgnores"
+        }
+      ]
+    },
+    "frontend-react/package-lock.json": {
+      "file": "frontend-react/package-lock.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "frontend-react/package.json": {
+      "file": "frontend-react/package.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "frontend-react/src/App.jsx": {
+      "file": "frontend-react/src/App.jsx",
+      "imports": [
+        "./components/Layout/Navbar",
+        "./components/CartSidebar",
+        "./pages/AIChat",
+        "./pages/Products",
+        "./pages/Home",
+        "./components/WishlistSidebar",
+        "react-router-dom",
+        "react",
+        "./pages/ProductDetail",
+        "./components/Layout/Footer"
+      ],
+      "functions": [
+        "App"
+      ],
+      "calls": [
+        {
+          "caller": "App",
+          "callee": "useState"
+        },
+        {
+          "caller": "App",
+          "callee": "useState"
+        },
+        {
+          "caller": "App",
+          "callee": "setIsCartOpen"
+        },
+        {
+          "caller": "App",
+          "callee": "setIsWishlistOpen"
+        },
+        {
+          "caller": "App",
+          "callee": "setIsCartOpen"
+        },
+        {
+          "caller": "App",
+          "callee": "setIsWishlistOpen"
+        }
+      ]
+    },
+    "frontend-react/src/api/index.js": {
+      "file": "frontend-react/src/api/index.js",
+      "imports": [],
+      "functions": [
+        "fetchProducts",
+        "chatQuery",
+        "fetchProductById"
+      ],
+      "calls": [
+        {
+          "caller": "fetchProducts",
+          "callee": "fetch"
+        },
+        {
+          "caller": "fetchProducts",
+          "callee": "json"
+        },
+        {
+          "caller": "fetchProductById",
+          "callee": "fetch"
+        },
+        {
+          "caller": "fetchProductById",
+          "callee": "json"
+        },
+        {
+          "caller": "chatQuery",
+          "callee": "fetch"
+        },
+        {
+          "caller": "chatQuery",
+          "callee": "stringify"
+        },
+        {
+          "caller": "chatQuery",
+          "callee": "json"
+        }
+      ]
+    },
+    "frontend-react/src/components/CartSidebar.jsx": {
+      "file": "frontend-react/src/components/CartSidebar.jsx",
+      "imports": [
+        "../context/CartContext",
+        "lucide-react",
+        "../utils/images"
+      ],
+      "functions": [
+        "CartSidebar"
+      ],
+      "calls": [
+        {
+          "caller": "CartSidebar",
+          "callee": "useCart"
+        },
+        {
+          "caller": "CartSidebar",
+          "callee": "map"
+        },
+        {
+          "caller": "CartSidebar",
+          "callee": "getProductImage"
+        },
+        {
+          "caller": "CartSidebar",
+          "callee": "removeItem"
+        },
+        {
+          "caller": "CartSidebar",
+          "callee": "dateQuantity(i"
+        },
+        {
+          "caller": "CartSidebar",
+          "callee": "dateQuantity(i"
+        },
+        {
+          "caller": "CartSidebar",
+          "callee": "caleString()}<"
+        }
+      ]
+    },
+    "frontend-react/src/components/Layout/Footer.jsx": {
+      "file": "frontend-react/src/components/Layout/Footer.jsx",
+      "imports": [
+        "lucide-react"
+      ],
+      "functions": [
+        "Footer"
+      ],
+      "calls": [
+        {
+          "caller": "Footer",
+          "callee": "getFullYear"
+        }
+      ]
+    },
+    "frontend-react/src/components/Layout/Navbar.jsx": {
+      "file": "frontend-react/src/components/Layout/Navbar.jsx",
+      "imports": [
+        "lucide-react",
+        "react-router-dom",
+        "../../context/WishlistContext",
+        "../../context/CartContext"
+      ],
+      "functions": [
+        "Navbar"
+      ],
+      "calls": [
+        {
+          "caller": "Navbar",
+          "callee": "useCart"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "useWishlist"
+        }
+      ]
+    },
+    "frontend-react/src/components/ProductCard.jsx": {
+      "file": "frontend-react/src/components/ProductCard.jsx",
+      "imports": [
+        "../context/WishlistContext",
+        "../utils/images",
+        "lucide-react",
+        "react-router-dom",
+        "../context/CartContext"
+      ],
+      "functions": [
+        "handleAddToCart",
+        "ProductCard",
+        "handleToggleWishlist"
+      ],
+      "calls": [
+        {
+          "caller": "ProductCard",
+          "callee": "useCart"
+        },
+        {
+          "caller": "ProductCard",
+          "callee": "useWishlist"
+        },
+        {
+          "caller": "ProductCard",
+          "callee": "isWishlisted"
+        },
+        {
+          "caller": "handleAddToCart",
+          "callee": "preventDefault"
+        },
+        {
+          "caller": "handleAddToCart",
+          "callee": "addItem"
+        },
+        {
+          "caller": "handleToggleWishlist",
+          "callee": "preventDefault"
+        },
+        {
+          "caller": "handleToggleWishlist",
+          "callee": "toggleWishlist"
+        },
+        {
+          "caller": "ProductCard",
+          "callee": "getProductImage"
+        },
+        {
+          "caller": "ProductCard",
+          "callee": "LocaleString()"
+        }
+      ]
+    },
+    "frontend-react/src/components/WishlistSidebar.jsx": {
+      "file": "frontend-react/src/components/WishlistSidebar.jsx",
+      "imports": [
+        "../context/WishlistContext",
+        "../utils/images",
+        "lucide-react",
+        "react-router-dom",
+        "../context/CartContext"
+      ],
+      "functions": [
+        "WishlistSidebar",
+        "handleAddToCart"
+      ],
+      "calls": [
+        {
+          "caller": "WishlistSidebar",
+          "callee": "useWishlist"
+        },
+        {
+          "caller": "WishlistSidebar",
+          "callee": "useCart"
+        },
+        {
+          "caller": "handleAddToCart",
+          "callee": "addItem"
+        },
+        {
+          "caller": "handleAddToCart",
+          "callee": "toggleWishlist"
+        },
+        {
+          "caller": "WishlistSidebar",
+          "callee": "map"
+        },
+        {
+          "caller": "WishlistSidebar",
+          "callee": "getProductImage"
+        },
+        {
+          "caller": "WishlistSidebar",
+          "callee": "toggleWishlist"
+        },
+        {
+          "caller": "WishlistSidebar",
+          "callee": "ndleAddToCart(p"
+        }
+      ]
+    },
+    "frontend-react/src/context/CartContext.jsx": {
+      "file": "frontend-react/src/context/CartContext.jsx",
+      "imports": [
+        "react"
+      ],
+      "functions": [
+        "useCart",
+        "CartProvider",
+        "cartReducer"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "createContext"
+        },
+        {
+          "caller": "cartReducer",
+          "callee": "find"
+        },
+        {
+          "caller": "cartReducer",
+          "callee": "map"
+        },
+        {
+          "caller": "cartReducer",
+          "callee": "filter"
+        },
+        {
+          "caller": "cartReducer",
+          "callee": "filter"
+        },
+        {
+          "caller": "cartReducer",
+          "callee": "map"
+        },
+        {
+          "caller": "CartProvider",
+          "callee": "useReducer"
+        },
+        {
+          "caller": "CartProvider",
+          "callee": "useCallback"
+        },
+        {
+          "caller": "CartProvider",
+          "callee": "dispatch"
+        },
+        {
+          "caller": "CartProvider",
+          "callee": "useCallback"
+        },
+        {
+          "caller": "CartProvider",
+          "callee": "dispatch"
+        },
+        {
+          "caller": "CartProvider",
+          "callee": "useCallback"
+        },
+        {
+          "caller": "CartProvider",
+          "callee": "dispatch"
+        },
+        {
+          "caller": "CartProvider",
+          "callee": "useCallback"
+        },
+        {
+          "caller": "CartProvider",
+          "callee": "dispatch"
+        },
+        {
+          "caller": "CartProvider",
+          "callee": "reduce"
+        },
+        {
+          "caller": "CartProvider",
+          "callee": "reduce"
+        },
+        {
+          "caller": "useCart",
+          "callee": "useContext"
+        }
+      ]
+    },
+    "frontend-react/src/context/WishlistContext.jsx": {
+      "file": "frontend-react/src/context/WishlistContext.jsx",
+      "imports": [
+        "react"
+      ],
+      "functions": [
+        "useWishlist",
+        "WishlistProvider"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "createContext"
+        },
+        {
+          "caller": "WishlistProvider",
+          "callee": "useState"
+        },
+        {
+          "caller": "WishlistProvider",
+          "callee": "useCallback"
+        },
+        {
+          "caller": "WishlistProvider",
+          "callee": "setItems"
+        },
+        {
+          "caller": "WishlistProvider",
+          "callee": "find"
+        },
+        {
+          "caller": "WishlistProvider",
+          "callee": "filter"
+        },
+        {
+          "caller": "WishlistProvider",
+          "callee": "useCallback"
+        },
+        {
+          "caller": "WishlistProvider",
+          "callee": "some"
+        },
+        {
+          "caller": "useWishlist",
+          "callee": "useContext"
+        }
+      ]
+    },
+    "frontend-react/src/main.jsx": {
+      "file": "frontend-react/src/main.jsx",
+      "imports": [
+        "./context/CartContext",
+        "./index.css",
+        "react",
+        "./App.jsx",
+        "react-dom/client",
+        "./context/WishlistContext"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "render"
+        },
+        {
+          "caller": "<global>",
+          "callee": "createRoot"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getElementById"
+        }
+      ]
+    },
+    "frontend-react/src/pages/AIChat.jsx": {
+      "file": "frontend-react/src/pages/AIChat.jsx",
+      "imports": [
+        "../components/ProductCard",
+        "lucide-react",
+        "../api",
+        "react"
+      ],
+      "functions": [
+        "AIChat",
+        "handleSubmit"
+      ],
+      "calls": [
+        {
+          "caller": "AIChat",
+          "callee": "useState"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "useState"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "useState"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "useRef"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "useRef"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "substring"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "toString"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "random"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "scrollIntoView"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "preventDefault"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "trim"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "trim"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setInput"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setMessages"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "now"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setLoading"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "chatQuery"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setMessages"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "now"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setMessages"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "now"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setLoading"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "map"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "map"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "slice"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "round"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "setInput"
+        },
+        {
+          "caller": "AIChat",
+          "callee": "trim"
+        }
+      ]
+    },
+    "frontend-react/src/pages/Home.jsx": {
+      "file": "frontend-react/src/pages/Home.jsx",
+      "imports": [
+        "../components/ProductCard",
+        "../utils/images",
+        "lucide-react",
+        "react",
+        "react-router-dom",
+        "../api"
+      ],
+      "functions": [
+        "Home"
+      ],
+      "calls": [
+        {
+          "caller": "Home",
+          "callee": "useState"
+        },
+        {
+          "caller": "Home",
+          "callee": "useState"
+        },
+        {
+          "caller": "Home",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "Home",
+          "callee": "catch"
+        },
+        {
+          "caller": "Home",
+          "callee": "then"
+        },
+        {
+          "caller": "Home",
+          "callee": "fetchProducts"
+        },
+        {
+          "caller": "Home",
+          "callee": "setFeaturedProducts"
+        },
+        {
+          "caller": "Home",
+          "callee": "setLoading"
+        },
+        {
+          "caller": "Home",
+          "callee": "map"
+        },
+        {
+          "caller": "Home",
+          "callee": "getCategoryImage"
+        },
+        {
+          "caller": "Home",
+          "callee": "map"
+        }
+      ]
+    },
+    "frontend-react/src/pages/ProductDetail.jsx": {
+      "file": "frontend-react/src/pages/ProductDetail.jsx",
+      "imports": [
+        "../context/WishlistContext",
+        "../utils/images",
+        "lucide-react",
+        "react",
+        "react-router-dom",
+        "../context/CartContext",
+        "../api"
+      ],
+      "functions": [
+        "ProductDetail"
+      ],
+      "calls": [
+        {
+          "caller": "ProductDetail",
+          "callee": "useParams"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "useCart"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "useWishlist"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "catch"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "then"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "fetchProductById"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "setProduct"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "setSelectedSize"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "setLoading"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "isWishlisted"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "getProductImage"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "LocaleString()"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "p(s"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "tSelectedSize(s"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "dItem(p"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "ggleWishlist(p"
+        },
+        {
+          "caller": "ProductDetail",
+          "callee": "p(o"
+        }
+      ]
+    },
+    "frontend-react/src/pages/Products.jsx": {
+      "file": "frontend-react/src/pages/Products.jsx",
+      "imports": [
+        "../components/ProductCard",
+        "../utils/images",
+        "lucide-react",
+        "react",
+        "react-router-dom",
+        "../api"
+      ],
+      "functions": [
+        "Products"
+      ],
+      "calls": [
+        {
+          "caller": "Products",
+          "callee": "useSearchParams"
+        },
+        {
+          "caller": "Products",
+          "callee": "get"
+        },
+        {
+          "caller": "Products",
+          "callee": "useState"
+        },
+        {
+          "caller": "Products",
+          "callee": "useState"
+        },
+        {
+          "caller": "Products",
+          "callee": "useState"
+        },
+        {
+          "caller": "Products",
+          "callee": "useState"
+        },
+        {
+          "caller": "Products",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "Products",
+          "callee": "catch"
+        },
+        {
+          "caller": "Products",
+          "callee": "then"
+        },
+        {
+          "caller": "Products",
+          "callee": "fetchProducts"
+        },
+        {
+          "caller": "Products",
+          "callee": "setProducts"
+        },
+        {
+          "caller": "Products",
+          "callee": "setLoading"
+        },
+        {
+          "caller": "Products",
+          "callee": "filter"
+        },
+        {
+          "caller": "Products",
+          "callee": "includes"
+        },
+        {
+          "caller": "Products",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "Products",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "Products",
+          "callee": "includes"
+        },
+        {
+          "caller": "Products",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "Products",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "Products",
+          "callee": "from"
+        },
+        {
+          "caller": "Products",
+          "callee": "map"
+        },
+        {
+          "caller": "Products",
+          "callee": "map"
+        },
+        {
+          "caller": "Products",
+          "callee": "setCategory"
+        },
+        {
+          "caller": "Products",
+          "callee": "setSearchParams"
+        },
+        {
+          "caller": "Products",
+          "callee": "setSearchQuery"
+        },
+        {
+          "caller": "Products",
+          "callee": "map"
+        }
+      ]
+    },
+    "frontend-react/src/utils/images.js": {
+      "file": "frontend-react/src/utils/images.js",
+      "imports": [],
+      "functions": [
+        "getCategoryImage",
+        "getProductImage"
+      ],
+      "calls": [
+        {
+          "caller": "getProductImage",
+          "callee": "parseInt"
+        },
+        {
+          "caller": "getProductImage",
+          "callee": "replace"
+        }
+      ]
+    },
+    "frontend-react/vite.config.js": {
+      "file": "frontend-react/vite.config.js",
+      "imports": [
+        "@vitejs/plugin-react",
+        "vite"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "defineConfig"
+        },
+        {
+          "caller": "<global>",
+          "callee": "react"
+        }
+      ]
+    },
+    "render.yaml": {
+      "file": "render.yaml",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "seed_firestore.py": {
+      "file": "seed_firestore.py",
+      "imports": [
+        "os",
+        "tenv i",
+        "google.cloud",
+        "dotenv"
+      ],
+      "functions": [
+        "seed"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "load_dotenv"
+        },
+        {
+          "caller": "seed",
+          "callee": "Client"
+        },
+        {
+          "caller": "seed",
+          "callee": "getenv"
+        },
+        {
+          "caller": "seed",
+          "callee": "collection"
+        },
+        {
+          "caller": "seed",
+          "callee": "print"
+        },
+        {
+          "caller": "seed",
+          "callee": "len"
+        },
+        {
+          "caller": "seed",
+          "callee": "batch"
+        },
+        {
+          "caller": "seed",
+          "callee": "enumerate"
+        },
+        {
+          "caller": "seed",
+          "callee": "document"
+        },
+        {
+          "caller": "seed",
+          "callee": "set"
+        },
+        {
+          "caller": "seed",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed",
+          "callee": "batch"
+        },
+        {
+          "caller": "seed",
+          "callee": "print"
+        },
+        {
+          "caller": "seed",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed",
+          "callee": "print"
+        },
+        {
+          "caller": "seed",
+          "callee": "n(P"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ad_dotenv()"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ed()"
+        }
+      ]
+    },
+    "tests/__init__.py": {
+      "file": "tests/__init__.py",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "tests/test_gemini.py": {
+      "file": "tests/test_gemini.py",
+      "imports": [
+        "app.models",
+        "pytest",
+        "app.services.gemini",
+        "json",
+        "unittest.mock",
+        "app.cache"
+      ],
+      "functions": [
+        "test_parse_intent_formal_shirt",
+        "test_cache_hit_skips_gemini",
+        "_clear_cache_before_each",
+        "test_parse_intent_fallback_on_bad_json"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "fixture"
+        },
+        {
+          "caller": "_clear_cache_before_each",
+          "callee": "clear_cache"
+        },
+        {
+          "caller": "test_parse_intent_formal_shirt",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_parse_intent_formal_shirt",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_parse_intent_formal_shirt",
+          "callee": "dumps"
+        },
+        {
+          "caller": "test_parse_intent_formal_shirt",
+          "callee": "patch"
+        },
+        {
+          "caller": "test_parse_intent_formal_shirt",
+          "callee": "parse_intent"
+        },
+        {
+          "caller": "test_parse_intent_formal_shirt",
+          "callee": "len"
+        },
+        {
+          "caller": "test_parse_intent_fallback_on_bad_json",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_parse_intent_fallback_on_bad_json",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_parse_intent_fallback_on_bad_json",
+          "callee": "patch"
+        },
+        {
+          "caller": "test_parse_intent_fallback_on_bad_json",
+          "callee": "parse_intent"
+        },
+        {
+          "caller": "test_cache_hit_skips_gemini",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_cache_hit_skips_gemini",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_cache_hit_skips_gemini",
+          "callee": "dumps"
+        },
+        {
+          "caller": "test_cache_hit_skips_gemini",
+          "callee": "patch"
+        },
+        {
+          "caller": "test_cache_hit_skips_gemini",
+          "callee": "parse_intent"
+        },
+        {
+          "caller": "test_cache_hit_skips_gemini",
+          "callee": "parse_intent"
+        }
+      ]
+    },
+    "tests/test_products.py": {
+      "file": "tests/test_products.py",
+      "imports": [
+        "app.models",
+        "pytest",
+        "app.services.firestore",
+        "unittest.mock"
+      ],
+      "functions": [
+        "test_query_products_fallback",
+        "test_query_products_with_color_filter",
+        "_make_mock_doc",
+        "test_query_products_price_filter"
+      ],
+      "calls": [
+        {
+          "caller": "_make_mock_doc",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_query_products_with_color_filter",
+          "callee": "ParsedIntent"
+        },
+        {
+          "caller": "test_query_products_with_color_filter",
+          "callee": "_make_mock_doc"
+        },
+        {
+          "caller": "test_query_products_with_color_filter",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_query_products_with_color_filter",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_query_products_with_color_filter",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_query_products_with_color_filter",
+          "callee": "patch"
+        },
+        {
+          "caller": "test_query_products_with_color_filter",
+          "callee": "query_products"
+        },
+        {
+          "caller": "test_query_products_with_color_filter",
+          "callee": "len"
+        },
+        {
+          "caller": "test_query_products_with_color_filter",
+          "callee": "assert_called"
+        },
+        {
+          "caller": "test_query_products_price_filter",
+          "callee": "ParsedIntent"
+        },
+        {
+          "caller": "test_query_products_price_filter",
+          "callee": "_make_mock_doc"
+        },
+        {
+          "caller": "test_query_products_price_filter",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_query_products_price_filter",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_query_products_price_filter",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_query_products_price_filter",
+          "callee": "patch"
+        },
+        {
+          "caller": "test_query_products_price_filter",
+          "callee": "query_products"
+        },
+        {
+          "caller": "test_query_products_price_filter",
+          "callee": "len"
+        },
+        {
+          "caller": "test_query_products_fallback",
+          "callee": "ParsedIntent"
+        },
+        {
+          "caller": "test_query_products_fallback",
+          "callee": "_make_mock_doc"
+        },
+        {
+          "caller": "test_query_products_fallback",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_query_products_fallback",
+          "callee": "MagicMock"
+        },
+        {
+          "caller": "test_query_products_fallback",
+          "callee": "patch"
+        },
+        {
+          "caller": "test_query_products_fallback",
+          "callee": "query_products"
+        },
+        {
+          "caller": "test_query_products_fallback",
+          "callee": "len"
+        },
+        {
+          "caller": "test_query_products_fallback",
+          "callee": "assert_not_called"
+        }
+      ]
+    },
+    "vercel.json": {
+      "file": "vercel.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    }
+  }
+}

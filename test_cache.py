@@ -1,7 +1,10 @@
 from cache.sha_cache import load_cache, save_cache, needs_reindex
 
 
-cache_path = r"C:\Users\lokes\OneDrive\Desktop\github_qa_bot\data\sha_cache.json"
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+cache_path = os.path.join(current_dir, "data", "sha_cache.json")
 
 cache = {
     "quality.py": "abc123",

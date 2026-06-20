@@ -1,0 +1,4912 @@
+{
+  "files": {
+    ".github/workflows/keep-alive.yml": {
+      "file": ".github/workflows/keep-alive.yml",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "README.md": {
+      "file": "README.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/alembic/env.py": {
+      "file": "backend/alembic/env.py",
+      "imports": [
+        "app.config",
+        "os",
+        "logging.config",
+        "app.database",
+        "sys",
+        "alembic",
+        "sqlalchemy",
+        "app.models"
+      ],
+      "functions": [
+        "get_url",
+        "run_migrations_online",
+        "run_migrations_offline"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "insert"
+        },
+        {
+          "caller": "<global>",
+          "callee": "abspath"
+        },
+        {
+          "caller": "<global>",
+          "callee": "join"
+        },
+        {
+          "caller": "<global>",
+          "callee": "dirname"
+        },
+        {
+          "caller": "<global>",
+          "callee": "fileConfig"
+        },
+        {
+          "caller": "get_url",
+          "callee": "startswith"
+        },
+        {
+          "caller": "get_url",
+          "callee": "replace"
+        },
+        {
+          "caller": "run_migrations_offline",
+          "callee": "get_url"
+        },
+        {
+          "caller": "run_migrations_offline",
+          "callee": "configure"
+        },
+        {
+          "caller": "run_migrations_offline",
+          "callee": "begin_transaction"
+        },
+        {
+          "caller": "run_migrations_offline",
+          "callee": "run_migrations"
+        },
+        {
+          "caller": "run_migrations_online",
+          "callee": "get_url"
+        },
+        {
+          "caller": "run_migrations_online",
+          "callee": "get_section"
+        },
+        {
+          "caller": "run_migrations_online",
+          "callee": "engine_from_config"
+        },
+        {
+          "caller": "run_migrations_online",
+          "callee": "connect"
+        },
+        {
+          "caller": "run_migrations_online",
+          "callee": "configure"
+        },
+        {
+          "caller": "run_migrations_online",
+          "callee": "begin_transaction"
+        },
+        {
+          "caller": "run_migrations_online",
+          "callee": "run_migrations"
+        },
+        {
+          "caller": "<global>",
+          "callee": "is_offline_mode"
+        },
+        {
+          "caller": "<global>",
+          "callee": "run_migrations_offline"
+        },
+        {
+          "caller": "<global>",
+          "callee": "run_migrations_online"
+        }
+      ]
+    },
+    "backend/app/config.py": {
+      "file": "backend/app/config.py",
+      "imports": [
+        "pydantic_settings"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "SettingsConfigDict"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Settings"
+        }
+      ]
+    },
+    "backend/app/database.py": {
+      "file": "backend/app/database.py",
+      "imports": [
+        "os",
+        "sqlalchemy.orm",
+        "sqlalchemy",
+        "app.config"
+      ],
+      "functions": [
+        "get_db"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "startswith"
+        },
+        {
+          "caller": "<global>",
+          "callee": "replace"
+        },
+        {
+          "caller": "<global>",
+          "callee": "create_engine"
+        },
+        {
+          "caller": "<global>",
+          "callee": "connect"
+        },
+        {
+          "caller": "<global>",
+          "callee": "close"
+        },
+        {
+          "caller": "<global>",
+          "callee": "print"
+        },
+        {
+          "caller": "<global>",
+          "callee": "dirname"
+        },
+        {
+          "caller": "<global>",
+          "callee": "dirname"
+        },
+        {
+          "caller": "<global>",
+          "callee": "abspath"
+        },
+        {
+          "caller": "<global>",
+          "callee": "join"
+        },
+        {
+          "caller": "<global>",
+          "callee": "create_engine"
+        },
+        {
+          "caller": "<global>",
+          "callee": "dirname"
+        },
+        {
+          "caller": "<global>",
+          "callee": "dirname"
+        },
+        {
+          "caller": "<global>",
+          "callee": "abspath"
+        },
+        {
+          "caller": "<global>",
+          "callee": "join"
+        },
+        {
+          "caller": "<global>",
+          "callee": "create_engine"
+        },
+        {
+          "caller": "<global>",
+          "callee": "sessionmaker"
+        },
+        {
+          "caller": "<global>",
+          "callee": "declarative_base"
+        },
+        {
+          "caller": "get_db",
+          "callee": "SessionLocal"
+        },
+        {
+          "caller": "get_db",
+          "callee": "close"
+        }
+      ]
+    },
+    "backend/app/executor.py": {
+      "file": "backend/app/executor.py",
+      "imports": [
+        "app.config",
+        "json",
+        "typing",
+        "httpx",
+        "os",
+        "app",
+        "subprocess",
+        "asyncio",
+        "tempfile",
+        "ast",
+        "sys",
+        "logging"
+      ],
+      "functions": [
+        "run_judge0",
+        "run_local_subprocess",
+        "get_entrypoint_function",
+        "wrap_code",
+        "execute_submission"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "getLogger"
+        },
+        {
+          "caller": "get_entrypoint_function",
+          "callee": "parse"
+        },
+        {
+          "caller": "get_entrypoint_function",
+          "callee": "walk"
+        },
+        {
+          "caller": "get_entrypoint_function",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "get_entrypoint_function",
+          "callee": "error"
+        },
+        {
+          "caller": "run_local_subprocess",
+          "callee": "mkstemp"
+        },
+        {
+          "caller": "run_local_subprocess",
+          "callee": "fdopen"
+        },
+        {
+          "caller": "run_local_subprocess",
+          "callee": "write"
+        },
+        {
+          "caller": "run_local_subprocess",
+          "callee": "run"
+        },
+        {
+          "caller": "run_local_subprocess",
+          "callee": "str"
+        },
+        {
+          "caller": "run_local_subprocess",
+          "callee": "remove"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "rstrip"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "lower"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "split"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "split"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "AsyncClient"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "post"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "error"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "get"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "json"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "range"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "sleep"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "get"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "json"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "get"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "get"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "get"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "get"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "get"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "error"
+        },
+        {
+          "caller": "run_judge0",
+          "callee": "str"
+        },
+        {
+          "caller": "execute_submission",
+          "callee": "get_entrypoint_function"
+        },
+        {
+          "caller": "execute_submission",
+          "callee": "wrap_code"
+        },
+        {
+          "caller": "execute_submission",
+          "callee": "bool"
+        },
+        {
+          "caller": "execute_submission",
+          "callee": "dumps"
+        },
+        {
+          "caller": "execute_submission",
+          "callee": "run_judge0"
+        },
+        {
+          "caller": "execute_submission",
+          "callee": "run_local_subprocess"
+        },
+        {
+          "caller": "execute_submission",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_submission",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_submission",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_submission",
+          "callee": "compare_outputs"
+        }
+      ]
+    },
+    "backend/app/judge.py": {
+      "file": "backend/app/judge.py",
+      "imports": [
+        "math",
+        "json",
+        "typing"
+      ],
+      "functions": [
+        "compare_outputs",
+        "recursive_approx_equal"
+      ],
+      "calls": [
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "isclose"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "float"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "float"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "len"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "len"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "all"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "recursive_approx_equal"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "zip"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "set"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "keys"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "set"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "keys"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "all"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "recursive_approx_equal"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "strip"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "str"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "strip"
+        },
+        {
+          "caller": "recursive_approx_equal",
+          "callee": "str"
+        },
+        {
+          "caller": "compare_outputs",
+          "callee": "strip"
+        },
+        {
+          "caller": "compare_outputs",
+          "callee": "strip"
+        },
+        {
+          "caller": "compare_outputs",
+          "callee": "loads"
+        },
+        {
+          "caller": "compare_outputs",
+          "callee": "loads"
+        },
+        {
+          "caller": "compare_outputs",
+          "callee": "recursive_approx_equal"
+        },
+        {
+          "caller": "compare_outputs",
+          "callee": "str"
+        }
+      ]
+    },
+    "backend/app/main.py": {
+      "file": "backend/app/main.py",
+      "imports": [
+        "app.config",
+        "fastapi.middleware.cors",
+        "app.database",
+        "fastapi",
+        "app.routers"
+      ],
+      "functions": [
+        "read_root"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "create_all"
+        },
+        {
+          "caller": "<global>",
+          "callee": "print"
+        },
+        {
+          "caller": "<global>",
+          "callee": "FastAPI"
+        },
+        {
+          "caller": "<global>",
+          "callee": "append"
+        },
+        {
+          "caller": "<global>",
+          "callee": "add_middleware"
+        },
+        {
+          "caller": "<global>",
+          "callee": "include_router"
+        },
+        {
+          "caller": "<global>",
+          "callee": "include_router"
+        },
+        {
+          "caller": "<global>",
+          "callee": "include_router"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        }
+      ]
+    },
+    "backend/app/models.py": {
+      "file": "backend/app/models.py",
+      "imports": [
+        "uuid",
+        "enum",
+        "sqlalchemy.orm",
+        "app.database",
+        "sqlalchemy.sql",
+        "sqlalchemy"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "DateTime"
+        },
+        {
+          "caller": "<global>",
+          "callee": "now"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "DateTime"
+        },
+        {
+          "caller": "<global>",
+          "callee": "now"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "str"
+        },
+        {
+          "caller": "<global>",
+          "callee": "uuid4"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "DateTime"
+        },
+        {
+          "caller": "<global>",
+          "callee": "now"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        }
+      ]
+    },
+    "backend/app/routers/auth.py": {
+      "file": "backend/app/routers/auth.py",
+      "imports": [
+        "datetime",
+        "app.config",
+        "app",
+        "fastapi.security",
+        "sqlalchemy.orm",
+        "app.database",
+        "fastapi"
+      ],
+      "functions": [
+        "get_current_user",
+        "register",
+        "login",
+        "read_users_me"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "APIRouter"
+        },
+        {
+          "caller": "<global>",
+          "callee": "OAuth2PasswordBearer"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "decode_access_token"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "get"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "get"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "first"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "filter"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "query"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "register",
+          "callee": "Depends"
+        },
+        {
+          "caller": "register",
+          "callee": "first"
+        },
+        {
+          "caller": "register",
+          "callee": "filter"
+        },
+        {
+          "caller": "register",
+          "callee": "query"
+        },
+        {
+          "caller": "register",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "register",
+          "callee": "first"
+        },
+        {
+          "caller": "register",
+          "callee": "filter"
+        },
+        {
+          "caller": "register",
+          "callee": "query"
+        },
+        {
+          "caller": "register",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "register",
+          "callee": "get_password_hash"
+        },
+        {
+          "caller": "register",
+          "callee": "User"
+        },
+        {
+          "caller": "register",
+          "callee": "add"
+        },
+        {
+          "caller": "register",
+          "callee": "commit"
+        },
+        {
+          "caller": "register",
+          "callee": "refresh"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "login",
+          "callee": "Depends"
+        },
+        {
+          "caller": "login",
+          "callee": "Depends"
+        },
+        {
+          "caller": "login",
+          "callee": "first"
+        },
+        {
+          "caller": "login",
+          "callee": "filter"
+        },
+        {
+          "caller": "login",
+          "callee": "query"
+        },
+        {
+          "caller": "login",
+          "callee": "verify_password"
+        },
+        {
+          "caller": "login",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "login",
+          "callee": "timedelta"
+        },
+        {
+          "caller": "login",
+          "callee": "create_access_token"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "read_users_me",
+          "callee": "Depends"
+        }
+      ]
+    },
+    "backend/app/routers/problems.py": {
+      "file": "backend/app/routers/problems.py",
+      "imports": [
+        "app.routers.auth",
+        "app",
+        "sqlalchemy.orm",
+        "app.database",
+        "typing",
+        "fastapi"
+      ],
+      "functions": [
+        "create_problem",
+        "update_problem",
+        "read_problems",
+        "read_problem",
+        "delete_problem"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "APIRouter"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "read_problems",
+          "callee": "Depends"
+        },
+        {
+          "caller": "read_problems",
+          "callee": "all"
+        },
+        {
+          "caller": "read_problems",
+          "callee": "query"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "read_problem",
+          "callee": "Depends"
+        },
+        {
+          "caller": "read_problem",
+          "callee": "first"
+        },
+        {
+          "caller": "read_problem",
+          "callee": "filter"
+        },
+        {
+          "caller": "read_problem",
+          "callee": "query"
+        },
+        {
+          "caller": "read_problem",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "read_problem",
+          "callee": "ProblemDetailResponse"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "create_problem",
+          "callee": "Depends"
+        },
+        {
+          "caller": "create_problem",
+          "callee": "Depends"
+        },
+        {
+          "caller": "create_problem",
+          "callee": "Problem"
+        },
+        {
+          "caller": "create_problem",
+          "callee": "add"
+        },
+        {
+          "caller": "create_problem",
+          "callee": "commit"
+        },
+        {
+          "caller": "create_problem",
+          "callee": "refresh"
+        },
+        {
+          "caller": "create_problem",
+          "callee": "TestCase"
+        },
+        {
+          "caller": "create_problem",
+          "callee": "add"
+        },
+        {
+          "caller": "create_problem",
+          "callee": "commit"
+        },
+        {
+          "caller": "create_problem",
+          "callee": "refresh"
+        },
+        {
+          "caller": "<global>",
+          "callee": "put"
+        },
+        {
+          "caller": "update_problem",
+          "callee": "Depends"
+        },
+        {
+          "caller": "update_problem",
+          "callee": "Depends"
+        },
+        {
+          "caller": "update_problem",
+          "callee": "first"
+        },
+        {
+          "caller": "update_problem",
+          "callee": "filter"
+        },
+        {
+          "caller": "update_problem",
+          "callee": "query"
+        },
+        {
+          "caller": "update_problem",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "update_problem",
+          "callee": "model_dump"
+        },
+        {
+          "caller": "update_problem",
+          "callee": "items"
+        },
+        {
+          "caller": "update_problem",
+          "callee": "setattr"
+        },
+        {
+          "caller": "update_problem",
+          "callee": "commit"
+        },
+        {
+          "caller": "update_problem",
+          "callee": "refresh"
+        },
+        {
+          "caller": "<global>",
+          "callee": "delete"
+        },
+        {
+          "caller": "delete_problem",
+          "callee": "Depends"
+        },
+        {
+          "caller": "delete_problem",
+          "callee": "Depends"
+        },
+        {
+          "caller": "delete_problem",
+          "callee": "first"
+        },
+        {
+          "caller": "delete_problem",
+          "callee": "filter"
+        },
+        {
+          "caller": "delete_problem",
+          "callee": "query"
+        },
+        {
+          "caller": "delete_problem",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "delete_problem",
+          "callee": "delete"
+        },
+        {
+          "caller": "delete_problem",
+          "callee": "commit"
+        }
+      ]
+    },
+    "backend/app/routers/submissions.py": {
+      "file": "backend/app/routers/submissions.py",
+      "imports": [
+        "app.routers.auth",
+        "app.config",
+        "app",
+        "sqlalchemy.orm",
+        "app.database",
+        "typing",
+        "logging",
+        "fastapi"
+      ],
+      "functions": [
+        "submit_solution",
+        "run_and_grade_submission_task",
+        "get_submission",
+        "get_completed_ids"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "getLogger"
+        },
+        {
+          "caller": "<global>",
+          "callee": "APIRouter"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "SessionLocal"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "first"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "filter"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "query"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "error"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "info"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "execute_submission"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "commit"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "info"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "exception"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "first"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "filter"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "query"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "str"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "commit"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "error"
+        },
+        {
+          "caller": "run_and_grade_submission_task",
+          "callee": "close"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "submit_solution",
+          "callee": "Depends"
+        },
+        {
+          "caller": "submit_solution",
+          "callee": "Depends"
+        },
+        {
+          "caller": "submit_solution",
+          "callee": "first"
+        },
+        {
+          "caller": "submit_solution",
+          "callee": "filter"
+        },
+        {
+          "caller": "submit_solution",
+          "callee": "query"
+        },
+        {
+          "caller": "submit_solution",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "submit_solution",
+          "callee": "Submission"
+        },
+        {
+          "caller": "submit_solution",
+          "callee": "add"
+        },
+        {
+          "caller": "submit_solution",
+          "callee": "commit"
+        },
+        {
+          "caller": "submit_solution",
+          "callee": "refresh"
+        },
+        {
+          "caller": "submit_solution",
+          "callee": "add_task"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "get_completed_ids",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_completed_ids",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_completed_ids",
+          "callee": "all"
+        },
+        {
+          "caller": "get_completed_ids",
+          "callee": "distinct"
+        },
+        {
+          "caller": "get_completed_ids",
+          "callee": "filter"
+        },
+        {
+          "caller": "get_completed_ids",
+          "callee": "filter"
+        },
+        {
+          "caller": "get_completed_ids",
+          "callee": "query"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "get_submission",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_submission",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_submission",
+          "callee": "first"
+        },
+        {
+          "caller": "get_submission",
+          "callee": "filter"
+        },
+        {
+          "caller": "get_submission",
+          "callee": "query"
+        },
+        {
+          "caller": "get_submission",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "get_submission",
+          "callee": "HTTPException"
+        }
+      ]
+    },
+    "backend/app/schemas.py": {
+      "file": "backend/app/schemas.py",
+      "imports": [
+        "datetime",
+        "pydantic",
+        "typing"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "Field"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Field"
+        }
+      ]
+    },
+    "backend/app/security.py": {
+      "file": "backend/app/security.py",
+      "imports": [
+        "datetime",
+        "app.config",
+        "jose",
+        "bcrypt",
+        "typing"
+      ],
+      "functions": [
+        "decode_access_token",
+        "verify_password",
+        "get_password_hash",
+        "create_access_token"
+      ],
+      "calls": [
+        {
+          "caller": "verify_password",
+          "callee": "checkpw"
+        },
+        {
+          "caller": "verify_password",
+          "callee": "encode"
+        },
+        {
+          "caller": "verify_password",
+          "callee": "encode"
+        },
+        {
+          "caller": "get_password_hash",
+          "callee": "gensalt"
+        },
+        {
+          "caller": "get_password_hash",
+          "callee": "hashpw"
+        },
+        {
+          "caller": "get_password_hash",
+          "callee": "encode"
+        },
+        {
+          "caller": "get_password_hash",
+          "callee": "decode"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "copy"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "now"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "now"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "timedelta"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "update"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "encode"
+        },
+        {
+          "caller": "decode_access_token",
+          "callee": "decode"
+        }
+      ]
+    },
+    "backend/get_seed_testcases.py": {
+      "file": "backend/get_seed_testcases.py",
+      "imports": [
+        "faiss",
+        "base64",
+        "docx",
+        "json",
+        "pypdf",
+        "os",
+        "rag_assets_data",
+        "sentence_transformers",
+        "io",
+        "math",
+        "sys",
+        "numpy"
+      ],
+      "functions": [
+        "main",
+        "chunk_text",
+        "run_reference_pipeline"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "append"
+        },
+        {
+          "caller": "chunk_text",
+          "callee": "len"
+        },
+        {
+          "caller": "chunk_text",
+          "callee": "min"
+        },
+        {
+          "caller": "chunk_text",
+          "callee": "len"
+        },
+        {
+          "caller": "chunk_text",
+          "callee": "append"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "b64decode"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "PdfReader"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "BytesIO"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "extract_text"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "Document"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "BytesIO"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "join"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "chunk_text"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "SentenceTransformer"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "encode"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "encode"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "IndexFlatL2"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "add"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "astype"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "search"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "array"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "int"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "join"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "format"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "len"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "append"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "join"
+        },
+        {
+          "caller": "run_reference_pipeline",
+          "callee": "format"
+        },
+        {
+          "caller": "main",
+          "callee": "print"
+        },
+        {
+          "caller": "main",
+          "callee": "run_reference_pipeline"
+        },
+        {
+          "caller": "main",
+          "callee": "print"
+        },
+        {
+          "caller": "main",
+          "callee": "print"
+        },
+        {
+          "caller": "main",
+          "callee": "print"
+        },
+        {
+          "caller": "main",
+          "callee": "print"
+        },
+        {
+          "caller": "main",
+          "callee": "dumps"
+        },
+        {
+          "caller": "main",
+          "callee": "print"
+        },
+        {
+          "caller": "main",
+          "callee": "run_reference_pipeline"
+        },
+        {
+          "caller": "main",
+          "callee": "print"
+        },
+        {
+          "caller": "main",
+          "callee": "print"
+        },
+        {
+          "caller": "main",
+          "callee": "print"
+        },
+        {
+          "caller": "main",
+          "callee": "print"
+        },
+        {
+          "caller": "main",
+          "callee": "dumps"
+        },
+        {
+          "caller": "<global>",
+          "callee": "main"
+        }
+      ]
+    },
+    "backend/rag_assets_data.py": {
+      "file": "backend/rag_assets_data.py",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed.py": {
+      "file": "backend/seed.py",
+      "imports": [
+        "json",
+        "os",
+        "app",
+        "sqlalchemy.orm",
+        "app.database",
+        "sys",
+        "sqlalchemy"
+      ],
+      "functions": [
+        "seed_db"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "append"
+        },
+        {
+          "caller": "<global>",
+          "callee": "dirname"
+        },
+        {
+          "caller": "<global>",
+          "callee": "abspath"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "create_all"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "SessionLocal"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "delete"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "query"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "delete"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "query"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "print"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "Problem"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "refresh"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "TestCase"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "dumps"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "TestCase"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "dumps"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "print"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "Problem"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "refresh"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "TestCase"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "dumps"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "TestCase"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "dumps"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "print"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "Problem"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "refresh"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "TestCase"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "dumps"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "TestCase"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "dumps"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "print"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "Problem"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "refresh"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "TestCase"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "dumps"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "TestCase"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "dumps"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "print"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "Problem"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "refresh"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "TestCase"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "dumps"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "TestCase"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "dumps"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "print"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "Problem"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "refresh"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "TestCase"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "dumps"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "add"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "TestCase"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "dumps"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "commit"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "print"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "print"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "rollback"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "print"
+        },
+        {
+          "caller": "seed_db",
+          "callee": "close"
+        },
+        {
+          "caller": "<global>",
+          "callee": "seed_db"
+        }
+      ]
+    },
+    "backend/seed_data/problems/10_rag_faiss_storage/description.md": {
+      "file": "backend/seed_data/problems/10_rag_faiss_storage/description.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/10_rag_faiss_storage/meta.json": {
+      "file": "backend/seed_data/problems/10_rag_faiss_storage/meta.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/10_rag_faiss_storage/starter_code.py": {
+      "file": "backend/seed_data/problems/10_rag_faiss_storage/starter_code.py",
+      "imports": [
+        "numpy",
+        "faiss"
+      ],
+      "functions": [
+        "build_faiss_index"
+      ],
+      "calls": []
+    },
+    "backend/seed_data/problems/10_rag_faiss_storage/testcases.json": {
+      "file": "backend/seed_data/problems/10_rag_faiss_storage/testcases.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/10_rag_faiss_storage/theory.md": {
+      "file": "backend/seed_data/problems/10_rag_faiss_storage/theory.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/11_rag_faiss_retrieval/description.md": {
+      "file": "backend/seed_data/problems/11_rag_faiss_retrieval/description.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/11_rag_faiss_retrieval/meta.json": {
+      "file": "backend/seed_data/problems/11_rag_faiss_retrieval/meta.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/11_rag_faiss_retrieval/starter_code.py": {
+      "file": "backend/seed_data/problems/11_rag_faiss_retrieval/starter_code.py",
+      "imports": [
+        "numpy",
+        "faiss"
+      ],
+      "functions": [
+        "retrieve_faiss"
+      ],
+      "calls": []
+    },
+    "backend/seed_data/problems/11_rag_faiss_retrieval/testcases.json": {
+      "file": "backend/seed_data/problems/11_rag_faiss_retrieval/testcases.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/11_rag_faiss_retrieval/theory.md": {
+      "file": "backend/seed_data/problems/11_rag_faiss_retrieval/theory.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/12_rag_end_to_end/description.md": {
+      "file": "backend/seed_data/problems/12_rag_end_to_end/description.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/12_rag_end_to_end/meta.json": {
+      "file": "backend/seed_data/problems/12_rag_end_to_end/meta.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/12_rag_end_to_end/starter_code.py": {
+      "file": "backend/seed_data/problems/12_rag_end_to_end/starter_code.py",
+      "imports": [
+        "faiss",
+        "base64",
+        "docx",
+        "pypdf",
+        "sentence_transformers",
+        "io",
+        "numpy"
+      ],
+      "functions": [
+        "run_rag_pipeline"
+      ],
+      "calls": []
+    },
+    "backend/seed_data/problems/12_rag_end_to_end/testcases.json": {
+      "file": "backend/seed_data/problems/12_rag_end_to_end/testcases.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/12_rag_end_to_end/theory.md": {
+      "file": "backend/seed_data/problems/12_rag_end_to_end/theory.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/1_positional_encoding/description.md": {
+      "file": "backend/seed_data/problems/1_positional_encoding/description.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/1_positional_encoding/meta.json": {
+      "file": "backend/seed_data/problems/1_positional_encoding/meta.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/1_positional_encoding/starter_code.py": {
+      "file": "backend/seed_data/problems/1_positional_encoding/starter_code.py",
+      "imports": [
+        "numpy"
+      ],
+      "functions": [
+        "positional_encoding"
+      ],
+      "calls": []
+    },
+    "backend/seed_data/problems/1_positional_encoding/testcases.json": {
+      "file": "backend/seed_data/problems/1_positional_encoding/testcases.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/1_positional_encoding/theory.md": {
+      "file": "backend/seed_data/problems/1_positional_encoding/theory.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/2_softmax/description.md": {
+      "file": "backend/seed_data/problems/2_softmax/description.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/2_softmax/meta.json": {
+      "file": "backend/seed_data/problems/2_softmax/meta.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/2_softmax/starter_code.py": {
+      "file": "backend/seed_data/problems/2_softmax/starter_code.py",
+      "imports": [
+        "numpy"
+      ],
+      "functions": [
+        "softmax"
+      ],
+      "calls": []
+    },
+    "backend/seed_data/problems/2_softmax/testcases.json": {
+      "file": "backend/seed_data/problems/2_softmax/testcases.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/2_softmax/theory.md": {
+      "file": "backend/seed_data/problems/2_softmax/theory.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/3_mse_loss/description.md": {
+      "file": "backend/seed_data/problems/3_mse_loss/description.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/3_mse_loss/meta.json": {
+      "file": "backend/seed_data/problems/3_mse_loss/meta.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/3_mse_loss/starter_code.py": {
+      "file": "backend/seed_data/problems/3_mse_loss/starter_code.py",
+      "imports": [
+        "numpy"
+      ],
+      "functions": [
+        "mse_loss"
+      ],
+      "calls": []
+    },
+    "backend/seed_data/problems/3_mse_loss/testcases.json": {
+      "file": "backend/seed_data/problems/3_mse_loss/testcases.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/3_mse_loss/theory.md": {
+      "file": "backend/seed_data/problems/3_mse_loss/theory.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/4_relu/description.md": {
+      "file": "backend/seed_data/problems/4_relu/description.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/4_relu/meta.json": {
+      "file": "backend/seed_data/problems/4_relu/meta.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/4_relu/starter_code.py": {
+      "file": "backend/seed_data/problems/4_relu/starter_code.py",
+      "imports": [],
+      "functions": [
+        "relu"
+      ],
+      "calls": []
+    },
+    "backend/seed_data/problems/4_relu/testcases.json": {
+      "file": "backend/seed_data/problems/4_relu/testcases.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/4_relu/theory.md": {
+      "file": "backend/seed_data/problems/4_relu/theory.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/5_dot_product/description.md": {
+      "file": "backend/seed_data/problems/5_dot_product/description.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/5_dot_product/meta.json": {
+      "file": "backend/seed_data/problems/5_dot_product/meta.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/5_dot_product/starter_code.py": {
+      "file": "backend/seed_data/problems/5_dot_product/starter_code.py",
+      "imports": [],
+      "functions": [
+        "dot_product"
+      ],
+      "calls": []
+    },
+    "backend/seed_data/problems/5_dot_product/testcases.json": {
+      "file": "backend/seed_data/problems/5_dot_product/testcases.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/5_dot_product/theory.md": {
+      "file": "backend/seed_data/problems/5_dot_product/theory.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/6_matrix_transpose/description.md": {
+      "file": "backend/seed_data/problems/6_matrix_transpose/description.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/6_matrix_transpose/meta.json": {
+      "file": "backend/seed_data/problems/6_matrix_transpose/meta.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/6_matrix_transpose/starter_code.py": {
+      "file": "backend/seed_data/problems/6_matrix_transpose/starter_code.py",
+      "imports": [],
+      "functions": [
+        "transpose"
+      ],
+      "calls": []
+    },
+    "backend/seed_data/problems/6_matrix_transpose/testcases.json": {
+      "file": "backend/seed_data/problems/6_matrix_transpose/testcases.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/6_matrix_transpose/theory.md": {
+      "file": "backend/seed_data/problems/6_matrix_transpose/theory.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/7_rag_document_parsing/description.md": {
+      "file": "backend/seed_data/problems/7_rag_document_parsing/description.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/7_rag_document_parsing/meta.json": {
+      "file": "backend/seed_data/problems/7_rag_document_parsing/meta.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/7_rag_document_parsing/starter_code.py": {
+      "file": "backend/seed_data/problems/7_rag_document_parsing/starter_code.py",
+      "imports": [
+        "pypdf",
+        "io",
+        "base64",
+        "docx"
+      ],
+      "functions": [
+        "parse_document"
+      ],
+      "calls": []
+    },
+    "backend/seed_data/problems/7_rag_document_parsing/testcases.json": {
+      "file": "backend/seed_data/problems/7_rag_document_parsing/testcases.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/7_rag_document_parsing/theory.md": {
+      "file": "backend/seed_data/problems/7_rag_document_parsing/theory.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/8_rag_chunking/description.md": {
+      "file": "backend/seed_data/problems/8_rag_chunking/description.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/8_rag_chunking/meta.json": {
+      "file": "backend/seed_data/problems/8_rag_chunking/meta.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/8_rag_chunking/starter_code.py": {
+      "file": "backend/seed_data/problems/8_rag_chunking/starter_code.py",
+      "imports": [],
+      "functions": [
+        "chunk_text"
+      ],
+      "calls": []
+    },
+    "backend/seed_data/problems/8_rag_chunking/testcases.json": {
+      "file": "backend/seed_data/problems/8_rag_chunking/testcases.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/8_rag_chunking/theory.md": {
+      "file": "backend/seed_data/problems/8_rag_chunking/theory.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/9_rag_semantic_embeddings/description.md": {
+      "file": "backend/seed_data/problems/9_rag_semantic_embeddings/description.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/9_rag_semantic_embeddings/meta.json": {
+      "file": "backend/seed_data/problems/9_rag_semantic_embeddings/meta.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/9_rag_semantic_embeddings/starter_code.py": {
+      "file": "backend/seed_data/problems/9_rag_semantic_embeddings/starter_code.py",
+      "imports": [
+        "sentence_transformers"
+      ],
+      "functions": [
+        "generate_embeddings"
+      ],
+      "calls": []
+    },
+    "backend/seed_data/problems/9_rag_semantic_embeddings/testcases.json": {
+      "file": "backend/seed_data/problems/9_rag_semantic_embeddings/testcases.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/seed_data/problems/9_rag_semantic_embeddings/theory.md": {
+      "file": "backend/seed_data/problems/9_rag_semantic_embeddings/theory.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "backend/setup_rag_assets.py": {
+      "file": "backend/setup_rag_assets.py",
+      "imports": [
+        "base64",
+        "docx",
+        "os",
+        "sentence_transformers",
+        "io",
+        "reportlab.lib.pagesizes",
+        "reportlab.platypus",
+        "reportlab.lib.styles"
+      ],
+      "functions": [
+        "generate_assets"
+      ],
+      "calls": [
+        {
+          "caller": "generate_assets",
+          "callee": "print"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "BytesIO"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "SimpleDocTemplate"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "getSampleStyleSheet"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "Paragraph"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "Spacer"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "Paragraph"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "build"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "getvalue"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "decode"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "b64encode"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "print"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "Document"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "add_heading"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "add_paragraph"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "BytesIO"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "save"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "getvalue"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "decode"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "b64encode"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "print"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "print"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "SentenceTransformer"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "print"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "open"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "write"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "write"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "write"
+        },
+        {
+          "caller": "generate_assets",
+          "callee": "print"
+        },
+        {
+          "caller": "<global>",
+          "callee": "generate_assets"
+        }
+      ]
+    },
+    "backend/verify.py": {
+      "file": "backend/verify.py",
+      "imports": [
+        "app",
+        "app.database",
+        "json",
+        "asyncio"
+      ],
+      "functions": [
+        "test_solution",
+        "run_tests"
+      ],
+      "calls": [
+        {
+          "caller": "run_tests",
+          "callee": "SessionLocal"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "first"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "filter"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "query"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "like"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "print"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "print"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "print"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "len"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "print"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "first"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "filter"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "query"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "User"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "add"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "commit"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "refresh"
+        },
+        {
+          "caller": "test_solution",
+          "callee": "Submission"
+        },
+        {
+          "caller": "test_solution",
+          "callee": "add"
+        },
+        {
+          "caller": "test_solution",
+          "callee": "commit"
+        },
+        {
+          "caller": "test_solution",
+          "callee": "refresh"
+        },
+        {
+          "caller": "test_solution",
+          "callee": "print"
+        },
+        {
+          "caller": "test_solution",
+          "callee": "execute_submission"
+        },
+        {
+          "caller": "test_solution",
+          "callee": "print"
+        },
+        {
+          "caller": "test_solution",
+          "callee": "print"
+        },
+        {
+          "caller": "test_solution",
+          "callee": "print"
+        },
+        {
+          "caller": "test_solution",
+          "callee": "print"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "test_solution"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "test_solution"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "test_solution"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "print"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "print"
+        },
+        {
+          "caller": "run_tests",
+          "callee": "print"
+        },
+        {
+          "caller": "<global>",
+          "callee": "run"
+        },
+        {
+          "caller": "<global>",
+          "callee": "run_tests"
+        }
+      ]
+    },
+    "docker-compose.prod.yml": {
+      "file": "docker-compose.prod.yml",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "docker-compose.yml": {
+      "file": "docker-compose.yml",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "frontend/README.md": {
+      "file": "frontend/README.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "frontend/eslint.config.js": {
+      "file": "frontend/eslint.config.js",
+      "imports": [
+        "eslint-plugin-react-refresh",
+        "eslint/config",
+        "globals",
+        "@eslint/js",
+        "typescript-eslint",
+        "eslint-plugin-react-hooks"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "defineConfig"
+        },
+        {
+          "caller": "<global>",
+          "callee": "globalIgnores"
+        }
+      ]
+    },
+    "frontend/package.json": {
+      "file": "frontend/package.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "frontend/postcss.config.js": {
+      "file": "frontend/postcss.config.js",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "frontend/src/App.tsx": {
+      "file": "frontend/src/App.tsx",
+      "imports": [
+        "./api",
+        "./context/store",
+        "./pages/ProblemDetail",
+        "./pages/Register",
+        "./pages/Login",
+        "react",
+        "./components/Navbar",
+        "./pages/Problems",
+        "./pages/UploadProblem",
+        "./pages/RagPathway",
+        "react-router-dom"
+      ],
+      "functions": [
+        "ProtectedRoute",
+        "App",
+        "restoreSession"
+      ],
+      "calls": [
+        {
+          "caller": "ProtectedRoute",
+          "callee": "useAppStore"
+        },
+        {
+          "caller": "App",
+          "callee": "useAppStore"
+        },
+        {
+          "caller": "App",
+          "callee": "useState"
+        },
+        {
+          "caller": "App",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "restoreSession",
+          "callee": "get"
+        },
+        {
+          "caller": "restoreSession",
+          "callee": "setUser"
+        },
+        {
+          "caller": "restoreSession",
+          "callee": "error"
+        },
+        {
+          "caller": "restoreSession",
+          "callee": "logout"
+        },
+        {
+          "caller": "restoreSession",
+          "callee": "setInitializing"
+        },
+        {
+          "caller": "App",
+          "callee": "restoreSession"
+        }
+      ]
+    },
+    "frontend/src/api.ts": {
+      "file": "frontend/src/api.ts",
+      "imports": [
+        "axios"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "create"
+        },
+        {
+          "caller": "<global>",
+          "callee": "use"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getItem"
+        },
+        {
+          "caller": "<global>",
+          "callee": "reject"
+        }
+      ]
+    },
+    "frontend/src/components/CodeEditor.tsx": {
+      "file": "frontend/src/components/CodeEditor.tsx",
+      "imports": [
+        "@monaco-editor/react",
+        "react"
+      ],
+      "functions": [
+        "CodeEditor",
+        "handleEditorChange",
+        "handleEditorDidMount"
+      ],
+      "calls": [
+        {
+          "caller": "handleEditorChange",
+          "callee": "onChange"
+        },
+        {
+          "caller": "handleEditorDidMount",
+          "callee": "defineTheme"
+        },
+        {
+          "caller": "handleEditorDidMount",
+          "callee": "setTheme"
+        },
+        {
+          "caller": "handleEditorDidMount",
+          "callee": "error"
+        }
+      ]
+    },
+    "frontend/src/components/Navbar.tsx": {
+      "file": "frontend/src/components/Navbar.tsx",
+      "imports": [
+        "lucide-react",
+        "react-router-dom",
+        "../context/store",
+        "react"
+      ],
+      "functions": [
+        "isActive",
+        "handleLogout",
+        "Navbar"
+      ],
+      "calls": [
+        {
+          "caller": "Navbar",
+          "callee": "useAppStore"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "useNavigate"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "useLocation"
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "logout"
+        },
+        {
+          "caller": "handleLogout",
+          "callee": "navigate"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "isActive"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "isActive"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "isActive"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "toUpperCase"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "slice"
+        }
+      ]
+    },
+    "frontend/src/components/SplitPane.tsx": {
+      "file": "frontend/src/components/SplitPane.tsx",
+      "imports": [
+        "react"
+      ],
+      "functions": [
+        "handleMouseMove",
+        "handleMouseUp",
+        "startResize",
+        "SplitPane"
+      ],
+      "calls": [
+        {
+          "caller": "SplitPane",
+          "callee": "useState"
+        },
+        {
+          "caller": "SplitPane",
+          "callee": "useRef"
+        },
+        {
+          "caller": "SplitPane",
+          "callee": "useRef"
+        },
+        {
+          "caller": "SplitPane",
+          "callee": "useState"
+        },
+        {
+          "caller": "startResize",
+          "callee": "preventDefault"
+        },
+        {
+          "caller": "startResize",
+          "callee": "setActiveDrag"
+        },
+        {
+          "caller": "SplitPane",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "handleMouseMove",
+          "callee": "getBoundingClientRect"
+        },
+        {
+          "caller": "handleMouseMove",
+          "callee": "setLeftWidth"
+        },
+        {
+          "caller": "handleMouseUp",
+          "callee": "setActiveDrag"
+        },
+        {
+          "caller": "SplitPane",
+          "callee": "addEventListener"
+        },
+        {
+          "caller": "SplitPane",
+          "callee": "addEventListener"
+        },
+        {
+          "caller": "SplitPane",
+          "callee": "removeEventListener"
+        },
+        {
+          "caller": "SplitPane",
+          "callee": "removeEventListener"
+        }
+      ]
+    },
+    "frontend/src/components/VerticalSplitPane.tsx": {
+      "file": "frontend/src/components/VerticalSplitPane.tsx",
+      "imports": [
+        "react"
+      ],
+      "functions": [
+        "handleMouseMove",
+        "handleMouseUp",
+        "startResize",
+        "VerticalSplitPane"
+      ],
+      "calls": [
+        {
+          "caller": "VerticalSplitPane",
+          "callee": "useState"
+        },
+        {
+          "caller": "VerticalSplitPane",
+          "callee": "useRef"
+        },
+        {
+          "caller": "VerticalSplitPane",
+          "callee": "useRef"
+        },
+        {
+          "caller": "VerticalSplitPane",
+          "callee": "useState"
+        },
+        {
+          "caller": "startResize",
+          "callee": "preventDefault"
+        },
+        {
+          "caller": "startResize",
+          "callee": "setActiveDrag"
+        },
+        {
+          "caller": "VerticalSplitPane",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "handleMouseMove",
+          "callee": "getBoundingClientRect"
+        },
+        {
+          "caller": "handleMouseMove",
+          "callee": "setBottomHeight"
+        },
+        {
+          "caller": "handleMouseUp",
+          "callee": "setActiveDrag"
+        },
+        {
+          "caller": "VerticalSplitPane",
+          "callee": "addEventListener"
+        },
+        {
+          "caller": "VerticalSplitPane",
+          "callee": "addEventListener"
+        },
+        {
+          "caller": "VerticalSplitPane",
+          "callee": "removeEventListener"
+        },
+        {
+          "caller": "VerticalSplitPane",
+          "callee": "removeEventListener"
+        }
+      ]
+    },
+    "frontend/src/context/store.ts": {
+      "file": "frontend/src/context/store.ts",
+      "imports": [
+        "zustand"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "create"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getItem"
+        },
+        {
+          "caller": "<global>",
+          "callee": "parse"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getItem"
+        },
+        {
+          "caller": "<global>",
+          "callee": "setItem"
+        },
+        {
+          "caller": "<global>",
+          "callee": "removeItem"
+        },
+        {
+          "caller": "<global>",
+          "callee": "set"
+        },
+        {
+          "caller": "<global>",
+          "callee": "set"
+        },
+        {
+          "caller": "<global>",
+          "callee": "set"
+        },
+        {
+          "caller": "<global>",
+          "callee": "setItem"
+        },
+        {
+          "caller": "<global>",
+          "callee": "stringify"
+        },
+        {
+          "caller": "<global>",
+          "callee": "removeItem"
+        },
+        {
+          "caller": "<global>",
+          "callee": "set"
+        }
+      ]
+    },
+    "frontend/src/main.tsx": {
+      "file": "frontend/src/main.tsx",
+      "imports": [
+        "./App.tsx",
+        "react-dom/client",
+        "react",
+        "./index.css"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "render"
+        },
+        {
+          "caller": "<global>",
+          "callee": "createRoot"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getElementById"
+        }
+      ]
+    },
+    "frontend/src/pages/Login.tsx": {
+      "file": "frontend/src/pages/Login.tsx",
+      "imports": [
+        "lucide-react",
+        "../context/store",
+        "react",
+        "../api",
+        "react-router-dom"
+      ],
+      "functions": [
+        "Login",
+        "handleSubmit"
+      ],
+      "calls": [
+        {
+          "caller": "Login",
+          "callee": "useState"
+        },
+        {
+          "caller": "Login",
+          "callee": "useState"
+        },
+        {
+          "caller": "Login",
+          "callee": "useState"
+        },
+        {
+          "caller": "Login",
+          "callee": "useState"
+        },
+        {
+          "caller": "Login",
+          "callee": "useAppStore"
+        },
+        {
+          "caller": "Login",
+          "callee": "useNavigate"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "preventDefault"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setError"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setLoading"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "append"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "append"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "post"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setToken"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "get"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setUser"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "navigate"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "error"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setError"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setLoading"
+        },
+        {
+          "caller": "Login",
+          "callee": "setIdentifier"
+        },
+        {
+          "caller": "Login",
+          "callee": "setPassword"
+        }
+      ]
+    },
+    "frontend/src/pages/ProblemDetail.tsx": {
+      "file": "frontend/src/pages/ProblemDetail.tsx",
+      "imports": [
+        "lucide-react",
+        "katex",
+        "../components/SplitPane",
+        "../components/VerticalSplitPane",
+        "../components/CodeEditor",
+        "../context/store",
+        "react",
+        "../api",
+        "react-router-dom"
+      ],
+      "functions": [
+        "addCustomTestCase",
+        "parseMarkdown",
+        "MathComponent",
+        "parseInlineFormatting",
+        "handleSubmission",
+        "handleTestcaseChange",
+        "fetchSubmissions",
+        "getDifficultyColor",
+        "fetchProblem",
+        "ProblemDetail",
+        "pollSubmission"
+      ],
+      "calls": [
+        {
+          "caller": "MathComponent",
+          "callee": "useRef"
+        },
+        {
+          "caller": "MathComponent",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "MathComponent",
+          "callee": "render"
+        },
+        {
+          "caller": "MathComponent",
+          "callee": "error"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useParams"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "Number"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useAppStore"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useState"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "fetchProblem",
+          "callee": "setLoading"
+        },
+        {
+          "caller": "fetchProblem",
+          "callee": "get"
+        },
+        {
+          "caller": "fetchProblem",
+          "callee": "setProblem"
+        },
+        {
+          "caller": "fetchProblem",
+          "callee": "setCustomTestCases"
+        },
+        {
+          "caller": "fetchProblem",
+          "callee": "setCustomTestCases"
+        },
+        {
+          "caller": "fetchProblem",
+          "callee": "setEditorCode"
+        },
+        {
+          "caller": "fetchProblem",
+          "callee": "error"
+        },
+        {
+          "caller": "fetchProblem",
+          "callee": "setError"
+        },
+        {
+          "caller": "fetchProblem",
+          "callee": "setLoading"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "fetchProblem"
+        },
+        {
+          "caller": "getDifficultyColor",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "split"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "map"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "split"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "map"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "split"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "map"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "replace"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "replace"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "replace"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "parseInlineFormatting"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "slice"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "parseInlineFormatting"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "split"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "map"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "endsWith"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "slice"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "endsWith"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "slice"
+        },
+        {
+          "caller": "handleSubmission",
+          "callee": "setIsSubmitting"
+        },
+        {
+          "caller": "handleSubmission",
+          "callee": "setSubmissionStatus"
+        },
+        {
+          "caller": "handleSubmission",
+          "callee": "setSubmissionError"
+        },
+        {
+          "caller": "handleSubmission",
+          "callee": "setSubmissionId"
+        },
+        {
+          "caller": "handleSubmission",
+          "callee": "setActiveRightTab"
+        },
+        {
+          "caller": "handleSubmission",
+          "callee": "post"
+        },
+        {
+          "caller": "handleSubmission",
+          "callee": "setSubmissionId"
+        },
+        {
+          "caller": "handleSubmission",
+          "callee": "pollSubmission"
+        },
+        {
+          "caller": "handleSubmission",
+          "callee": "error"
+        },
+        {
+          "caller": "handleSubmission",
+          "callee": "setSubmissionStatus"
+        },
+        {
+          "caller": "handleSubmission",
+          "callee": "setSubmissionError"
+        },
+        {
+          "caller": "handleSubmission",
+          "callee": "setIsSubmitting"
+        },
+        {
+          "caller": "pollSubmission",
+          "callee": "setInterval"
+        },
+        {
+          "caller": "pollSubmission",
+          "callee": "get"
+        },
+        {
+          "caller": "pollSubmission",
+          "callee": "clearInterval"
+        },
+        {
+          "caller": "pollSubmission",
+          "callee": "setSubmissionStatus"
+        },
+        {
+          "caller": "pollSubmission",
+          "callee": "setSubmissionError"
+        },
+        {
+          "caller": "pollSubmission",
+          "callee": "setIsSubmitting"
+        },
+        {
+          "caller": "pollSubmission",
+          "callee": "clearInterval"
+        },
+        {
+          "caller": "pollSubmission",
+          "callee": "setSubmissionStatus"
+        },
+        {
+          "caller": "pollSubmission",
+          "callee": "setSubmissionError"
+        },
+        {
+          "caller": "pollSubmission",
+          "callee": "setIsSubmitting"
+        },
+        {
+          "caller": "handleTestcaseChange",
+          "callee": "isNaN"
+        },
+        {
+          "caller": "handleTestcaseChange",
+          "callee": "Number"
+        },
+        {
+          "caller": "handleTestcaseChange",
+          "callee": "trim"
+        },
+        {
+          "caller": "handleTestcaseChange",
+          "callee": "Number"
+        },
+        {
+          "caller": "handleTestcaseChange",
+          "callee": "parse"
+        },
+        {
+          "caller": "handleTestcaseChange",
+          "callee": "setCustomTestCases"
+        },
+        {
+          "caller": "addCustomTestCase",
+          "callee": "parse"
+        },
+        {
+          "caller": "addCustomTestCase",
+          "callee": "stringify"
+        },
+        {
+          "caller": "addCustomTestCase",
+          "callee": "setCustomTestCases"
+        },
+        {
+          "caller": "addCustomTestCase",
+          "callee": "setSelectedTestCaseIndex"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "getDifficultyColor"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "setActiveLeftTab"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "setActiveLeftTab"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "map"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "parseMarkdown"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "parseMarkdown"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "setEditorCode"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "setActiveRightTab"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "setActiveRightTab"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "map"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "setSelectedTestCaseIndex"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "map"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "entries"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "stringify"
+        },
+        {
+          "caller": "ProblemDetail",
+          "callee": "handleTestcaseChange"
+        }
+      ]
+    },
+    "frontend/src/pages/Problems.tsx": {
+      "file": "frontend/src/pages/Problems.tsx",
+      "imports": [
+        "../api",
+        "lucide-react",
+        "react-router-dom",
+        "react"
+      ],
+      "functions": [
+        "fetchProblems",
+        "handleDeleteProblem",
+        "getDifficultyColor",
+        "Problems"
+      ],
+      "calls": [
+        {
+          "caller": "Problems",
+          "callee": "useState"
+        },
+        {
+          "caller": "Problems",
+          "callee": "useState"
+        },
+        {
+          "caller": "Problems",
+          "callee": "useState"
+        },
+        {
+          "caller": "Problems",
+          "callee": "useState"
+        },
+        {
+          "caller": "Problems",
+          "callee": "useState"
+        },
+        {
+          "caller": "Problems",
+          "callee": "useState"
+        },
+        {
+          "caller": "handleDeleteProblem",
+          "callee": "delete"
+        },
+        {
+          "caller": "handleDeleteProblem",
+          "callee": "setProblems"
+        },
+        {
+          "caller": "handleDeleteProblem",
+          "callee": "filter"
+        },
+        {
+          "caller": "handleDeleteProblem",
+          "callee": "setDeleteConfirmId"
+        },
+        {
+          "caller": "handleDeleteProblem",
+          "callee": "error"
+        },
+        {
+          "caller": "handleDeleteProblem",
+          "callee": "alert"
+        },
+        {
+          "caller": "handleDeleteProblem",
+          "callee": "setDeleteConfirmId"
+        },
+        {
+          "caller": "Problems",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "fetchProblems",
+          "callee": "get"
+        },
+        {
+          "caller": "fetchProblems",
+          "callee": "setProblems"
+        },
+        {
+          "caller": "fetchProblems",
+          "callee": "error"
+        },
+        {
+          "caller": "fetchProblems",
+          "callee": "setError"
+        },
+        {
+          "caller": "fetchProblems",
+          "callee": "setLoading"
+        },
+        {
+          "caller": "Problems",
+          "callee": "fetchProblems"
+        },
+        {
+          "caller": "getDifficultyColor",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "Problems",
+          "callee": "filter"
+        },
+        {
+          "caller": "Problems",
+          "callee": "includes"
+        },
+        {
+          "caller": "Problems",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "Problems",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "Problems",
+          "callee": "some"
+        },
+        {
+          "caller": "Problems",
+          "callee": "includes"
+        },
+        {
+          "caller": "Problems",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "Problems",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "Problems",
+          "callee": "setSearchQuery"
+        },
+        {
+          "caller": "Problems",
+          "callee": "map"
+        },
+        {
+          "caller": "Problems",
+          "callee": "setSelectedDifficulty"
+        },
+        {
+          "caller": "Problems",
+          "callee": "reload"
+        },
+        {
+          "caller": "Problems",
+          "callee": "map"
+        },
+        {
+          "caller": "Problems",
+          "callee": "getDifficultyColor"
+        },
+        {
+          "caller": "Problems",
+          "callee": "map"
+        },
+        {
+          "caller": "Problems",
+          "callee": "setDeleteConfirmId"
+        },
+        {
+          "caller": "Problems",
+          "callee": "setDeleteConfirmId"
+        },
+        {
+          "caller": "Problems",
+          "callee": "handleDeleteProblem"
+        }
+      ]
+    },
+    "frontend/src/pages/RagPathway.tsx": {
+      "file": "frontend/src/pages/RagPathway.tsx",
+      "imports": [
+        "../api",
+        "lucide-react",
+        "react-router-dom",
+        "react"
+      ],
+      "functions": [
+        "fetchData",
+        "RagPathway",
+        "getProblemForStep",
+        "getDifficultyColor",
+        "isStepCompleted"
+      ],
+      "calls": [
+        {
+          "caller": "RagPathway",
+          "callee": "useState"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "useState"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "useState"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "useState"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "useState"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "fetchData",
+          "callee": "all"
+        },
+        {
+          "caller": "fetchData",
+          "callee": "get"
+        },
+        {
+          "caller": "fetchData",
+          "callee": "get"
+        },
+        {
+          "caller": "fetchData",
+          "callee": "setProblems"
+        },
+        {
+          "caller": "fetchData",
+          "callee": "setCompletedIds"
+        },
+        {
+          "caller": "fetchData",
+          "callee": "error"
+        },
+        {
+          "caller": "fetchData",
+          "callee": "setError"
+        },
+        {
+          "caller": "fetchData",
+          "callee": "setLoading"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "fetchData"
+        },
+        {
+          "caller": "getProblemForStep",
+          "callee": "find"
+        },
+        {
+          "caller": "isStepCompleted",
+          "callee": "getProblemForStep"
+        },
+        {
+          "caller": "isStepCompleted",
+          "callee": "includes"
+        },
+        {
+          "caller": "getDifficultyColor",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "filter"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "round"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "reload"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "setActiveVisualNode"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "setActiveVisualNode"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "isStepCompleted"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "setActiveVisualNode"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "setActiveVisualNode"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "isStepCompleted"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "setActiveVisualNode"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "setActiveVisualNode"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "isStepCompleted"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "setActiveVisualNode"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "setActiveVisualNode"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "isStepCompleted"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "setActiveVisualNode"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "setActiveVisualNode"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "isStepCompleted"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "setActiveVisualNode"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "setActiveVisualNode"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "isStepCompleted"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "map"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "getProblemForStep"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "isStepCompleted"
+        },
+        {
+          "caller": "RagPathway",
+          "callee": "getDifficultyColor"
+        }
+      ]
+    },
+    "frontend/src/pages/Register.tsx": {
+      "file": "frontend/src/pages/Register.tsx",
+      "imports": [
+        "../api",
+        "lucide-react",
+        "react-router-dom",
+        "react"
+      ],
+      "functions": [
+        "Register",
+        "handleSubmit"
+      ],
+      "calls": [
+        {
+          "caller": "Register",
+          "callee": "useState"
+        },
+        {
+          "caller": "Register",
+          "callee": "useState"
+        },
+        {
+          "caller": "Register",
+          "callee": "useState"
+        },
+        {
+          "caller": "Register",
+          "callee": "useState"
+        },
+        {
+          "caller": "Register",
+          "callee": "useState"
+        },
+        {
+          "caller": "Register",
+          "callee": "useState"
+        },
+        {
+          "caller": "Register",
+          "callee": "useState"
+        },
+        {
+          "caller": "Register",
+          "callee": "useNavigate"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "preventDefault"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setError"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setError"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setLoading"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "post"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setSuccess"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setTimeout"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "navigate"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "error"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setError"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setLoading"
+        },
+        {
+          "caller": "Register",
+          "callee": "setEmail"
+        },
+        {
+          "caller": "Register",
+          "callee": "setUsername"
+        },
+        {
+          "caller": "Register",
+          "callee": "setPassword"
+        },
+        {
+          "caller": "Register",
+          "callee": "rd(e.target.value)"
+        }
+      ]
+    },
+    "frontend/src/pages/UploadProblem.tsx": {
+      "file": "frontend/src/pages/UploadProblem.tsx",
+      "imports": [
+        "lucide-react",
+        "katex",
+        "../components/SplitPane",
+        "react",
+        "../api",
+        "react-router-dom"
+      ],
+      "functions": [
+        "parseMarkdown",
+        "handleUploadSubmit",
+        "parseBulkContent",
+        "parseInlineFormatting",
+        "getDifficultyColor",
+        "handleTestCaseChange",
+        "deleteTestCase",
+        "addTestCase",
+        "MathComponent",
+        "UploadProblem"
+      ],
+      "calls": [
+        {
+          "caller": "MathComponent",
+          "callee": "useRef"
+        },
+        {
+          "caller": "MathComponent",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "MathComponent",
+          "callee": "render"
+        },
+        {
+          "caller": "MathComponent",
+          "callee": "error"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useNavigate"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useState"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useState"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useState"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useState"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useState"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useState"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useState"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useState"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useState"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useState"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useState"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useState"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "parseBulkContent"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setTitle"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setDifficulty"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setTags"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setDescriptionMd"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setTheoryMd"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setStarterCode"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setTestCases"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "error"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "split"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "match"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "toUpperCase"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "charAt"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "slice"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "match"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "filter"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "map"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "split"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "match"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "match"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "push"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "join"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "push"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "push"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "join"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "match"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "includes"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "split"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "match"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "match"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "match"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "parse"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "match"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "parse"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "push"
+        },
+        {
+          "caller": "parseBulkContent",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "split"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "map"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "split"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "map"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "split"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "map"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "replace"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "replace"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "replace"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "parseInlineFormatting"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "slice"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "trim"
+        },
+        {
+          "caller": "parseMarkdown",
+          "callee": "parseInlineFormatting"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "split"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "map"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "endsWith"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "slice"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "startsWith"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "endsWith"
+        },
+        {
+          "caller": "parseInlineFormatting",
+          "callee": "slice"
+        },
+        {
+          "caller": "handleTestCaseChange",
+          "callee": "parse"
+        },
+        {
+          "caller": "handleTestCaseChange",
+          "callee": "setTestCases"
+        },
+        {
+          "caller": "addTestCase",
+          "callee": "setTestCases"
+        },
+        {
+          "caller": "deleteTestCase",
+          "callee": "setTestCases"
+        },
+        {
+          "caller": "deleteTestCase",
+          "callee": "filter"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "trim"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "setUploadError"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "trim"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "setUploadError"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "trim"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "setUploadError"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "setUploadError"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "setIsUploading"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "setUploadError"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "map"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "post"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "setUploadSuccess"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "setTimeout"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "navigate"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "error"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "setUploadError"
+        },
+        {
+          "caller": "handleUploadSubmit",
+          "callee": "setIsUploading"
+        },
+        {
+          "caller": "getDifficultyColor",
+          "callee": "toLowerCase"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setBulkContent"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setTitle"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setDifficulty"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "join"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setTags"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "filter"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "map"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "split"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "trim"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "map"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "deleteTestCase"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "stringify"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "handleTestCaseChange"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "handleTestCaseChange"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "handleTestCaseChange"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setActivePreviewTab"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setActivePreviewTab"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setActivePreviewTab"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "setActivePreviewTab"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "getDifficultyColor"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "map"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "parseMarkdown"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "parseMarkdown"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "map"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "stringify"
+        },
+        {
+          "caller": "UploadProblem",
+          "callee": "stringify"
+        }
+      ]
+    },
+    "frontend/tailwind.config.js": {
+      "file": "frontend/tailwind.config.js",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "frontend/tsconfig.app.json": {
+      "file": "frontend/tsconfig.app.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "frontend/tsconfig.json": {
+      "file": "frontend/tsconfig.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "frontend/tsconfig.node.json": {
+      "file": "frontend/tsconfig.node.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "frontend/vercel.json": {
+      "file": "frontend/vercel.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "frontend/vite.config.ts": {
+      "file": "frontend/vite.config.ts",
+      "imports": [
+        "@vitejs/plugin-react",
+        "vite"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "defineConfig"
+        },
+        {
+          "caller": "<global>",
+          "callee": "react"
+        }
+      ]
+    }
+  }
+}

@@ -24,12 +24,14 @@ class FallbackLLM(RunnableSerializable[Any, Any]):
         self.primary_model = ChatGoogleGenerativeAI(
             model="gemini-2.5-flash",
             google_api_key=GEMINI_API_KEY,
-            temperature=0.2
+            temperature=0.2,
+            max_retries=0,
+            timeout=10
         )
         self.cohere = ChatOpenAI(
             base_url="https://openrouter.ai/api/v1",
             api_key=OPENROUTER_API_KEY,
-            model="cohere/north-mini-code:free",
+            model="meta-llama/llama-3.2-3b-instruct:free",
             temperature=0.2,
             max_retries=0,
             timeout=15
@@ -37,7 +39,7 @@ class FallbackLLM(RunnableSerializable[Any, Any]):
         self.gemma = ChatOpenAI(
             base_url="https://openrouter.ai/api/v1",
             api_key=OPENROUTER_API_KEY,
-            model="google/gemma-4-31b-it:free",
+            model="openai/gpt-oss-120b:free",
             temperature=0.2,
             max_retries=0,
             timeout=15

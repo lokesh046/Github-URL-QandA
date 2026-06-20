@@ -1,15 +1,11 @@
-# pyrefly: ignore [missing-import]
-import chromadb
-import  hashlib
+import hashlib
+from pinecone import Pinecone
+from config import PINECONE_API_KEY, PINECONE_INDEX_NAME
 
+# Initialize Pinecone client
+pc = Pinecone(api_key=PINECONE_API_KEY)
+index = pc.Index(PINECONE_INDEX_NAME)
 
-client = chromadb.PersistentClient(
-    path="./chroma_db"
-)
-
-collection = client.get_or_create_collection(
-    name="github_repo_chunks"
-)
 
 def generate_chunk_id(
         repo_id: str,
@@ -17,7 +13,6 @@ def generate_chunk_id(
         fn_name: str,
         text: str
 ):
-
     key = (
         repo_id
         + file_path
@@ -29,83 +24,69 @@ def generate_chunk_id(
         key.encode("utf-8")
     ).hexdigest()
 
+
 def add_chunk(chunks: list, embeddings, repo_id: str):
-
-    documents,metadatas,ids=[],[],[]
-
+    """
+    Upserts document chunks and their local embeddings into the Pinecone index.
+    Metadata includes the repo_id, file path, function name, start line, and the raw text chunk.
+    """
+    vectors = []
     for idx, chunk in enumerate(chunks):
-
-        documents.append(
+        vector_id = generate_chunk_id(
+            repo_id,
+            chunk["file"],
+            chunk["fn_name"],
             chunk["text"]
         )
-
-        metadatas.append(
-            {
+        vectors.append({
+            "id": vector_id,
+            "values": embeddings[idx].tolist(),
+            "metadata": {
                 "repo_id": repo_id,
                 "file": chunk["file"],
                 "fn_name": chunk["fn_name"] or "",
-                "start_line": chunk["start_line"] or 0
-            })
+                "start_line": int(chunk["start_line"] or 1),
+                "text": chunk["text"]
+            }
+        })
 
-        ids.append(
-            generate_chunk_id(
-                repo_id,
-                chunk["file"],
-                chunk["fn_name"],
-                chunk["text"]
-            )
-        )
+    # Batch upserts (Pinecone recommends batches of ~100 vectors)
+    batch_size = 100
+    for i in range(0, len(vectors), batch_size):
+        batch = vectors[i : i + batch_size]
+        try:
+            index.upsert(vectors=batch)
+        except Exception as e:
+            raise RuntimeError(f"Failed to upsert to Pinecone: {e}")
 
-    collection.upsert(
-        ids=ids,
-        documents=documents,
-        embeddings=embeddings.tolist(),
-        metadatas=metadatas
-    )
 
-def count_chunks():
-    return collection.count()
+def count_chunks() -> int:
+    """
+    Return the total vector count from the Pinecone index stats.
+    """
+    try:
+        stats = index.describe_index_stats()
+        return stats.total_vector_count
+    except Exception:
+        return 0
+
 
 def delete_repo(repo_id: str):
-
-    collection.delete(
-        where={
-            "repo_id": repo_id
-        }
-    )
-
-
-
-def get_collection():
-
-    return client.get_or_create_collection(
-        name="github_repo_chunks"
-    )
-
-
-collection = get_collection()
+    """
+    Delete all vectors matching the repo_id metadata filter.
+    """
+    try:
+        index.delete(filter={"repo_id": {"$eq": repo_id}})
+    except Exception as e:
+        print(f"Error deleting Pinecone vectors for {repo_id}: {e}")
 
 
 def reset_collection():
-
-    global collection
-
+    """
+    Delete all vectors in the Pinecone index.
+    """
     try:
-
-        client.delete_collection(
-            "github_repo_chunks"
-        )
-
-        print(
-            "Old collection deleted."
-        )
-
-    except Exception:
-
-        pass
-
-    collection = get_collection()
-
-    print(
-        "New collection created."
-    )
+        index.delete(delete_all=True)
+        print("All vectors in Pinecone index deleted.")
+    except Exception as e:
+        print(f"Error resetting Pinecone index: {e}")

@@ -4,7 +4,9 @@ import os
 import json
 from typing import Dict, Any
 
-DB_DIR = "./data/graph_db"
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(current_dir)
+DB_DIR = os.path.join(project_root, "data", "graph_db")
 
 def get_db_path(repo_id: str) -> str:
     return os.path.join(DB_DIR, f"{repo_id}.json")

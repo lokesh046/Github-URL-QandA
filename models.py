@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 class QueryRequest(BaseModel):
     repo_url: str
-    branch: str = "main"
+    branch: str = None
     question: str
 
 
@@ -16,12 +16,12 @@ class SearchIndexInput(BaseModel):
 
 class ListRepoFilesInput(BaseModel):
     repo_url: str
-    branch: str = "main"
+    branch: str = None
 
 class GetFileContentInput(BaseModel):
     repo_url: str
     file_path: str
-    branch: str = "main"
+    branch: str = None
 
 class SummaryRepoInput(BaseModel):
     repo_url: str

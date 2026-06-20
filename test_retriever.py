@@ -1,11 +1,11 @@
 from rag.retriever import retrieve_chunks
 from utils.repo_utils import get_repo_id
 
-repo_url = "https://github.com/lokesh046/portfolio"
+repo_url = "https://github.com/lokesh046/neural-mind"
 
 repo_id = get_repo_id(repo_url)
 
-query = "What does Hero component do?"
+query = "What does the Settings class configure?"
 
 results = retrieve_chunks(
     repo_id=repo_id,

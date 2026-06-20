@@ -16,8 +16,8 @@
     "src/app.js": {
       "file": "src/app.js",
       "imports": [
-        "./router",
-        "./server"
+        "./server",
+        "./router"
       ],
       "functions": [
         "initApp"

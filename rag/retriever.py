@@ -1,10 +1,10 @@
-
-from rag.indexer import collection
+from pinecone import Pinecone
+from config import PINECONE_API_KEY, PINECONE_INDEX_NAME
 from rag.embedder import embed_query
-from rag.formatter import format_chunks
-from rag.formatter import format_chunks
 
-
+# Initialize Pinecone client
+pc = Pinecone(api_key=PINECONE_API_KEY)
+index = pc.Index(PINECONE_INDEX_NAME)
 
 
 def retrieve_chunks(
@@ -12,36 +12,43 @@ def retrieve_chunks(
         query: str,
         top_k: int 
 ):
-
+    """
+    Retrieve semantically relevant chunks from the Pinecone index filtered by repo_id.
+    """
+    import time
+    print(f"[Timing] [Retriever] Query embedding generation started...")
+    t0 = time.time()
     query_embedding = embed_query(query)
+    t_embed = time.time() - t0
+    print(f"[Timing] [Retriever] Query embedding generated via Pinecone Inference in {t_embed:.4f}s")
 
-    results = collection.query(
-        query_embeddings=[query_embedding],
-        where={
-            "repo_id": repo_id
-        },
-        n_results=10
-    )
+    print(f"[Timing] [Retriever] Pinecone vector search started for repo_id '{repo_id}'...")
+    t0 = time.time()
+    try:
+        response = index.query(
+            vector=query_embedding.tolist(),
+            top_k=top_k,
+            include_metadata=True,
+            filter={
+                "repo_id": {"$eq": repo_id}
+            }
+        )
+        t_query = time.time() - t0
+        print(f"[Timing] [Retriever] Pinecone vector search completed in {t_query:.4f}s (returned {len(response.matches)} matches)")
+    except Exception as e:
+        print(f"Error querying Pinecone for {repo_id}: {e}")
+        return []
 
     chunks = []
-
-    documents = results["documents"][0]
-    metadatas = results["metadatas"][0]
-
-    for doc, meta in zip(
-            documents,
-            metadatas
-    ):
-
+    for match in response.matches:
+        meta = match.metadata or {}
         chunks.append(
             {
-                "text": doc,
-                "file": meta["file"],
-                "fn_name": meta["fn_name"],
-                "start_line": meta["start_line"]
+                "text": meta.get("text", ""),
+                "file": meta.get("file", ""),
+                "fn_name": meta.get("fn_name", ""),
+                "start_line": int(meta.get("start_line", 1))
             }
         )
 
-
     return chunks
-
