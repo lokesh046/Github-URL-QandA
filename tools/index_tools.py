@@ -78,11 +78,34 @@ def index_repository(
                 chunks
             )
 
+            # Build and update dependency graph in parallel
+            try:
+                from graph.graph_builder import build_dependency_graph
+                from graph.graph_store import update_file_graph
+                file_graph = build_dependency_graph(content, path)
+                update_file_graph(repo_id, path, file_graph)
+            except Exception as ge:
+                print(f"Error building dependency graph for {path}: {ge}")
+
         except Exception as e:
 
             print(
                 f"Error processing {path}: {e}"
             )
+
+    # Clean up deleted files from graph
+    try:
+        from graph.graph_store import load_graph, save_graph
+        graph_data = load_graph(repo_id)
+        if "files" in graph_data:
+            active_paths = {f["path"] for f in files}
+            to_delete = [f for f in graph_data["files"] if f not in active_paths]
+            if to_delete:
+                for f in to_delete:
+                    del graph_data["files"][f]
+                save_graph(repo_id, graph_data)
+    except Exception as e:
+        print(f"Error cleaning up deleted files from graph: {e}")
 
     if len(all_chunks) == 0:
 

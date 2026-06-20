@@ -26,7 +26,7 @@ def generate_chunk_id(
     )
 
     return hashlib.md5(
-        key.encode()
+        key.encode("utf-8")
     ).hexdigest()
 
 def add_chunk(chunks: list, embeddings, repo_id: str):
@@ -56,7 +56,7 @@ def add_chunk(chunks: list, embeddings, repo_id: str):
             )
         )
 
-    collection.add(
+    collection.upsert(
         ids=ids,
         documents=documents,
         embeddings=embeddings.tolist(),
@@ -72,4 +72,40 @@ def delete_repo(repo_id: str):
         where={
             "repo_id": repo_id
         }
+    )
+
+
+
+def get_collection():
+
+    return client.get_or_create_collection(
+        name="github_repo_chunks"
+    )
+
+
+collection = get_collection()
+
+
+def reset_collection():
+
+    global collection
+
+    try:
+
+        client.delete_collection(
+            "github_repo_chunks"
+        )
+
+        print(
+            "Old collection deleted."
+        )
+
+    except Exception:
+
+        pass
+
+    collection = get_collection()
+
+    print(
+        "New collection created."
     )

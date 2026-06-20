@@ -1,24 +1,37 @@
+
 from rag.indexer import collection
 from rag.embedder import embed_query
+from rag.formatter import format_chunks
+from rag.formatter import format_chunks
 
 
-def retrieve_chunks(repo_id: str,query: str, top_k=5):
+
+
+def retrieve_chunks(
+        repo_id: str,
+        query: str,
+        top_k: int 
+):
 
     query_embedding = embed_query(query)
 
     results = collection.query(
         query_embeddings=[query_embedding],
-        where={"repo_id": repo_id},
-        n_results=top_k
+        where={
+            "repo_id": repo_id
+        },
+        n_results=10
     )
-
 
     chunks = []
 
     documents = results["documents"][0]
     metadatas = results["metadatas"][0]
 
-    for doc, meta in zip(documents, metadatas):
+    for doc, meta in zip(
+            documents,
+            metadatas
+    ):
 
         chunks.append(
             {
@@ -29,11 +42,6 @@ def retrieve_chunks(repo_id: str,query: str, top_k=5):
             }
         )
 
+
     return chunks
 
-
-    
-
-    
-
-    

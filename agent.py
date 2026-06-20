@@ -1,39 +1,67 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
+from tools.summary_tools import summarize_repo
 from langchain_core.tools import StructuredTool
 from langgraph.prebuilt import create_react_agent
 from langchain_core.prompts import PromptTemplate
-
+from langgraph.checkpoint.memory import MemorySaver
 from models import (
     SearchIndexInput,
     ListRepoFilesInput,
-    GetFileContentInput
+    GetFileContentInput,
+    SummaryRepoInput,
+    FindImportsInput,
+    FindUsagesInput,
+    TraceImportChainInput,
+    TraceCallChainInput
 )
 
+from llm.fallback_llm import  FallbackLLM
 from tools.rag_tool import search_index
 from tools.github_tools import (list_repo_files, get_file_content)
-
-from config import GEMINI_API_KEY
-
-llm = ChatGoogleGenerativeAI(
-    model= "gemini-2.5-flash",
-    google_api_key=GEMINI_API_KEY,
-    temperature=0.2
+from graph.graph_tools import (
+    find_imports,
+    find_usages,
+    trace_import_chain,
+    trace_call_chain
 )
 
+llm = FallbackLLM()
+
+memory  = MemorySaver()
 
 SYSTEM_PROMPT = """
-You are a GitHub repository assistant.
+You are an expert software engineer and GitHub repository assistant.
 
-When answering questions:
+Guidelines:
 
-1. Prefer search_index() first.
-2. Use list_repo_files() if structure is needed.
-3. Use get_file_content() if exact implementation details are required.
-4. Base answers only on retrieved code.
-5. Cite file names and function names.
+1. Always begin with search_index().
+2. If search results are insufficient, use list_repo_files().
+3. Use get_file_content() only when exact code details are needed.
+4. Never hallucinate.
+5. Use summarize_repo() for overview questions.
+6. Cite files and function names.
+7. Base answers only on tool outputs.
+8. Mention file names and function names.
+9. Explain code step by step when asked.
+10. If information is unavailable, say so.
+11. Prefer minimal tool calls.
+12. Use find_imports(), find_usages(), trace_import_chain(), or trace_call_chain() to understand repository structures, trace dependencies, find symbol references/usages, or walk function call chains.
 """
 
 
+summary_tool = StructuredTool.from_function(
+    func=summarize_repo,
+    args_schema=SummaryRepoInput,
+    description="""
+Useful for summarizing an entire repository.
+
+Input:
+repo_url
+
+Returns:
+Project purpose, architecture,
+folder structure and tech stack.
+"""
+)
 
 search_tool = StructuredTool.from_function(
     func=search_index,
@@ -78,16 +106,70 @@ Returns file contents.
 """
 )
 
+find_imports_tool = StructuredTool.from_function(
+    func=find_imports,
+    args_schema=FindImportsInput,
+    description="""
+    Useful for finding all import statements listed in a specific file.
+
+    Input:
+    repo_url : GitHub repository URL
+    file_path : Relative path to the file in the repository
+    """
+)
+
+find_usages_tool = StructuredTool.from_function(
+    func=find_usages,
+    args_schema=FindUsagesInput,
+    description="""
+    Useful for finding files in the repository that use, call, or import a specific symbol/function.
+
+    Input:
+    repo_url : GitHub repository URL
+    symbol : Name of the function, class, or variable to find usages of
+    """
+)
+
+trace_import_chain_tool = StructuredTool.from_function(
+    func=trace_import_chain,
+    args_schema=TraceImportChainInput,
+    description="""
+    Useful for tracing the import dependency chain starting from a specific file path.
+
+    Input:
+    repo_url : GitHub repository URL
+    file_path : Relative path to the starting file
+    """
+)
+
+trace_call_chain_tool = StructuredTool.from_function(
+    func=trace_call_chain,
+    args_schema=TraceCallChainInput,
+    description="""
+    Useful for tracing the call graph/chain of calls starting from a specific function name.
+
+    Input:
+    repo_url : GitHub repository URL
+    function_name : Name of the function to trace call chains from
+    """
+)
+
 tools = [
     search_tool,
     list_tool,
-    file_tool
+    file_tool,
+    summary_tool,
+    find_imports_tool,
+    find_usages_tool,
+    trace_import_chain_tool,
+    trace_call_chain_tool
 ]
 
 
 agent = create_react_agent(
     model=llm,
     tools=tools,
-    prompt=SYSTEM_PROMPT
+    prompt=SYSTEM_PROMPT,
+    checkpointer = memory
 )
 

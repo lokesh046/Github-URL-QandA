@@ -1,0 +1,78 @@
+{
+  "files": {
+    "index.js": {
+      "file": "index.js",
+      "imports": [
+        "./src/app"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "initApp"
+        }
+      ]
+    },
+    "src/app.js": {
+      "file": "src/app.js",
+      "imports": [
+        "./router",
+        "./server"
+      ],
+      "functions": [
+        "initApp"
+      ],
+      "calls": [
+        {
+          "caller": "initApp",
+          "callee": "setupRoutes"
+        },
+        {
+          "caller": "initApp",
+          "callee": "startServer"
+        }
+      ]
+    },
+    "src/router.js": {
+      "file": "src/router.js",
+      "imports": [
+        "./handler"
+      ],
+      "functions": [
+        "setupRoutes"
+      ],
+      "calls": [
+        {
+          "caller": "setupRoutes",
+          "callee": "log"
+        }
+      ]
+    },
+    "src/server.js": {
+      "file": "src/server.js",
+      "imports": [],
+      "functions": [
+        "startServer"
+      ],
+      "calls": [
+        {
+          "caller": "startServer",
+          "callee": "log"
+        }
+      ]
+    },
+    "src/handler.js": {
+      "file": "src/handler.js",
+      "imports": [],
+      "functions": [
+        "handleRequest"
+      ],
+      "calls": [
+        {
+          "caller": "handleRequest",
+          "callee": "log"
+        }
+      ]
+    }
+  }
+}

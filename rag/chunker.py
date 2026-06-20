@@ -2,16 +2,14 @@
 import ast
 import re
 import tiktoken
-
+from rag.tree_sitter_chunker import chunk_tree_sitter
+from pathlib import Path
+from utils.language_map import LANGUAGE_MAP
 
 ENCODER = tiktoken.get_encoding("cl100k_base")
 
-def chunk_js_ts(text: str, file_path: str):
-    chunks = []
 
 
-    line = text.splitlines()
-    
 
 def chunk_python_file(text: str, file_path: str):
 
@@ -93,13 +91,37 @@ def chunk_file(
 
     return []
 
-def split_context_for_llm(file_chunks,vector_store):
-
-    chunk_texts = []
-
-    for chunk in file_chunks:
-
-        chunk_texts.append(chunk["text"])
 
 
 
+def chunk_file(
+        text: str,
+        file_path: str
+):
+
+    ext = Path(
+        file_path
+    ).suffix.lower()
+
+    if ext == ".py":
+
+        return chunk_python_file(
+            text,
+            file_path
+        )
+
+    elif ext in LANGUAGE_MAP:
+
+        return chunk_tree_sitter(
+            text,
+            file_path
+        )
+
+    else:
+
+        return chunk_text_file(
+            text,
+            file_path,
+            chunk_size=1024,
+            overlap=100
+        )

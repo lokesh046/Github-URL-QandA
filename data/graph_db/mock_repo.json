@@ -1,0 +1,58 @@
+{
+  "files": {
+    "App.tsx": {
+      "file": "App.tsx",
+      "imports": [
+        "./Navbar",
+        "./Hero"
+      ],
+      "functions": [
+        "App"
+      ],
+      "calls": [
+        {
+          "caller": "App",
+          "callee": "Hero"
+        }
+      ]
+    },
+    "Hero.tsx": {
+      "file": "Hero.tsx",
+      "imports": [
+        "./ParticleBackground"
+      ],
+      "functions": [
+        "handleIncrement",
+        "greetUser",
+        "Hero"
+      ],
+      "calls": [
+        {
+          "caller": "Hero",
+          "callee": "handleIncrement"
+        },
+        {
+          "caller": "handleIncrement",
+          "callee": "greetUser"
+        },
+        {
+          "caller": "greetUser",
+          "callee": "log"
+        }
+      ]
+    },
+    "ParticleBackground.tsx": {
+      "file": "ParticleBackground.tsx",
+      "imports": [],
+      "functions": [
+        "ParticleBackground"
+      ],
+      "calls": [
+        {
+          "caller": "ParticleBackground",
+          "callee": "log"
+        }
+      ]
+    }
+  }
+}

@@ -14,6 +14,11 @@ What does compute_doc_qual_score do?
 """
             )
         ]
+    },
+    config={
+        "configurable": {
+            "thread_id": "test_thread"
+        }
     }
 )
 
