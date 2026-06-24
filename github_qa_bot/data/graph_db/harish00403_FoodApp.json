@@ -1,0 +1,534 @@
+{
+  "files": {
+    "README.md": {
+      "file": "README.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "package.json": {
+      "file": "package.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "public/manifest.json": {
+      "file": "public/manifest.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "src/App.js": {
+      "file": "src/App.js",
+      "imports": [
+        "./Components/Footer/Footer",
+        "./App.css",
+        "react-router-dom",
+        "react",
+        "./Pages/Cart/Cart",
+        "./Pages/PlaceOrder/PlaceOrder",
+        "./Components/Navbar/Navbar",
+        "./Components/LoginPopup/LoginPopup",
+        "./Pages/Home/Home"
+      ],
+      "functions": [
+        "App"
+      ],
+      "calls": [
+        {
+          "caller": "App",
+          "callee": "useState"
+        }
+      ]
+    },
+    "src/App.test.js": {
+      "file": "src/App.test.js",
+      "imports": [
+        "./App",
+        "@testing-library/react"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "test"
+        },
+        {
+          "caller": "<global>",
+          "callee": "render"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getByText"
+        },
+        {
+          "caller": "<global>",
+          "callee": "toBeInTheDocument"
+        },
+        {
+          "caller": "<global>",
+          "callee": "expect"
+        }
+      ]
+    },
+    "src/Components/AppDownload/AppDownload.jsx": {
+      "file": "src/Components/AppDownload/AppDownload.jsx",
+      "imports": [
+        "react",
+        "./AppDownload.css",
+        "../../assets/assets"
+      ],
+      "functions": [
+        "AppDownload"
+      ],
+      "calls": []
+    },
+    "src/Components/ExploreMenu/ExploreMenu.jsx": {
+      "file": "src/Components/ExploreMenu/ExploreMenu.jsx",
+      "imports": [
+        "react",
+        "../../assets/assets",
+        "./ExploreMenu.css"
+      ],
+      "functions": [
+        "ExploreMenu"
+      ],
+      "calls": [
+        {
+          "caller": "ExploreMenu",
+          "callee": "map"
+        },
+        {
+          "caller": "ExploreMenu",
+          "callee": "setCategory"
+        }
+      ]
+    },
+    "src/Components/FoodDisplay/FoodDisplay.jsx": {
+      "file": "src/Components/FoodDisplay/FoodDisplay.jsx",
+      "imports": [
+        "react",
+        "./FoodDisplay.css",
+        "../../context/StoreContext",
+        "../FoodItem/FoodItem"
+      ],
+      "functions": [
+        "FoodDisplay"
+      ],
+      "calls": [
+        {
+          "caller": "FoodDisplay",
+          "callee": "useContext"
+        },
+        {
+          "caller": "FoodDisplay",
+          "callee": "map"
+        }
+      ]
+    },
+    "src/Components/FoodItem/FoodItem.jsx": {
+      "file": "src/Components/FoodItem/FoodItem.jsx",
+      "imports": [
+        "react",
+        "../../assets/assets",
+        "../../context/StoreContext",
+        "./FoodItem.css"
+      ],
+      "functions": [
+        "FoodItem"
+      ],
+      "calls": [
+        {
+          "caller": "FoodItem",
+          "callee": "useContext"
+        },
+        {
+          "caller": "FoodItem",
+          "callee": "addToCart"
+        },
+        {
+          "caller": "FoodItem",
+          "callee": "removeFromCart"
+        },
+        {
+          "caller": "FoodItem",
+          "callee": "addToCart"
+        }
+      ]
+    },
+    "src/Components/Footer/Footer.jsx": {
+      "file": "src/Components/Footer/Footer.jsx",
+      "imports": [
+        "react",
+        "../../assets/assets",
+        "./Footer.css"
+      ],
+      "functions": [
+        "Footer"
+      ],
+      "calls": []
+    },
+    "src/Components/Header/Header.jsx": {
+      "file": "src/Components/Header/Header.jsx",
+      "imports": [
+        "react",
+        "./Header.css"
+      ],
+      "functions": [
+        "Header"
+      ],
+      "calls": []
+    },
+    "src/Components/LoginPopup/LoginPopup.jsx": {
+      "file": "src/Components/LoginPopup/LoginPopup.jsx",
+      "imports": [
+        "react",
+        "./LoginPopup.css",
+        "../../assets/assets"
+      ],
+      "functions": [
+        "LoginPopup"
+      ],
+      "calls": [
+        {
+          "caller": "LoginPopup",
+          "callee": "useState"
+        },
+        {
+          "caller": "LoginPopup",
+          "callee": "setShowLogin"
+        },
+        {
+          "caller": "LoginPopup",
+          "callee": "setCurrState"
+        },
+        {
+          "caller": "LoginPopup",
+          "callee": "setCurrState"
+        }
+      ]
+    },
+    "src/Components/Navbar/Navbar.jsx": {
+      "file": "src/Components/Navbar/Navbar.jsx",
+      "imports": [
+        "../../context/StoreContext",
+        "react-router-dom",
+        "react",
+        "./Navbar.css",
+        "../../assets/assets",
+        "../../assets/newlogo.png"
+      ],
+      "functions": [
+        "Navbar"
+      ],
+      "calls": [
+        {
+          "caller": "Navbar",
+          "callee": "useState"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "useContext"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "setMenu"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "setMenu"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "setMenu"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "setMenu"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "getTotalCartAmount"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "setShowLogin"
+        }
+      ]
+    },
+    "src/Pages/Cart/Cart.jsx": {
+      "file": "src/Pages/Cart/Cart.jsx",
+      "imports": [
+        "react",
+        "react-router-dom",
+        "../../context/StoreContext",
+        "./Cart.css"
+      ],
+      "functions": [
+        "Cart"
+      ],
+      "calls": [
+        {
+          "caller": "Cart",
+          "callee": "useContext"
+        },
+        {
+          "caller": "Cart",
+          "callee": "useNavigate"
+        },
+        {
+          "caller": "Cart",
+          "callee": "map"
+        },
+        {
+          "caller": "Cart",
+          "callee": "removeFromCart"
+        },
+        {
+          "caller": "Cart",
+          "callee": "getTotalCartAmount"
+        },
+        {
+          "caller": "Cart",
+          "callee": "getTotalCartAmount"
+        },
+        {
+          "caller": "Cart",
+          "callee": "getTotalCartAmount"
+        },
+        {
+          "caller": "Cart",
+          "callee": "getTotalCartAmount"
+        },
+        {
+          "caller": "Cart",
+          "callee": "navigate"
+        }
+      ]
+    },
+    "src/Pages/Home/Home.jsx": {
+      "file": "src/Pages/Home/Home.jsx",
+      "imports": [
+        "../../Components/AppDownload/AppDownload",
+        "../../Components/FoodDisplay/FoodDisplay",
+        "react",
+        "./Home.css",
+        "../../Components/ExploreMenu/ExploreMenu",
+        "../../Components/Header/Header"
+      ],
+      "functions": [
+        "Home"
+      ],
+      "calls": [
+        {
+          "caller": "Home",
+          "callee": "useState"
+        }
+      ]
+    },
+    "src/Pages/PlaceOrder/PlaceOrder.jsx": {
+      "file": "src/Pages/PlaceOrder/PlaceOrder.jsx",
+      "imports": [
+        "react",
+        "../../context/StoreContext",
+        "./PlaceOrder.css"
+      ],
+      "functions": [
+        "PlaceOder"
+      ],
+      "calls": [
+        {
+          "caller": "PlaceOder",
+          "callee": "useContext"
+        },
+        {
+          "caller": "PlaceOder",
+          "callee": "getTotalCartAmount"
+        },
+        {
+          "caller": "PlaceOder",
+          "callee": "getTotalCartAmount"
+        },
+        {
+          "caller": "PlaceOder",
+          "callee": "getTotalCartAmount"
+        },
+        {
+          "caller": "PlaceOder",
+          "callee": "getTotalCartAmount"
+        }
+      ]
+    },
+    "src/assets/assets.js": {
+      "file": "src/assets/assets.js",
+      "imports": [
+        "./basket_icon.png",
+        "./menu_2.png",
+        "./food_19.png",
+        "./food_21.png",
+        "./food_26.png",
+        "./food_17.png",
+        "./food_7.png",
+        "./menu_1.png",
+        "./food_12.png",
+        "./search_icon.png",
+        "./food_31.png",
+        "./menu_5.png",
+        "./food_1.png",
+        "./food_29.png",
+        "./food_30.png",
+        "./food_5.png",
+        "./menu_4.png",
+        "./add_icon_green.png",
+        "./rating_starts.png",
+        "./logo.png",
+        "./food_18.png",
+        "./selector_icon.png",
+        "./profile_icon.png",
+        "./food_10.png",
+        "./logout_icon.png",
+        "./food_13.png",
+        "./food_27.png",
+        "./twitter_icon.png",
+        "./food_9.png",
+        "./menu_7.png",
+        "./header_img.png",
+        "./food_6.png",
+        "./food_14.png",
+        "./food_20.png",
+        "./food_22.png",
+        "./food_24.png",
+        "./linkedin_icon.png",
+        "./menu_3.png",
+        "./menu_6.png",
+        "./food_32.png",
+        "./play_store.png",
+        "./remove_icon_red.png",
+        "./parcel_icon.png",
+        "./food_28.png",
+        "./food_23.png",
+        "./food_16.png",
+        "./food_15.png",
+        "./add_icon_white.png",
+        "./food_4.png",
+        "./food_8.png",
+        "./menu_8.png",
+        "./app_store.png",
+        "./bag_icon.png",
+        "./food_2.png",
+        "./food_25.png",
+        "./food_11.png",
+        "./food_3.png",
+        "./cross_icon.png",
+        "./facebook_icon.png"
+      ],
+      "functions": [],
+      "calls": []
+    },
+    "src/context/StoreContext.jsx": {
+      "file": "src/context/StoreContext.jsx",
+      "imports": [
+        "react",
+        "../assets/assets"
+      ],
+      "functions": [
+        "addToCart",
+        "removeFromCart",
+        "StoreContextProvider",
+        "getTotalCartAmount"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "createContext"
+        },
+        {
+          "caller": "StoreContextProvider",
+          "callee": "useState"
+        },
+        {
+          "caller": "addToCart",
+          "callee": "setCartItems"
+        },
+        {
+          "caller": "removeFromCart",
+          "callee": "setCartItems"
+        },
+        {
+          "caller": "getTotalCartAmount",
+          "callee": "find"
+        }
+      ]
+    },
+    "src/index.js": {
+      "file": "src/index.js",
+      "imports": [
+        "./App",
+        "react-router-dom",
+        "react-dom/client",
+        "react",
+        "./context/StoreContext"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "createRoot"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getElementById"
+        },
+        {
+          "caller": "<global>",
+          "callee": "render"
+        }
+      ]
+    },
+    "src/reportWebVitals.js": {
+      "file": "src/reportWebVitals.js",
+      "imports": [],
+      "functions": [
+        "reportWebVitals"
+      ],
+      "calls": [
+        {
+          "caller": "reportWebVitals",
+          "callee": "then"
+        },
+        {
+          "caller": "reportWebVitals",
+          "callee": "import"
+        },
+        {
+          "caller": "reportWebVitals",
+          "callee": "getCLS"
+        },
+        {
+          "caller": "reportWebVitals",
+          "callee": "getFID"
+        },
+        {
+          "caller": "reportWebVitals",
+          "callee": "getFCP"
+        },
+        {
+          "caller": "reportWebVitals",
+          "callee": "getLCP"
+        },
+        {
+          "caller": "reportWebVitals",
+          "callee": "getTTFB"
+        }
+      ]
+    },
+    "src/setupTests.js": {
+      "file": "src/setupTests.js",
+      "imports": [
+        "@testing-library/jest-dom"
+      ],
+      "functions": [],
+      "calls": []
+    }
+  }
+}

@@ -7,17 +7,17 @@ response = agent.invoke(
                 "user",
                 """
 repo_url:
-https://github.com/lokesh046/ocr_metric
+https://github.com/lokesh046/neural-mind
 
 Question:
-What does compute_doc_qual_score do?
+give me a summary about this repo
 """
             )
         ]
     },
     config={
         "configurable": {
-            "thread_id": "test_thread"
+            "thread_id": "test_thread_fresh"
         }
     }
 )

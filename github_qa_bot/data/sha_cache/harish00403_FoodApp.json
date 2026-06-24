@@ -1,0 +1,23 @@
+{
+    "README.md": "58beeaccd87e230076cab531b8f418f40b6d1aeb",
+    "package.json": "4a0d7b9f048910c50c28e3f1f9711069b9bf25c0",
+    "public/manifest.json": "080d6c77ac21bb2ef88a6992b2b73ad93daaca92",
+    "src/App.js": "9b449f6873ecd4a9f6e7834b9dffe282a2bca282",
+    "src/App.test.js": "1f03afeece5ac28064fa3c73a29215037465f789",
+    "src/Components/AppDownload/AppDownload.jsx": "19a1a8270cca73f5bffcea168064790a25d01894",
+    "src/Components/ExploreMenu/ExploreMenu.jsx": "d1a4174fb18458146a0a7b873d927caa89cc2d0f",
+    "src/Components/FoodDisplay/FoodDisplay.jsx": "5baf013ec2430ed5465b17869ebc72596c9cef35",
+    "src/Components/FoodItem/FoodItem.jsx": "93bd96dd9d843092e88791c47ebb767d137e7a1e",
+    "src/Components/Footer/Footer.jsx": "4798eff7e59ea7a1b01ee07a422571839383c9fe",
+    "src/Components/Header/Header.jsx": "1dd87b587052636b9352be79e7d95daea7865d6d",
+    "src/Components/LoginPopup/LoginPopup.jsx": "69c65d8e819274fa1d43990e0d8c0c60cb639fe0",
+    "src/Components/Navbar/Navbar.jsx": "2c54f1701aa08d225698349fcfd635642911271e",
+    "src/Pages/Cart/Cart.jsx": "f0db68af17abda6ea07b6c17ecf6a408b8c4b85a",
+    "src/Pages/Home/Home.jsx": "c3f451c30d9e336d343f5702832692e1d4fcbea2",
+    "src/Pages/PlaceOrder/PlaceOrder.jsx": "2b861d45289ec224954af1ec06262ada139e655b",
+    "src/assets/assets.js": "0f37921d4bce15e0ed0b3898c2047e7c6fddf47f",
+    "src/context/StoreContext.jsx": "421f4d8f89b5642845ef2642dc1261007860883a",
+    "src/index.js": "6e09e44124e6d43b70ab2d6b494db14e633fecc5",
+    "src/reportWebVitals.js": "5253d3ad9e6be6690549cb255f5952337b02401d",
+    "src/setupTests.js": "8f2609b7b3e0e3897ab3bcaad13caf6876e48699"
+}

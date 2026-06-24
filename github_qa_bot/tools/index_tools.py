@@ -74,7 +74,7 @@ def index_repository(
     t0 = time.time()
     try:
         from tools.github_tools import download_repo_archive
-        zip_archive, zip_prefix = download_repo_archive(repo_url, branch)
+        zip_archive, zip_prefix = download_repo_archive(repo_url, branch, force_download=True)
         t_zip_download = time.time() - t0
         print(f"[Timing] Downloaded ZIP archive in {t_zip_download:.4f}s")
     except Exception as ae:

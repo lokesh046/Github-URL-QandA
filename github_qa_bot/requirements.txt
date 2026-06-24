@@ -20,3 +20,7 @@ tiktoken
 tree-sitter
 tree-sitter-language-pack
 uvicorn
+langgraph-checkpoint-postgres
+psycopg[binary]
+pyjwt
+bcrypt

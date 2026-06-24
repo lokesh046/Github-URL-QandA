@@ -26,7 +26,40 @@ from graph.graph_tools import (
 
 llm = FallbackLLM()
 
-memory  = MemorySaver()
+from config import DATABASE_URL
+from langgraph.checkpoint.memory import MemorySaver
+
+pool = None
+checkpointer = None
+
+if DATABASE_URL:
+    try:
+        from psycopg_pool import ConnectionPool
+        from psycopg.rows import dict_row
+        from langgraph.checkpoint.postgres import PostgresSaver
+
+        def check_conn(conn):
+            conn.execute("SELECT 1;")
+
+        pool = ConnectionPool(
+            conninfo=DATABASE_URL,
+            max_size=10,
+            timeout=5.0,
+            check=check_conn,
+            kwargs={
+                "autocommit": True, 
+                "row_factory": dict_row,
+                "connect_timeout": 5
+            }
+        )
+        checkpointer = PostgresSaver(pool)
+        checkpointer.setup()
+        print("[Database] PostgresSaver checkpointer initialized successfully.")
+    except Exception as e:
+        print(f"Warning: Failed to initialize PostgresSaver: {e}. Falling back to MemorySaver.")
+        checkpointer = MemorySaver()
+else:
+    checkpointer = MemorySaver()
 
 SYSTEM_PROMPT = """
 You are an expert software engineer and GitHub repository assistant.
@@ -170,6 +203,6 @@ agent = create_react_agent(
     model=llm,
     tools=tools,
     prompt=SYSTEM_PROMPT,
-    checkpointer = memory
+    checkpointer = checkpointer
 )
 

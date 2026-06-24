@@ -101,13 +101,30 @@ def get_file_content(repo_url: str, file_path: str, branch: str = None):
         raise RuntimeError(f"Failed to get file content : {str(e)}")
 
 
-def download_repo_archive(repo_url: str, branch: str = None) -> tuple[zipfile.ZipFile, str]:
+def download_repo_archive(repo_url: str, branch: str = None, force_download: bool = False) -> tuple[zipfile.ZipFile, str]:
     """
-    Download the repository archive as a ZIP file.
+    Download the repository archive as a ZIP file and cache it locally.
     Returns the ZipFile object and the top-level directory prefix inside the archive.
     """
+    import os
     try:
         owner, repo_name = parse_repo_url(repo_url)
+        repo_id = f"{owner}_{repo_name}"
+
+        # Define project root and local cache path
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(current_dir)
+        archive_dir = os.path.join(project_root, "data", "archives")
+        os.makedirs(archive_dir, exist_ok=True)
+        archive_path = os.path.join(archive_dir, f"{repo_id}.zip")
+
+        # If cache exists and we aren't forcing a download, read from local disk
+        if not force_download and os.path.exists(archive_path):
+            print(f"[Timing] Loading ZIP archive from local cache: {archive_path}")
+            z = zipfile.ZipFile(archive_path)
+            prefix = z.namelist()[0]
+            return z, prefix
+
         repo = g.get_repo(f"{owner}/{repo_name}")
         
         if not branch:
@@ -117,11 +134,17 @@ def download_repo_archive(repo_url: str, branch: str = None) -> tuple[zipfile.Zi
         archive_url = repo.get_archive_link("zipball", ref=branch)
         
         # Download archive
-        response = requests.get(archive_url)
+        print(f"[Timing] Downloading remote ZIP archive from GitHub...")
+        response = requests.get(archive_url, timeout=30)
         if response.status_code != 200:
             raise RuntimeError(f"Failed to download archive: status code {response.status_code}")
             
-        z = zipfile.ZipFile(io.BytesIO(response.content))
+        # Save to local cache
+        with open(archive_path, "wb") as f:
+            f.write(response.content)
+        print(f"[Timing] ZIP archive saved to local cache: {archive_path}")
+            
+        z = zipfile.ZipFile(archive_path)
         prefix = z.namelist()[0]
         
         return z, prefix

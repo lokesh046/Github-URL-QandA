@@ -1,0 +1,459 @@
+{
+  "files": {
+    "README.md": {
+      "file": "README.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "eslint.config.js": {
+      "file": "eslint.config.js",
+      "imports": [
+        "typescript-eslint",
+        "globals",
+        "eslint-plugin-react-hooks",
+        "@eslint/js",
+        "eslint/config",
+        "eslint-plugin-react-refresh"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "defineConfig"
+        },
+        {
+          "caller": "<global>",
+          "callee": "globalIgnores"
+        }
+      ]
+    },
+    "package.json": {
+      "file": "package.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "postcss.config.js": {
+      "file": "postcss.config.js",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "src/App.tsx": {
+      "file": "src/App.tsx",
+      "imports": [
+        "./components/Navbar",
+        "./components/ParticleBackground",
+        "./components/Skills",
+        "./components/Projects",
+        "./components/Hero",
+        "./components/Resume",
+        "./components/Contact",
+        "./components/ProblemSolving"
+      ],
+      "functions": [
+        "App"
+      ],
+      "calls": [
+        {
+          "caller": "App",
+          "callee": "etFullYear("
+        }
+      ]
+    },
+    "src/components/Contact.tsx": {
+      "file": "src/components/Contact.tsx",
+      "imports": [
+        "framer-motion",
+        "react-icons/fi",
+        "react-icons/si",
+        "react"
+      ],
+      "functions": [
+        "Contact",
+        "handleSubmit"
+      ],
+      "calls": [
+        {
+          "caller": "Contact",
+          "callee": "useState"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "preventDefault"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setFormStatus"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "fetch"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setFormStatus"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "reset"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setFormStatus"
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setFormStatus"
+        }
+      ]
+    },
+    "src/components/Hero.tsx": {
+      "file": "src/components/Hero.tsx",
+      "imports": [
+        "framer-motion",
+        "react-scroll",
+        "react"
+      ],
+      "functions": [
+        "handleType",
+        "Hero",
+        "handleMouseMove"
+      ],
+      "calls": [
+        {
+          "caller": "Hero",
+          "callee": "useState"
+        },
+        {
+          "caller": "Hero",
+          "callee": "useState"
+        },
+        {
+          "caller": "Hero",
+          "callee": "useState"
+        },
+        {
+          "caller": "Hero",
+          "callee": "useState"
+        },
+        {
+          "caller": "Hero",
+          "callee": "useMotionValue"
+        },
+        {
+          "caller": "Hero",
+          "callee": "useMotionValue"
+        },
+        {
+          "caller": "Hero",
+          "callee": "useSpring"
+        },
+        {
+          "caller": "Hero",
+          "callee": "useSpring"
+        },
+        {
+          "caller": "Hero",
+          "callee": "useTransform"
+        },
+        {
+          "caller": "Hero",
+          "callee": "useTransform"
+        },
+        {
+          "caller": "Hero",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "handleMouseMove",
+          "callee": "set"
+        },
+        {
+          "caller": "handleMouseMove",
+          "callee": "set"
+        },
+        {
+          "caller": "Hero",
+          "callee": "addEventListener"
+        },
+        {
+          "caller": "Hero",
+          "callee": "removeEventListener"
+        },
+        {
+          "caller": "Hero",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "handleType",
+          "callee": "setText"
+        },
+        {
+          "caller": "handleType",
+          "callee": "substring"
+        },
+        {
+          "caller": "handleType",
+          "callee": "setTypingSpeed"
+        },
+        {
+          "caller": "handleType",
+          "callee": "setText"
+        },
+        {
+          "caller": "handleType",
+          "callee": "substring"
+        },
+        {
+          "caller": "handleType",
+          "callee": "setTypingSpeed"
+        },
+        {
+          "caller": "handleType",
+          "callee": "setTimeout"
+        },
+        {
+          "caller": "handleType",
+          "callee": "setIsDeleting"
+        },
+        {
+          "caller": "handleType",
+          "callee": "setIsDeleting"
+        },
+        {
+          "caller": "handleType",
+          "callee": "setLoopNum"
+        },
+        {
+          "caller": "handleType",
+          "callee": "setTypingSpeed"
+        },
+        {
+          "caller": "Hero",
+          "callee": "setTimeout"
+        },
+        {
+          "caller": "Hero",
+          "callee": "clearTimeout"
+        }
+      ]
+    },
+    "src/components/Navbar.tsx": {
+      "file": "src/components/Navbar.tsx",
+      "imports": [
+        "framer-motion",
+        "react-scroll",
+        "react-icons/fi",
+        "react"
+      ],
+      "functions": [
+        "handleScroll",
+        "Navbar"
+      ],
+      "calls": [
+        {
+          "caller": "Navbar",
+          "callee": "useState"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "useState"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "handleScroll",
+          "callee": "setScrolled"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "addEventListener"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "removeEventListener"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "map"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "setIsOpen"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "map"
+        },
+        {
+          "caller": "Navbar",
+          "callee": "setIsOpen"
+        }
+      ]
+    },
+    "src/components/ParticleBackground.tsx": {
+      "file": "src/components/ParticleBackground.tsx",
+      "imports": [
+        "@tsparticles/react",
+        "@tsparticles/slim",
+        "react"
+      ],
+      "functions": [
+        "particlesLoaded",
+        "ParticleBackground"
+      ],
+      "calls": [
+        {
+          "caller": "ParticleBackground",
+          "callee": "useState"
+        },
+        {
+          "caller": "ParticleBackground",
+          "callee": "useEffect"
+        },
+        {
+          "caller": "ParticleBackground",
+          "callee": "then"
+        },
+        {
+          "caller": "ParticleBackground",
+          "callee": "initParticlesEngine"
+        },
+        {
+          "caller": "ParticleBackground",
+          "callee": "loadSlim"
+        },
+        {
+          "caller": "ParticleBackground",
+          "callee": "setInit"
+        }
+      ]
+    },
+    "src/components/ProblemSolving.tsx": {
+      "file": "src/components/ProblemSolving.tsx",
+      "imports": [
+        "framer-motion",
+        "react-icons/fi",
+        "react-icons/si"
+      ],
+      "functions": [
+        "ProblemSolving"
+      ],
+      "calls": []
+    },
+    "src/components/Projects.tsx": {
+      "file": "src/components/Projects.tsx",
+      "imports": [
+        "framer-motion",
+        "react-icons/fi"
+      ],
+      "functions": [
+        "Projects"
+      ],
+      "calls": [
+        {
+          "caller": "Projects",
+          "callee": "map"
+        },
+        {
+          "caller": "Projects",
+          "callee": "map"
+        }
+      ]
+    },
+    "src/components/Resume.tsx": {
+      "file": "src/components/Resume.tsx",
+      "imports": [
+        "framer-motion",
+        "react-icons/fi"
+      ],
+      "functions": [
+        "Resume"
+      ],
+      "calls": []
+    },
+    "src/components/Skills.tsx": {
+      "file": "src/components/Skills.tsx",
+      "imports": [
+        "framer-motion"
+      ],
+      "functions": [
+        "Skills"
+      ],
+      "calls": [
+        {
+          "caller": "Skills",
+          "callee": "map"
+        },
+        {
+          "caller": "Skills",
+          "callee": "map"
+        }
+      ]
+    },
+    "src/main.tsx": {
+      "file": "src/main.tsx",
+      "imports": [
+        "./index.css",
+        "react-dom/client",
+        "./App.tsx",
+        "react"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "render"
+        },
+        {
+          "caller": "<global>",
+          "callee": "createRoot"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getElementById"
+        }
+      ]
+    },
+    "tsconfig.app.json": {
+      "file": "tsconfig.app.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "tsconfig.json": {
+      "file": "tsconfig.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "tsconfig.node.json": {
+      "file": "tsconfig.node.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "vite.config.ts": {
+      "file": "vite.config.ts",
+      "imports": [
+        "vite",
+        "@vitejs/plugin-react"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "defineConfig"
+        },
+        {
+          "caller": "<global>",
+          "callee": "react"
+        }
+      ]
+    }
+  }
+}
