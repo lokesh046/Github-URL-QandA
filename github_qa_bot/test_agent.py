@@ -1,5 +1,6 @@
 from agent import agent
 
+import uuid
 response = agent.invoke(
     {
         "messages": [
@@ -17,7 +18,7 @@ give me a summary about this repo
     },
     config={
         "configurable": {
-            "thread_id": "test_thread_fresh"
+            "thread_id": f"test_thread_{uuid.uuid4().hex[:8]}"
         }
     }
 )

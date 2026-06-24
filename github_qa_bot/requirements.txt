@@ -4,7 +4,7 @@ google-genai
 google-generativeai
 langchain
 langchain-chroma
-langchain-community
+langchain-community>=0.3.0,<0.4.2
 langchain-core
 langchain-google-genai
 langchain-openai

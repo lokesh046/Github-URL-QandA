@@ -34,27 +34,17 @@ checkpointer = None
 
 if DATABASE_URL:
     try:
-        from psycopg_pool import ConnectionPool
-        from psycopg.rows import dict_row
+        from utils.db import get_db_pool
         from langgraph.checkpoint.postgres import PostgresSaver
 
-        def check_conn(conn):
-            conn.execute("SELECT 1;")
-
-        pool = ConnectionPool(
-            conninfo=DATABASE_URL,
-            max_size=10,
-            timeout=5.0,
-            check=check_conn,
-            kwargs={
-                "autocommit": True, 
-                "row_factory": dict_row,
-                "connect_timeout": 5
-            }
-        )
-        checkpointer = PostgresSaver(pool)
-        checkpointer.setup()
-        print("[Database] PostgresSaver checkpointer initialized successfully.")
+        pool = get_db_pool()
+        if pool is not None:
+            checkpointer = PostgresSaver(pool)
+            checkpointer.setup()
+            print("[Database] PostgresSaver checkpointer initialized successfully using shared pool.")
+        else:
+            print("Warning: get_db_pool returned None. Falling back to MemorySaver.")
+            checkpointer = MemorySaver()
     except Exception as e:
         print(f"Warning: Failed to initialize PostgresSaver: {e}. Falling back to MemorySaver.")
         checkpointer = MemorySaver()

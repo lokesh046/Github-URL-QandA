@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { signup, login, streamAnswer } from "./api";
+import { marked } from "marked";
 
 function App() {
   // Authentication State
@@ -7,10 +8,13 @@ function App() {
   const [username, setUsername] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
   const [authUsername, setAuthUsername] = useState("");
+  const [authEmail, setAuthEmail] = useState("");
   const [authPassword, setAuthPassword] = useState("");
 
   // Bot & Chat State
-  const [repoUrl, setRepoUrl] = useState(localStorage.getItem("repo_url") || "");
+  const [repoUrl, setRepoUrl] = useState("");
+  const [geminiApiKey, setGeminiApiKey] = useState("");
+  const [openrouterApiKey, setOpenrouterApiKey] = useState("");
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState([]);
   const [isStreaming, setIsStreaming] = useState(false);
@@ -32,10 +36,37 @@ function App() {
     }
   }, []);
 
-  // Save repoUrl to localStorage when changed
+  // Sync user-specific states when username changes
   useEffect(() => {
-    localStorage.setItem("repo_url", repoUrl);
-  }, [repoUrl]);
+    if (username) {
+      setRepoUrl(localStorage.getItem(`${username}_repo_url`) || "");
+      setGeminiApiKey(localStorage.getItem(`${username}_gemini_api_key`) || "");
+      setOpenrouterApiKey(localStorage.getItem(`${username}_openrouter_api_key`) || "");
+    } else {
+      setRepoUrl("");
+      setGeminiApiKey("");
+      setOpenrouterApiKey("");
+    }
+  }, [username]);
+
+  // Save repoUrl to localStorage when changed (scoped by user)
+  useEffect(() => {
+    if (username && repoUrl !== null) {
+      localStorage.setItem(`${username}_repo_url`, repoUrl);
+    }
+  }, [repoUrl, username]);
+
+  useEffect(() => {
+    if (username && geminiApiKey !== null) {
+      localStorage.setItem(`${username}_gemini_api_key`, geminiApiKey);
+    }
+  }, [geminiApiKey, username]);
+
+  useEffect(() => {
+    if (username && openrouterApiKey !== null) {
+      localStorage.setItem(`${username}_openrouter_api_key`, openrouterApiKey);
+    }
+  }, [openrouterApiKey, username]);
 
   // Auto-scroll chat to bottom when messages list updates
   useEffect(() => {
@@ -49,23 +80,58 @@ function App() {
     setSuccessMessage("");
     setIsLoading(true);
 
-    if (authUsername.length < 3) {
-      setErrorMessage("Username must be at least 3 characters.");
-      setIsLoading(false);
-      return;
-    }
-    if (authPassword.length < 6) {
-      setErrorMessage("Password must be at least 6 characters.");
-      setIsLoading(false);
-      return;
+    if (isRegistering) {
+      // Username validation: starts with letter, alphanumeric/underscore only, 3-30 chars
+      const usernameRegex = /^[a-zA-Z][a-zA-Z0-9_]{2,29}$/;
+      if (!usernameRegex.test(authUsername)) {
+        setErrorMessage("Username must start with a letter and contain only alphanumeric characters or underscores (3-30 characters).");
+        setIsLoading(false);
+        return;
+      }
+
+      // Email validation: standard email format
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailRegex.test(authEmail)) {
+        setErrorMessage("Please enter a valid Gmail ID / Email address.");
+        setIsLoading(false);
+        return;
+      }
+
+      // Password strict conditions
+      if (authPassword.length < 8) {
+        setErrorMessage("Password must be at least 8 characters long.");
+        setIsLoading(false);
+        return;
+      }
+      if (!/[A-Z]/.test(authPassword)) {
+        setErrorMessage("Password must contain at least one uppercase letter.");
+        setIsLoading(false);
+        return;
+      }
+      if (!/[a-z]/.test(authPassword)) {
+        setErrorMessage("Password must contain at least one lowercase letter.");
+        setIsLoading(false);
+        return;
+      }
+      if (!/\d/.test(authPassword)) {
+        setErrorMessage("Password must contain at least one number.");
+        setIsLoading(false);
+        return;
+      }
+      if (!/[@$!%*?&#]/.test(authPassword)) {
+        setErrorMessage("Password must contain at least one special character (@$!%*?&#).");
+        setIsLoading(false);
+        return;
+      }
     }
 
     try {
       if (isRegistering) {
-        await signup(authUsername, authPassword);
+        await signup(authUsername, authEmail, authPassword);
         setSuccessMessage("Account created successfully! You can now log in.");
         setIsRegistering(false);
         setAuthPassword("");
+        setAuthEmail("");
       } else {
         const response = await login(authUsername, authPassword);
         localStorage.setItem("token", response.access_token);
@@ -87,6 +153,9 @@ function App() {
     localStorage.removeItem("username");
     setIsAuthenticated(false);
     setUsername("");
+    setRepoUrl("");
+    setGeminiApiKey("");
+    setOpenrouterApiKey("");
     setMessages([]);
     setErrorMessage("");
     setSuccessMessage("");
@@ -107,9 +176,7 @@ function App() {
     setIsStreaming(true);
 
     let streamBuffer = "";
-    
-    // Add placeholder for bot response
-    setMessages((prev) => [...prev, { sender: "bot", text: "" }]);
+    let hasBotMessage = false;
 
     try {
       await streamAnswer(
@@ -117,12 +184,19 @@ function App() {
         userMessage,
         (chunk) => {
           streamBuffer += chunk;
-          setMessages((prev) => {
-            const updated = [...prev];
-            updated[updated.length - 1] = { sender: "bot", text: streamBuffer };
-            return updated;
-          });
-        }
+          if (!hasBotMessage) {
+            hasBotMessage = true;
+            setMessages((prev) => [...prev, { sender: "bot", text: streamBuffer }]);
+          } else {
+            setMessages((prev) => {
+              const updated = [...prev];
+              updated[updated.length - 1] = { sender: "bot", text: streamBuffer };
+              return updated;
+            });
+          }
+        },
+        geminiApiKey,
+        openrouterApiKey
       );
     } catch (err) {
       if (err.message === "unauthorized") {
@@ -131,11 +205,15 @@ function App() {
       } else {
         setMessages((prev) => {
           const updated = [...prev];
-          updated[updated.length - 1] = { 
-            sender: "bot", 
-            text: `⚠️ Error retrieving response: ${err.message}` 
-          };
-          return updated;
+          if (!hasBotMessage) {
+            return [...updated, { sender: "bot", text: `⚠️ Error retrieving response: ${err.message}` }];
+          } else {
+            updated[updated.length - 1] = { 
+              sender: "bot", 
+              text: `⚠️ Error retrieving response: ${err.message}` 
+            };
+            return updated;
+          }
         });
       }
     } finally {
@@ -158,17 +236,31 @@ function App() {
 
           <form onSubmit={handleAuthSubmit}>
             <div className="auth-form-group">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username">{isRegistering ? "Username" : "Username or Gmail ID"}</label>
               <input
                 type="text"
                 id="username"
-                placeholder="Enter username"
+                placeholder={isRegistering ? "Enter username" : "Enter username or email"}
                 value={authUsername}
                 onChange={(e) => setAuthUsername(e.target.value)}
                 required
                 disabled={isLoading}
               />
             </div>
+            {isRegistering && (
+              <div className="auth-form-group">
+                <label htmlFor="email">Gmail ID / Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter Gmail ID or email"
+                  value={authEmail}
+                  onChange={(e) => setAuthEmail(e.target.value)}
+                  required
+                  disabled={isLoading}
+                />
+              </div>
+            )}
             <div className="auth-form-group">
               <label htmlFor="password">Password</label>
               <input
@@ -181,6 +273,16 @@ function App() {
                 disabled={isLoading}
               />
             </div>
+
+            {isRegistering && (
+              <div className="auth-requirements">
+                <div style={{ fontWeight: "600", marginBottom: "4px" }}>Requirements:</div>
+                <ul style={{ margin: 0, paddingLeft: "16px", listStyleType: "disc" }}>
+                  <li>Username: 3-30 chars, starts with a letter, letters/numbers/underscores only.</li>
+                  <li>Password: Min 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special character (@$!%*?&#).</li>
+                </ul>
+              </div>
+            )}
 
             <button type="submit" className="btn btn-primary" style={{ width: "100%", marginTop: "10px" }} disabled={isLoading}>
               {isLoading ? "Processing..." : isRegistering ? "Sign Up" : "Log In"}
@@ -195,6 +297,9 @@ function App() {
                 setIsRegistering(!isRegistering);
                 setErrorMessage("");
                 setSuccessMessage("");
+                setAuthUsername("");
+                setAuthEmail("");
+                setAuthPassword("");
               }}
             >
               {isRegistering ? "Log In" : "Sign Up"}
@@ -228,6 +333,28 @@ function App() {
               placeholder="e.g., https://github.com/langchain-ai/langchain"
               value={repoUrl}
               onChange={(e) => setRepoUrl(e.target.value)}
+              disabled={isStreaming}
+            />
+          </div>
+          <div style={{ marginTop: "14px" }}>
+            <label htmlFor="gemini-key">Gemini API Key (Optional)</label>
+            <input
+              type="password"
+              id="gemini-key"
+              placeholder="AIzaSy..."
+              value={geminiApiKey}
+              onChange={(e) => setGeminiApiKey(e.target.value)}
+              disabled={isStreaming}
+            />
+          </div>
+          <div style={{ marginTop: "14px" }}>
+            <label htmlFor="openrouter-key">OpenRouter API Key (Optional)</label>
+            <input
+              type="password"
+              id="openrouter-key"
+              placeholder="sk-or-..."
+              value={openrouterApiKey}
+              onChange={(e) => setOpenrouterApiKey(e.target.value)}
               disabled={isStreaming}
             />
           </div>
@@ -270,24 +397,25 @@ function App() {
             messages.map((msg, index) => (
               <div key={index} className={`message ${msg.sender === "user" ? "message-user" : "message-bot"}`}>
                 <span className="message-sender">{msg.sender === "user" ? `@${username}` : "Assistant"}</span>
-                <div className="message-bubble-content">
-                  {msg.text.split("\n").map((line, lIdx) => {
-                    // Very simple formatter to highlight backticks or triple backticks in text bubbles
-                    if (line.startsWith("```")) return null;
-                    
-                    // Simple regex replacement for bold markup
-                    const boldFormatted = line.split("**").map((subText, sIdx) => {
-                      return sIdx % 2 === 1 ? <strong key={sIdx}>{subText}</strong> : subText;
-                    });
-                    
-                    return <p key={lIdx} style={{ minHeight: "1.2em", marginBottom: "4px" }}>{boldFormatted}</p>;
-                  })}
-                </div>
+                {msg.sender === "user" ? (
+                  <div className="message-bubble-content">
+                    {msg.text.split("\n").map((line, lIdx) => (
+                      <p key={lIdx} style={{ minHeight: "1.2em", marginBottom: "4px" }}>{line}</p>
+                    ))}
+                  </div>
+                ) : (
+                  <div 
+                    className="message-bubble-content markdown-body"
+                    dangerouslySetInnerHTML={{ 
+                      __html: marked.parse(msg.text, { gfm: true, breaks: true }) 
+                    }}
+                  />
+                )}
               </div>
             ))
           )}
 
-          {isStreaming && (
+          {isStreaming && (messages.length === 0 || messages[messages.length - 1]?.sender !== "bot") && (
             <div className="message message-bot">
               <span className="message-sender">Assistant</span>
               <div className="message-bubble-content" style={{ padding: "8px 12px" }}>

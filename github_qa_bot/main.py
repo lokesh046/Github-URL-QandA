@@ -17,18 +17,10 @@ async def lifespan(app: FastAPI):
     yield
     # Shutdown
     try:
-        from agent import pool
-        if pool:
-            print("[Database] Closing Postgres connection pool...")
-            pool.close()
-    except Exception as e:
-        print(f"Error closing Agent Postgres pool: {e}")
-        
-    try:
         from utils.db import close_db_pool
         close_db_pool()
     except Exception as e:
-        print(f"Error closing Users database pool: {e}")
+        print(f"Error closing shared database pool: {e}")
 
 app = FastAPI(
     title="GITHUB QA Bot",

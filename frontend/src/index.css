@@ -242,6 +242,22 @@ label {
   color: var(--accent-hover);
 }
 
+.auth-requirements {
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.12);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: left;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.auth-requirements li {
+  margin-top: 4px;
+}
+
 /* Error/Success banners */
 .banner {
   padding: 12px 16px;
@@ -555,4 +571,116 @@ label {
 @keyframes typingBounce {
   0%, 100%, 80% { transform: translateY(0); opacity: 0.4; }
   40% { transform: translateY(-4px); opacity: 1; }
+}
+
+/* ==========================================
+   MARKDOWN RENDERER STYLING
+   ========================================== */
+.message-bubble-content.markdown-body h1,
+.message-bubble-content.markdown-body h2,
+.message-bubble-content.markdown-body h3,
+.message-bubble-content.markdown-body h4 {
+  color: #fff;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.message-bubble-content.markdown-body h1 { font-size: 1.3rem; }
+.message-bubble-content.markdown-body h2 { font-size: 1.15rem; }
+.message-bubble-content.markdown-body h3 { font-size: 1.05rem; }
+
+.message-bubble-content.markdown-body p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.message-bubble-content.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+
+.message-bubble-content.markdown-body ul,
+.message-bubble-content.markdown-body ol {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.message-bubble-content.markdown-body li {
+  margin-bottom: 4px;
+}
+
+.message-bubble-content.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+  background: rgba(10, 8, 20, 0.4);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.message-bubble-content.markdown-body th,
+.message-bubble-content.markdown-body td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.message-bubble-content.markdown-body th {
+  background: rgba(139, 92, 246, 0.12);
+  color: #fff;
+  font-weight: 600;
+}
+
+.message-bubble-content.markdown-body tr:last-child td {
+  border-bottom: none;
+}
+
+.message-bubble-content.markdown-body tr:hover td {
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.message-bubble-content.markdown-body blockquote {
+  border-left: 4px solid var(--accent);
+  background: rgba(139, 92, 246, 0.05);
+  padding: 8px 16px;
+  margin: 12px 0;
+  border-radius: 4px;
+  color: var(--text-secondary);
+}
+
+.message-bubble-content.markdown-body a {
+  color: var(--accent-hover);
+  text-decoration: none;
+}
+
+.message-bubble-content.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.message-bubble-content.markdown-body code {
+  color: #e9d5ff;
+  background: rgba(139, 92, 246, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.message-bubble-content.markdown-body pre {
+  margin: 12px 0;
+  background: rgba(10, 8, 20, 0.7);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  padding: 14px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.message-bubble-content.markdown-body pre code {
+  background: transparent !important;
+  padding: 0 !important;
+  color: #f3f4f6 !important;
+  font-size: 13.5px !important;
 }

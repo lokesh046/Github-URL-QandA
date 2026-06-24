@@ -3,35 +3,47 @@ const BASE_URL = window.location.hostname === "localhost" || window.location.hos
     : "";
 
 
-export async function signup(username, password) {
+export async function signup(username, email, password) {
     const response = await fetch(`${BASE_URL}/auth/signup`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ username, email, password })
     });
     
     const data = await response.json();
     if (!response.ok) {
-        throw new Error(data.detail || "Signup failed");
+        let errorMsg = "Signup failed";
+        if (typeof data.detail === "string") {
+            errorMsg = data.detail;
+        } else if (Array.isArray(data.detail)) {
+            errorMsg = data.detail.map(err => err.msg.replace(/^Value error, /, '')).join(". ");
+        }
+        throw new Error(errorMsg);
     }
     return data;
 }
 
 
-export async function login(username, password) {
+export async function login(usernameOrEmail, password) {
     const response = await fetch(`${BASE_URL}/auth/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ username_or_email: usernameOrEmail, password })
     });
     
     const data = await response.json();
     if (!response.ok) {
-        throw new Error(data.detail || "Login failed");
+        let errorMsg = "Login failed";
+        if (typeof data.detail === "string") {
+            errorMsg = data.detail;
+        } else if (Array.isArray(data.detail)) {
+            errorMsg = data.detail.map(err => err.msg.replace(/^Value error, /, '')).join(". ");
+        }
+        throw new Error(errorMsg);
     }
     return data; // Returns { access_token, token_type, username }
 }
@@ -40,7 +52,9 @@ export async function login(username, password) {
 export async function streamAnswer(
     repo_url,
     question,
-    onChunk
+    onChunk,
+    geminiApiKey = "",
+    openrouterApiKey = ""
 ) {
     const token = localStorage.getItem("token");
     const headers = {
@@ -49,6 +63,14 @@ export async function streamAnswer(
     
     if (token) {
         headers["Authorization"] = `Bearer ${token}`;
+    }
+
+    if (geminiApiKey) {
+        headers["x-gemini-api-key"] = geminiApiKey;
+    }
+    
+    if (openrouterApiKey) {
+        headers["x-openrouter-api-key"] = openrouterApiKey;
     }
 
     const response = await fetch(
