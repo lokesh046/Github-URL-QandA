@@ -3,8 +3,6 @@ from api.routes import router
 from api.auth_routes import router as auth_router
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
-import os
-from fastapi.staticfiles import StaticFiles
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -22,6 +20,8 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         print(f"Error closing shared database pool: {e}")
 
+from config import ALLOWED_ORIGINS
+
 app = FastAPI(
     title="GITHUB QA Bot",
     lifespan=lifespan
@@ -29,7 +29,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # or ["http://localhost:5173"]
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -38,7 +38,3 @@ app.add_middleware(
 app.include_router(auth_router)
 app.include_router(router)
 
-# Serve the frontend built files if the 'dist' directory is present (Production)
-dist_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dist")
-if os.path.exists(dist_path):
-    app.mount("/", StaticFiles(directory=dist_path, html=True), name="frontend")

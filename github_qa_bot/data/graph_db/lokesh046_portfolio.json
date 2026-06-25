@@ -9,12 +9,12 @@
     "eslint.config.js": {
       "file": "eslint.config.js",
       "imports": [
-        "typescript-eslint",
-        "globals",
-        "eslint-plugin-react-hooks",
+        "eslint-plugin-react-refresh",
         "@eslint/js",
         "eslint/config",
-        "eslint-plugin-react-refresh"
+        "typescript-eslint",
+        "globals",
+        "eslint-plugin-react-hooks"
       ],
       "functions": [],
       "calls": [
@@ -43,14 +43,14 @@
     "src/App.tsx": {
       "file": "src/App.tsx",
       "imports": [
-        "./components/Navbar",
-        "./components/ParticleBackground",
-        "./components/Skills",
-        "./components/Projects",
         "./components/Hero",
         "./components/Resume",
+        "./components/Navbar",
         "./components/Contact",
-        "./components/ProblemSolving"
+        "./components/Projects",
+        "./components/ProblemSolving",
+        "./components/Skills",
+        "./components/ParticleBackground"
       ],
       "functions": [
         "App"
@@ -65,10 +65,10 @@
     "src/components/Contact.tsx": {
       "file": "src/components/Contact.tsx",
       "imports": [
-        "framer-motion",
         "react-icons/fi",
         "react-icons/si",
-        "react"
+        "react",
+        "framer-motion"
       ],
       "functions": [
         "Contact",
@@ -112,14 +112,14 @@
     "src/components/Hero.tsx": {
       "file": "src/components/Hero.tsx",
       "imports": [
-        "framer-motion",
         "react-scroll",
-        "react"
+        "react",
+        "framer-motion"
       ],
       "functions": [
+        "handleMouseMove",
         "handleType",
-        "Hero",
-        "handleMouseMove"
+        "Hero"
       ],
       "calls": [
         {
@@ -243,10 +243,10 @@
     "src/components/Navbar.tsx": {
       "file": "src/components/Navbar.tsx",
       "imports": [
-        "framer-motion",
-        "react-scroll",
         "react-icons/fi",
-        "react"
+        "react-scroll",
+        "react",
+        "framer-motion"
       ],
       "functions": [
         "handleScroll",
@@ -298,13 +298,13 @@
     "src/components/ParticleBackground.tsx": {
       "file": "src/components/ParticleBackground.tsx",
       "imports": [
-        "@tsparticles/react",
         "@tsparticles/slim",
-        "react"
+        "react",
+        "@tsparticles/react"
       ],
       "functions": [
-        "particlesLoaded",
-        "ParticleBackground"
+        "ParticleBackground",
+        "particlesLoaded"
       ],
       "calls": [
         {
@@ -336,9 +336,9 @@
     "src/components/ProblemSolving.tsx": {
       "file": "src/components/ProblemSolving.tsx",
       "imports": [
-        "framer-motion",
+        "react-icons/si",
         "react-icons/fi",
-        "react-icons/si"
+        "framer-motion"
       ],
       "functions": [
         "ProblemSolving"
@@ -348,8 +348,8 @@
     "src/components/Projects.tsx": {
       "file": "src/components/Projects.tsx",
       "imports": [
-        "framer-motion",
-        "react-icons/fi"
+        "react-icons/fi",
+        "framer-motion"
       ],
       "functions": [
         "Projects"
@@ -368,8 +368,8 @@
     "src/components/Resume.tsx": {
       "file": "src/components/Resume.tsx",
       "imports": [
-        "framer-motion",
-        "react-icons/fi"
+        "react-icons/fi",
+        "framer-motion"
       ],
       "functions": [
         "Resume"
@@ -398,10 +398,10 @@
     "src/main.tsx": {
       "file": "src/main.tsx",
       "imports": [
-        "./index.css",
         "react-dom/client",
-        "./App.tsx",
-        "react"
+        "./index.css",
+        "react",
+        "./App.tsx"
       ],
       "functions": [],
       "calls": [
@@ -440,8 +440,8 @@
     "vite.config.ts": {
       "file": "vite.config.ts",
       "imports": [
-        "vite",
-        "@vitejs/plugin-react"
+        "@vitejs/plugin-react",
+        "vite"
       ],
       "functions": [],
       "calls": [
@@ -454,6 +454,12 @@
           "callee": "react"
         }
       ]
+    },
+    "package-lock.json": {
+      "file": "package-lock.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
     }
   }
 }

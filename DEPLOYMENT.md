@@ -1,82 +1,92 @@
-# Deploying to Render (Free Tier Guide)
+# Deployment Guide
 
-This guide explains how to deploy the combined Python FastAPI backend + React frontend to Render's **Free Tier** as a single native Python web service.
-
----
-
-## How It Works on the Free Tier:
-* **No Docker**: Render's Free Tier does not support custom Docker builds, so we deploy using the native **Python** runtime.
-* **No Paid Disks (Ephemeral Caching)**: Render's Free Tier doesn't allow persistent disk mounts. Instead, the application writes the repository ZIPs, SHA indices, and dependency graphs directly to its local directory. This is writable but **ephemeral** (caches reset whenever the server restarts or goes to sleep, which is standard for the free tier).
-* **Serving Frontend from Backend**: We compile the React frontend locally, place the compiled files inside the backend folder, and push it to GitHub. The backend then serves both the API and the user interface.
+This guide explains how to deploy the **FastAPI Backend** and the **React Frontend** to Render's Free Tier. You can choose to deploy them together (integrated as one service) or separately (two services).
 
 ---
 
-## Step 1: Build the Frontend Locally
+## ⚡ Option 1: Separate Deployment (Recommended for scalability)
 
-We have created a helper PowerShell script `build_frontend.ps1` in the project root to automate this:
+In this approach, the React frontend is deployed as a **Static Site** (which is extremely fast and free on Render), and the FastAPI backend is deployed as a **Python Web Service**.
 
-1. Open PowerShell in your project root directory.
-2. Run the script:
-   ```powershell
-   .\build_frontend.ps1
-   ```
-   *This compiles the React frontend under `frontend/` and automatically copies the output (`dist/`) into `github_qa_bot/dist/`.*
-
-3. Commit and push the changes to GitHub:
-   ```bash
-   git add .
-   git commit -m "Build and integrate frontend"
-   git push
-   ```
-
----
-
-## Step 2: Create the Web Service on Render
-
-1. Log in to your [Render Dashboard](https://dashboard.render.com/).
-2. Click **New +** and select **Web Service**.
-3. Connect your Git repository.
+### 1. Deploy the Backend (Web Service)
+1. Go to your [Render Dashboard](https://dashboard.render.com/).
+2. Click **New +** ➡️ Select **Web Service**.
+3. Link your GitHub repository.
 4. Set the following configuration:
-   * **Name**: `github-qa-bot`
-   * **Region**: Choose the one closest to you (e.g., Oregon, Frankfurt)
-   * **Branch**: `main` (or your main branch)
-   * **Root Directory**: `github_qa_bot`
-   * **Runtime**: **Python**
-   * **Instance Type**: **Free**
+   * **Name:** `github-qa-backend`
+   * **Root Directory:** `github_qa_bot`
+   * **Runtime:** `Python`
+   * **Instance Type:** `Free`
+   * **Build Command:** `pip install -r requirements.txt`
+   * **Start Command:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
+5. Go to the **Environment** tab and add the environment variables listed in the configuration section below.
+
+### 2. Deploy the Frontend (Static Site)
+1. Go to your Render Dashboard.
+2. Click **New +** ➡️ Select **Static Site**.
+3. Link your GitHub repository.
+4. Set the following configuration:
+   * **Name:** `github-qa-frontend`
+   * **Root Directory:** `frontend`
+   * **Build Command:** `npm run build`
+   * **Publish Directory:** `dist`
+5. Go to the **Environment** tab and add the following environment variable:
+   * `VITE_API_URL`: `https://github-qa-backend.onrender.com` (Your deployed Render backend URL)
+
+### 3. Update Backend CORS Allowed Origins
+Once your frontend Static Site is created, copy its URL (e.g., `https://github-qa-frontend.onrender.com`) and update your Backend Environment Variables:
+   * Add / update `ALLOWED_ORIGINS`: `https://github-qa-frontend.onrender.com`
+   * *This allows the React app to communicate with the FastAPI server without triggering CORS blocking.*
 
 ---
 
-## Step 3: Configure Build and Start Commands
+## 📦 Option 2: Integrated Deployment (Single Free Service)
 
-Under the configuration section, set:
-* **Build Command**: 
-  ```bash
-  pip install -r requirements.txt
-  ```
-* **Start Command**: 
-  ```bash
-  uvicorn main:app --host 0.0.0.0 --port $PORT
-  ```
+In this approach, you compile the React frontend locally, copy the build assets into the backend folder, and deploy a single Python service that serves both the API and user interface.
+
+### 1. Build Frontend locally
+In your project root, run the pre-configured PowerShell script:
+```powershell
+.\build_frontend.ps1
+```
+*This compiles the React frontend and copies output files to `github_qa_bot/dist/`.*
+
+### 2. Push to GitHub
+```bash
+git add .
+git commit -m "build: compile frontend assets"
+git push
+```
+
+### 3. Create Web Service on Render
+1. Go to your Render Dashboard ➡️ click **New +** ➡️ select **Web Service**.
+2. Link your GitHub repository.
+3. Configure:
+   * **Name:** `github-qa-bot`
+   * **Root Directory:** `github_qa_bot`
+   * **Runtime:** `Python`
+   * **Build Command:** `pip install -r requirements.txt`
+   * **Start Command:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
+4. Add all configuration variables in the **Environment** tab.
 
 ---
 
-## Step 4: Configure Environment Variables
+## 🔑 Backend Environment Variables (Configured on Render)
 
-Under the **Environment** tab, click **Add Environment Variable** and add the following required credentials:
+Add these variables to your Render Backend Service:
 
-| Key | Value | Description |
-| :--- | :--- | :--- |
-| `GITHUB_TOKEN_KEY` | `ghp_...` | Your GitHub Personal Access Token (PAT) |
-| `GEMINI_API_KEY` | `AIzaSy...` | Your Gemini API Key |
-| `OPENROUTER_API_KEY` | `sk-or-...` | Your OpenRouter API Key |
-| `PINECONE_API_KEY` | `pcsk_...` | Your Pinecone API Key |
-| `PINECONE_INDEX_NAME` | `your-index` | Your Pinecone index name |
-| `DATABASE_URL` | `postgresql://...` | (Optional) Your Neon Postgres database connection URL to enable persistent user chat memory. |
-
----
-
-## Step 5: Deploy!
-
-Click **Create Web Service**. 
-* Render will install the Python dependencies and launch the backend server.
-* Because the built frontend is inside the `github_qa_bot/dist` directory, FastAPI will automatically serve the user interface when you visit your Render URL (e.g., `https://github-qa-bot.onrender.com`).
+| Key | Description |
+| :--- | :--- |
+| `ENVIRONMENT` | Set to `production`. |
+| `JWT_SECRET_KEY` | Generate a secure, random 32-character string. |
+| `ALLOWED_ORIGINS` | `https://your-frontend.onrender.com` (Needed for Option 1 separate deploy). |
+| `GITHUB_TOKEN_KEY` | Your GitHub Personal Access Token (PAT). |
+| `GEMINI_API_KEY` | Your Google Gemini API Key. |
+| `OPENROUTER_API_KEY` | Your OpenRouter API Key. |
+| `PINECONE_API_KEY` | Your Pinecone API Key. |
+| `PINECONE_INDEX_NAME` | Your Pinecone Vector Database Index Name. |
+| `DATABASE_URL` | Neon Postgres Connection String (for chat database checks). |
+| `S3_ENDPOINT_URL` | `https://s3.us-east-005.backblazeb2.com` (Your B2 Endpoint URL). |
+| `R2_ACCESS_KEY_ID` | Your Backblaze keyID. |
+| `R2_SECRET_ACCESS_KEY` | Your Backblaze applicationKey. |
+| `R2_BUCKET_NAME` | `github-qa-bot-storage`. |

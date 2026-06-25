@@ -6,8 +6,10 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from utils.db import get_user_by_username
 
+from config import JWT_SECRET_KEY
+
 # Security Settings
-JWT_SECRET = os.getenv("JWT_SECRET_KEY", "your_jwt_secret_key_change_me_in_production")
+JWT_SECRET = JWT_SECRET_KEY
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 days
 

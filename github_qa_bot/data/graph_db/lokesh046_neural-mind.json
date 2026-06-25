@@ -16,18 +16,18 @@
       "file": "backend/alembic/env.py",
       "imports": [
         "app.config",
-        "os",
-        "logging.config",
-        "app.database",
+        "sqlalchemy",
         "sys",
         "alembic",
-        "sqlalchemy",
+        "app.database",
+        "logging.config",
+        "os",
         "app.models"
       ],
       "functions": [
+        "run_migrations_offline",
         "get_url",
-        "run_migrations_online",
-        "run_migrations_offline"
+        "run_migrations_online"
       ],
       "calls": [
         {
@@ -136,10 +136,10 @@
     "backend/app/database.py": {
       "file": "backend/app/database.py",
       "imports": [
-        "os",
-        "sqlalchemy.orm",
         "sqlalchemy",
-        "app.config"
+        "os",
+        "app.config",
+        "sqlalchemy.orm"
       ],
       "functions": [
         "get_db"
@@ -230,24 +230,24 @@
     "backend/app/executor.py": {
       "file": "backend/app/executor.py",
       "imports": [
-        "app.config",
         "json",
-        "typing",
-        "httpx",
-        "os",
-        "app",
         "subprocess",
-        "asyncio",
+        "app",
+        "app.config",
         "tempfile",
+        "httpx",
+        "typing",
+        "os",
         "ast",
+        "asyncio",
         "sys",
         "logging"
       ],
       "functions": [
         "run_judge0",
         "run_local_subprocess",
-        "get_entrypoint_function",
         "wrap_code",
+        "get_entrypoint_function",
         "execute_submission"
       ],
       "calls": [
@@ -420,13 +420,13 @@
     "backend/app/judge.py": {
       "file": "backend/app/judge.py",
       "imports": [
-        "math",
         "json",
-        "typing"
+        "typing",
+        "math"
       ],
       "functions": [
-        "compare_outputs",
-        "recursive_approx_equal"
+        "recursive_approx_equal",
+        "compare_outputs"
       ],
       "calls": [
         {
@@ -554,11 +554,11 @@
     "backend/app/main.py": {
       "file": "backend/app/main.py",
       "imports": [
+        "app.routers",
         "app.config",
         "fastapi.middleware.cors",
         "app.database",
-        "fastapi",
-        "app.routers"
+        "fastapi"
       ],
       "functions": [
         "read_root"
@@ -605,12 +605,12 @@
     "backend/app/models.py": {
       "file": "backend/app/models.py",
       "imports": [
+        "sqlalchemy.orm",
+        "sqlalchemy",
         "uuid",
         "enum",
-        "sqlalchemy.orm",
         "app.database",
-        "sqlalchemy.sql",
-        "sqlalchemy"
+        "sqlalchemy.sql"
       ],
       "functions": [],
       "calls": [
@@ -791,19 +791,19 @@
     "backend/app/routers/auth.py": {
       "file": "backend/app/routers/auth.py",
       "imports": [
-        "datetime",
-        "app.config",
         "app",
-        "fastapi.security",
+        "app.config",
         "sqlalchemy.orm",
+        "datetime",
         "app.database",
-        "fastapi"
+        "fastapi",
+        "fastapi.security"
       ],
       "functions": [
         "get_current_user",
         "register",
-        "login",
-        "read_users_me"
+        "read_users_me",
+        "login"
       ],
       "calls": [
         {
@@ -963,19 +963,19 @@
     "backend/app/routers/problems.py": {
       "file": "backend/app/routers/problems.py",
       "imports": [
-        "app.routers.auth",
         "app",
         "sqlalchemy.orm",
-        "app.database",
+        "app.routers.auth",
         "typing",
+        "app.database",
         "fastapi"
       ],
       "functions": [
+        "read_problem",
+        "delete_problem",
         "create_problem",
         "update_problem",
-        "read_problems",
-        "read_problem",
-        "delete_problem"
+        "read_problems"
       ],
       "calls": [
         {
@@ -1159,19 +1159,19 @@
     "backend/app/routers/submissions.py": {
       "file": "backend/app/routers/submissions.py",
       "imports": [
-        "app.routers.auth",
-        "app.config",
         "app",
+        "app.config",
         "sqlalchemy.orm",
-        "app.database",
+        "app.routers.auth",
         "typing",
-        "logging",
-        "fastapi"
+        "app.database",
+        "fastapi",
+        "logging"
       ],
       "functions": [
         "submit_solution",
-        "run_and_grade_submission_task",
         "get_submission",
+        "run_and_grade_submission_task",
         "get_completed_ids"
       ],
       "calls": [
@@ -1368,8 +1368,8 @@
     "backend/app/schemas.py": {
       "file": "backend/app/schemas.py",
       "imports": [
-        "datetime",
         "pydantic",
+        "datetime",
         "typing"
       ],
       "functions": [],
@@ -1387,11 +1387,11 @@
     "backend/app/security.py": {
       "file": "backend/app/security.py",
       "imports": [
-        "datetime",
         "app.config",
-        "jose",
+        "datetime",
+        "typing",
         "bcrypt",
-        "typing"
+        "jose"
       ],
       "functions": [
         "decode_access_token",
@@ -1461,23 +1461,23 @@
     "backend/get_seed_testcases.py": {
       "file": "backend/get_seed_testcases.py",
       "imports": [
+        "json",
         "faiss",
         "base64",
-        "docx",
-        "json",
-        "pypdf",
-        "os",
         "rag_assets_data",
         "sentence_transformers",
+        "os",
         "io",
+        "numpy",
         "math",
         "sys",
-        "numpy"
+        "pypdf",
+        "docx"
       ],
       "functions": [
-        "main",
+        "run_reference_pipeline",
         "chunk_text",
-        "run_reference_pipeline"
+        "main"
       ],
       "calls": [
         {
@@ -1664,12 +1664,12 @@
       "file": "backend/seed.py",
       "imports": [
         "json",
-        "os",
         "app",
         "sqlalchemy.orm",
+        "sqlalchemy",
+        "os",
         "app.database",
-        "sys",
-        "sqlalchemy"
+        "sys"
       ],
       "functions": [
         "seed_db"
@@ -2044,8 +2044,8 @@
     "backend/seed_data/problems/10_rag_faiss_storage/starter_code.py": {
       "file": "backend/seed_data/problems/10_rag_faiss_storage/starter_code.py",
       "imports": [
-        "numpy",
-        "faiss"
+        "faiss",
+        "numpy"
       ],
       "functions": [
         "build_faiss_index"
@@ -2079,8 +2079,8 @@
     "backend/seed_data/problems/11_rag_faiss_retrieval/starter_code.py": {
       "file": "backend/seed_data/problems/11_rag_faiss_retrieval/starter_code.py",
       "imports": [
-        "numpy",
-        "faiss"
+        "faiss",
+        "numpy"
       ],
       "functions": [
         "retrieve_faiss"
@@ -2116,11 +2116,11 @@
       "imports": [
         "faiss",
         "base64",
-        "docx",
-        "pypdf",
         "sentence_transformers",
         "io",
-        "numpy"
+        "numpy",
+        "pypdf",
+        "docx"
       ],
       "functions": [
         "run_rag_pipeline"
@@ -2352,10 +2352,10 @@
     "backend/seed_data/problems/7_rag_document_parsing/starter_code.py": {
       "file": "backend/seed_data/problems/7_rag_document_parsing/starter_code.py",
       "imports": [
-        "pypdf",
-        "io",
         "base64",
-        "docx"
+        "pypdf",
+        "docx",
+        "io"
       ],
       "functions": [
         "parse_document"
@@ -2444,13 +2444,13 @@
       "file": "backend/setup_rag_assets.py",
       "imports": [
         "base64",
-        "docx",
-        "os",
+        "reportlab.lib.styles",
+        "reportlab.lib.pagesizes",
         "sentence_transformers",
         "io",
-        "reportlab.lib.pagesizes",
         "reportlab.platypus",
-        "reportlab.lib.styles"
+        "os",
+        "docx"
       ],
       "functions": [
         "generate_assets"
@@ -2581,9 +2581,9 @@
     "backend/verify.py": {
       "file": "backend/verify.py",
       "imports": [
+        "json",
         "app",
         "app.database",
-        "json",
         "asyncio"
       ],
       "functions": [
@@ -2755,10 +2755,10 @@
       "file": "frontend/eslint.config.js",
       "imports": [
         "eslint-plugin-react-refresh",
-        "eslint/config",
-        "globals",
         "@eslint/js",
+        "eslint/config",
         "typescript-eslint",
+        "globals",
         "eslint-plugin-react-hooks"
       ],
       "functions": [],
@@ -2788,22 +2788,22 @@
     "frontend/src/App.tsx": {
       "file": "frontend/src/App.tsx",
       "imports": [
-        "./api",
-        "./context/store",
-        "./pages/ProblemDetail",
-        "./pages/Register",
-        "./pages/Login",
-        "react",
-        "./components/Navbar",
-        "./pages/Problems",
-        "./pages/UploadProblem",
         "./pages/RagPathway",
-        "react-router-dom"
+        "./pages/Register",
+        "./pages/ProblemDetail",
+        "./pages/UploadProblem",
+        "./components/Navbar",
+        "./context/store",
+        "./pages/Login",
+        "react-router-dom",
+        "react",
+        "./pages/Problems",
+        "./api"
       ],
       "functions": [
-        "ProtectedRoute",
         "App",
-        "restoreSession"
+        "restoreSession",
+        "ProtectedRoute"
       ],
       "calls": [
         {
@@ -2876,13 +2876,13 @@
     "frontend/src/components/CodeEditor.tsx": {
       "file": "frontend/src/components/CodeEditor.tsx",
       "imports": [
-        "@monaco-editor/react",
-        "react"
+        "react",
+        "@monaco-editor/react"
       ],
       "functions": [
         "CodeEditor",
-        "handleEditorChange",
-        "handleEditorDidMount"
+        "handleEditorDidMount",
+        "handleEditorChange"
       ],
       "calls": [
         {
@@ -2906,15 +2906,15 @@
     "frontend/src/components/Navbar.tsx": {
       "file": "frontend/src/components/Navbar.tsx",
       "imports": [
-        "lucide-react",
-        "react-router-dom",
         "../context/store",
-        "react"
+        "react-router-dom",
+        "react",
+        "lucide-react"
       ],
       "functions": [
+        "Navbar",
         "isActive",
-        "handleLogout",
-        "Navbar"
+        "handleLogout"
       ],
       "calls": [
         {
@@ -2965,10 +2965,10 @@
         "react"
       ],
       "functions": [
-        "handleMouseMove",
-        "handleMouseUp",
+        "SplitPane",
         "startResize",
-        "SplitPane"
+        "handleMouseMove",
+        "handleMouseUp"
       ],
       "calls": [
         {
@@ -3035,10 +3035,10 @@
         "react"
       ],
       "functions": [
-        "handleMouseMove",
-        "handleMouseUp",
         "startResize",
-        "VerticalSplitPane"
+        "VerticalSplitPane",
+        "handleMouseMove",
+        "handleMouseUp"
       ],
       "calls": [
         {
@@ -3163,10 +3163,10 @@
     "frontend/src/main.tsx": {
       "file": "frontend/src/main.tsx",
       "imports": [
-        "./App.tsx",
         "react-dom/client",
+        "./index.css",
         "react",
-        "./index.css"
+        "./App.tsx"
       ],
       "functions": [],
       "calls": [
@@ -3187,11 +3187,11 @@
     "frontend/src/pages/Login.tsx": {
       "file": "frontend/src/pages/Login.tsx",
       "imports": [
-        "lucide-react",
-        "../context/store",
-        "react",
         "../api",
-        "react-router-dom"
+        "react-router-dom",
+        "lucide-react",
+        "react",
+        "../context/store"
       ],
       "functions": [
         "Login",
@@ -3287,28 +3287,28 @@
     "frontend/src/pages/ProblemDetail.tsx": {
       "file": "frontend/src/pages/ProblemDetail.tsx",
       "imports": [
+        "../components/CodeEditor",
+        "../api",
+        "react-router-dom",
+        "react",
+        "../components/VerticalSplitPane",
         "lucide-react",
         "katex",
         "../components/SplitPane",
-        "../components/VerticalSplitPane",
-        "../components/CodeEditor",
-        "../context/store",
-        "react",
-        "../api",
-        "react-router-dom"
+        "../context/store"
       ],
       "functions": [
-        "addCustomTestCase",
-        "parseMarkdown",
-        "MathComponent",
         "parseInlineFormatting",
-        "handleSubmission",
-        "handleTestcaseChange",
-        "fetchSubmissions",
-        "getDifficultyColor",
         "fetchProblem",
+        "handleSubmission",
+        "pollSubmission",
+        "addCustomTestCase",
+        "MathComponent",
+        "getDifficultyColor",
+        "parseMarkdown",
         "ProblemDetail",
-        "pollSubmission"
+        "handleTestcaseChange",
+        "fetchSubmissions"
       ],
       "calls": [
         {
@@ -3736,16 +3736,16 @@
     "frontend/src/pages/Problems.tsx": {
       "file": "frontend/src/pages/Problems.tsx",
       "imports": [
-        "../api",
         "lucide-react",
         "react-router-dom",
-        "react"
+        "react",
+        "../api"
       ],
       "functions": [
         "fetchProblems",
+        "Problems",
         "handleDeleteProblem",
-        "getDifficultyColor",
-        "Problems"
+        "getDifficultyColor"
       ],
       "calls": [
         {
@@ -3909,15 +3909,15 @@
     "frontend/src/pages/RagPathway.tsx": {
       "file": "frontend/src/pages/RagPathway.tsx",
       "imports": [
-        "../api",
         "lucide-react",
         "react-router-dom",
-        "react"
+        "react",
+        "../api"
       ],
       "functions": [
         "fetchData",
-        "RagPathway",
         "getProblemForStep",
+        "RagPathway",
         "getDifficultyColor",
         "isStepCompleted"
       ],
@@ -4103,10 +4103,10 @@
     "frontend/src/pages/Register.tsx": {
       "file": "frontend/src/pages/Register.tsx",
       "imports": [
-        "../api",
         "lucide-react",
         "react-router-dom",
-        "react"
+        "react",
+        "../api"
       ],
       "functions": [
         "Register",
@@ -4210,23 +4210,23 @@
     "frontend/src/pages/UploadProblem.tsx": {
       "file": "frontend/src/pages/UploadProblem.tsx",
       "imports": [
-        "lucide-react",
-        "katex",
-        "../components/SplitPane",
-        "react",
         "../api",
-        "react-router-dom"
+        "react-router-dom",
+        "react",
+        "lucide-react",
+        "../components/SplitPane",
+        "katex"
       ],
       "functions": [
-        "parseMarkdown",
-        "handleUploadSubmit",
-        "parseBulkContent",
         "parseInlineFormatting",
-        "getDifficultyColor",
+        "addTestCase",
+        "handleUploadSubmit",
         "handleTestCaseChange",
         "deleteTestCase",
-        "addTestCase",
         "MathComponent",
+        "parseBulkContent",
+        "getDifficultyColor",
+        "parseMarkdown",
         "UploadProblem"
       ],
       "calls": [
@@ -4907,6 +4907,12 @@
           "callee": "react"
         }
       ]
+    },
+    "frontend/package-lock.json": {
+      "file": "frontend/package-lock.json",
+      "imports": [],
+      "functions": [],
+      "calls": []
     }
   }
 }

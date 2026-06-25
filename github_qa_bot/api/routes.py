@@ -182,3 +182,32 @@ Question:
         generate(),
         media_type="text/event-stream"
     )
+
+
+@router.get("/files")
+def get_files(
+    repo_url: str,
+    current_user: dict = Depends(get_current_user)
+):
+    from tools.github_tools import list_repo_files
+    from fastapi import HTTPException
+    try:
+        files = list_repo_files(repo_url)
+        return {"files": files}
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@router.get("/file-content")
+def get_file_content_endpoint(
+    repo_url: str,
+    file_path: str,
+    current_user: dict = Depends(get_current_user)
+):
+    from tools.github_tools import get_file_content
+    from fastapi import HTTPException
+    try:
+        content = get_file_content(repo_url, file_path)
+        return {"content": content}
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))

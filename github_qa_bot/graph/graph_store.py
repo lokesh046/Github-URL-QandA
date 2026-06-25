@@ -4,15 +4,26 @@ import os
 import json
 from typing import Dict, Any
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.dirname(current_dir)
-DB_DIR = os.path.join(project_root, "data", "graph_db")
+from config import DATA_DIR, S3_STORAGE_ENABLED
+from utils.s3_store import s3_exists, s3_upload, s3_download
+
+DB_DIR = os.path.join(DATA_DIR, "graph_db")
 
 def get_db_path(repo_id: str) -> str:
     return os.path.join(DB_DIR, f"{repo_id}.json")
 
 def load_graph(repo_id: str) -> Dict[str, Any]:
     """Loads the dependency graph for the given repository. Returns empty dict if not found."""
+    r2_key = f"graph_db/{repo_id}.json"
+
+    if S3_STORAGE_ENABLED and s3_exists(r2_key):
+        try:
+            print(f"[R2 Storage] Loading dependency graph: {r2_key}")
+            graph_bytes = s3_download(r2_key)
+            return json.loads(graph_bytes.decode("utf-8"))
+        except Exception as e:
+            print(f"Warning: Failed to load graph from R2 ({r2_key}): {e}")
+
     db_path = get_db_path(repo_id)
     if not os.path.exists(db_path):
         return {"files": {}}
@@ -26,11 +37,21 @@ def load_graph(repo_id: str) -> Dict[str, Any]:
 
 def save_graph(repo_id: str, graph_data: Dict[str, Any]):
     """Saves the dependency graph for the given repository."""
+    r2_key = f"graph_db/{repo_id}.json"
+    graph_str = json.dumps(graph_data, indent=2, ensure_ascii=False)
+
+    if S3_STORAGE_ENABLED:
+        try:
+            s3_upload(graph_str.encode("utf-8"), r2_key)
+            return
+        except Exception as e:
+            print(f"Warning: Failed to upload graph to R2 ({r2_key}): {e}")
+
     os.makedirs(DB_DIR, exist_ok=True)
     db_path = get_db_path(repo_id)
     try:
         with open(db_path, "w", encoding="utf-8") as f:
-            json.dump(graph_data, f, indent=2, ensure_ascii=False)
+            f.write(graph_str)
     except Exception as e:
         print(f"Error saving graph for {repo_id}: {e}")
 

@@ -24,3 +24,4 @@ langgraph-checkpoint-postgres
 psycopg[binary]
 pyjwt
 bcrypt
+boto3

@@ -1,6 +1,6 @@
 import os
 import sqlite3
-from config import DATABASE_URL
+from config import DATABASE_URL, DATA_DIR
 
 # PostgreSQL specific connection pool
 _postgres_pool = None
@@ -15,9 +15,14 @@ def get_db_pool():
         def check_conn(conn):
             conn.execute("SELECT 1;")
 
+        # Rewrite protocol prefix if necessary for psycopg3 compatibility
+        conn_info = DATABASE_URL
+        if conn_info.startswith("postgres://"):
+            conn_info = conn_info.replace("postgres://", "postgresql://", 1)
+
         print("[Database] Initializing shared Postgres connection pool...")
         _postgres_pool = ConnectionPool(
-            conninfo=DATABASE_URL,
+            conninfo=conn_info,
             max_size=6,
             timeout=10.0,
             check=check_conn,
@@ -35,9 +40,7 @@ def get_db_connection():
         pool = get_db_pool()
         return pool.connection()
     else:
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        project_root = os.path.dirname(current_dir)
-        db_dir = os.path.join(project_root, "data")
+        db_dir = DATA_DIR
         os.makedirs(db_dir, exist_ok=True)
         db_path = os.path.join(db_dir, "users.db")
 

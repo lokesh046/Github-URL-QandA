@@ -1,5 +1,7 @@
 # tools/index_tool.py
 
+from config import DATA_DIR
+
 from tools.github_tools import (
     list_repo_files,
     get_file_content
@@ -32,16 +34,15 @@ def index_repository(
     repo_id = get_repo_id(repo_url)
 
     import os
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.dirname(current_dir)
-    cache_path = os.path.join(project_root, "data", "sha_cache", f"{repo_id}.json")
+    cache_path = os.path.join(DATA_DIR, "sha_cache", f"{repo_id}.json")
 
     cache = load_cache(cache_path)
 
     t0 = time.time()
     files = list_repo_files(
         repo_url=repo_url,
-        branch=branch
+        branch=branch,
+        use_cache=False
     )
     t_list_files = time.time() - t0
     print(f"[Timing] Listed {len(files)} files via GitHub API in {t_list_files:.4f}s")

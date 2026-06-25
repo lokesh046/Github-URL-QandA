@@ -1,0 +1,8631 @@
+{
+  "files": {
+    "README.md": {
+      "file": "README.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "alembic/env.py": {
+      "file": "alembic/env.py",
+      "imports": [
+        "sqlalchemy",
+        "logging.config",
+        "alembic"
+      ],
+      "functions": [
+        "run_migrations_offline",
+        "run_migrations_online"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "fileConfig"
+        },
+        {
+          "caller": "run_migrations_offline",
+          "callee": "get_main_option"
+        },
+        {
+          "caller": "run_migrations_offline",
+          "callee": "configure"
+        },
+        {
+          "caller": "run_migrations_offline",
+          "callee": "begin_transaction"
+        },
+        {
+          "caller": "run_migrations_offline",
+          "callee": "run_migrations"
+        },
+        {
+          "caller": "run_migrations_online",
+          "callee": "engine_from_config"
+        },
+        {
+          "caller": "run_migrations_online",
+          "callee": "get_section"
+        },
+        {
+          "caller": "run_migrations_online",
+          "callee": "connect"
+        },
+        {
+          "caller": "run_migrations_online",
+          "callee": "configure"
+        },
+        {
+          "caller": "run_migrations_online",
+          "callee": "begin_transaction"
+        },
+        {
+          "caller": "run_migrations_online",
+          "callee": "run_migrations"
+        },
+        {
+          "caller": "<global>",
+          "callee": "is_offline_mode"
+        },
+        {
+          "caller": "<global>",
+          "callee": "run_migrations_offline"
+        },
+        {
+          "caller": "<global>",
+          "callee": "run_migrations_online"
+        }
+      ]
+    },
+    "api_gateway/main.py": {
+      "file": "api_gateway/main.py",
+      "imports": [
+        "dotenv",
+        "loan_optimzer_service.loan_engine",
+        "explain_service.main",
+        "shared.services.health_service",
+        "shared.services.auth_routes",
+        "shared.services.service_auth",
+        "shared.services.fire_service",
+        "sqlalchemy",
+        "explain_service.pipeline.retrieval",
+        "shared.models",
+        "shared.database",
+        "shared.services.loan_service",
+        "pydantic",
+        "typing",
+        "explain_service.pipeline.prompt_builder",
+        "fire_service.fire_engine",
+        "chat_service.main",
+        "httpx",
+        "health_service.financial_health_score",
+        "explain_service.pipeline.llm_client",
+        "os",
+        "fastapi.middleware.cors",
+        "fastapi",
+        "uuid"
+      ],
+      "functions": [
+        "get_auth_headers",
+        "health_direct",
+        "get_fire_history",
+        "get_dashboard",
+        "require_auth",
+        "dev_promote_to_admin",
+        "fire_direct",
+        "ping",
+        "calculate_fire",
+        "get_loan_history",
+        "loan_only",
+        "logout",
+        "root",
+        "loan_direct",
+        "get_current_user_info",
+        "get_current_user_from_token",
+        "startup",
+        "get_token_from_request",
+        "health_check",
+        "compare_loan_vs_fire",
+        "get_health_history"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "load_dotenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "FastAPI"
+        },
+        {
+          "caller": "<global>",
+          "callee": "split"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "add_middleware"
+        },
+        {
+          "caller": "<global>",
+          "callee": "include_router"
+        },
+        {
+          "caller": "<global>",
+          "callee": "include_router"
+        },
+        {
+          "caller": "<global>",
+          "callee": "include_router"
+        },
+        {
+          "caller": "<global>",
+          "callee": "on_event"
+        },
+        {
+          "caller": "startup",
+          "callee": "begin"
+        },
+        {
+          "caller": "startup",
+          "callee": "run_sync"
+        },
+        {
+          "caller": "startup",
+          "callee": "execute"
+        },
+        {
+          "caller": "startup",
+          "callee": "text"
+        },
+        {
+          "caller": "startup",
+          "callee": "print"
+        },
+        {
+          "caller": "startup",
+          "callee": "execute"
+        },
+        {
+          "caller": "startup",
+          "callee": "text"
+        },
+        {
+          "caller": "startup",
+          "callee": "print"
+        },
+        {
+          "caller": "startup",
+          "callee": "execute"
+        },
+        {
+          "caller": "startup",
+          "callee": "text"
+        },
+        {
+          "caller": "startup",
+          "callee": "execute"
+        },
+        {
+          "caller": "startup",
+          "callee": "text"
+        },
+        {
+          "caller": "startup",
+          "callee": "execute"
+        },
+        {
+          "caller": "startup",
+          "callee": "text"
+        },
+        {
+          "caller": "startup",
+          "callee": "print"
+        },
+        {
+          "caller": "startup",
+          "callee": "print"
+        },
+        {
+          "caller": "startup",
+          "callee": "print"
+        },
+        {
+          "caller": "startup",
+          "callee": "print"
+        },
+        {
+          "caller": "get_token_from_request",
+          "callee": "Header"
+        },
+        {
+          "caller": "get_token_from_request",
+          "callee": "Cookie"
+        },
+        {
+          "caller": "get_token_from_request",
+          "callee": "replace"
+        },
+        {
+          "caller": "get_current_user_from_token",
+          "callee": "decode_token"
+        },
+        {
+          "caller": "get_current_user_from_token",
+          "callee": "CurrentUser"
+        },
+        {
+          "caller": "get_auth_headers",
+          "callee": "Header"
+        },
+        {
+          "caller": "get_auth_headers",
+          "callee": "Cookie"
+        },
+        {
+          "caller": "get_auth_headers",
+          "callee": "get_token_from_request"
+        },
+        {
+          "caller": "require_auth",
+          "callee": "Header"
+        },
+        {
+          "caller": "require_auth",
+          "callee": "Cookie"
+        },
+        {
+          "caller": "require_auth",
+          "callee": "get_token_from_request"
+        },
+        {
+          "caller": "require_auth",
+          "callee": "get_current_user_from_token"
+        },
+        {
+          "caller": "require_auth",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "dev_promote_to_admin",
+          "callee": "Depends"
+        },
+        {
+          "caller": "dev_promote_to_admin",
+          "callee": "execute"
+        },
+        {
+          "caller": "dev_promote_to_admin",
+          "callee": "text"
+        },
+        {
+          "caller": "dev_promote_to_admin",
+          "callee": "scalar"
+        },
+        {
+          "caller": "dev_promote_to_admin",
+          "callee": "commit"
+        },
+        {
+          "caller": "dev_promote_to_admin",
+          "callee": "rollback"
+        },
+        {
+          "caller": "dev_promote_to_admin",
+          "callee": "str"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "Depends"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "Header"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "Cookie"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "Depends"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "calculate_fire_plan"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "lower"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "str"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "calculate_financial_health_score"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "lower"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "str"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "save_fire_calculation"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "UUID"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "print"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "save_health_score"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "UUID"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "print"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "Depends"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "Header"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "Cookie"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "Depends"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "calculate_fire_plan"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "lower"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "str"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "get"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "lower"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "str"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "normalize_interest_rate"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "suggest_optimal_emi"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "calculate_emi"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "generate_amortization_schedule"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "calculate_fire_plan"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "get"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "calculate_financial_health_score"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "get"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "lower"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "str"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "ExplainRequest"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "int"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "int"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "retrieve"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "build_prompt"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "generate_explanation"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "print"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "save_fire_calculation"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "UUID"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "get"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "get"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "get"
+        },
+        {
+          "caller": "compare_loan_vs_fire",
+          "callee": "print"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "loan_only",
+          "callee": "Depends"
+        },
+        {
+          "caller": "loan_only",
+          "callee": "Header"
+        },
+        {
+          "caller": "loan_only",
+          "callee": "Cookie"
+        },
+        {
+          "caller": "loan_only",
+          "callee": "normalize_interest_rate"
+        },
+        {
+          "caller": "loan_only",
+          "callee": "calculate_emi"
+        },
+        {
+          "caller": "loan_only",
+          "callee": "generate_amortization_schedule"
+        },
+        {
+          "caller": "loan_only",
+          "callee": "suggest_optimal_emi"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "get_current_user_info",
+          "callee": "Depends"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "execute"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "limit"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "order_by"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "where"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "select"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "UUID"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "desc"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "all"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "scalars"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "str"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "isoformat"
+        },
+        {
+          "caller": "get_fire_history",
+          "callee": "len"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "get_health_history",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_health_history",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_health_history",
+          "callee": "execute"
+        },
+        {
+          "caller": "get_health_history",
+          "callee": "limit"
+        },
+        {
+          "caller": "get_health_history",
+          "callee": "order_by"
+        },
+        {
+          "caller": "get_health_history",
+          "callee": "where"
+        },
+        {
+          "caller": "get_health_history",
+          "callee": "select"
+        },
+        {
+          "caller": "get_health_history",
+          "callee": "UUID"
+        },
+        {
+          "caller": "get_health_history",
+          "callee": "desc"
+        },
+        {
+          "caller": "get_health_history",
+          "callee": "all"
+        },
+        {
+          "caller": "get_health_history",
+          "callee": "scalars"
+        },
+        {
+          "caller": "get_health_history",
+          "callee": "isoformat"
+        },
+        {
+          "caller": "get_health_history",
+          "callee": "len"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "logout",
+          "callee": "delete_cookie"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "Depends"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "Depends"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "calculate_fire_plan"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "lower"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "str"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "save_fire_calculation"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "UUID"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "get"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "get"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "get"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "calculate_financial_health_score"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "lower"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "str"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "save_health_score"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "UUID"
+        },
+        {
+          "caller": "fire_direct",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "health_direct",
+          "callee": "Depends"
+        },
+        {
+          "caller": "health_direct",
+          "callee": "calculate_financial_health_score"
+        },
+        {
+          "caller": "health_direct",
+          "callee": "lower"
+        },
+        {
+          "caller": "health_direct",
+          "callee": "str"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "loan_direct",
+          "callee": "Depends"
+        },
+        {
+          "caller": "loan_direct",
+          "callee": "Depends"
+        },
+        {
+          "caller": "loan_direct",
+          "callee": "normalize_interest_rate"
+        },
+        {
+          "caller": "loan_direct",
+          "callee": "calculate_emi"
+        },
+        {
+          "caller": "loan_direct",
+          "callee": "generate_amortization_schedule"
+        },
+        {
+          "caller": "loan_direct",
+          "callee": "suggest_optimal_emi"
+        },
+        {
+          "caller": "loan_direct",
+          "callee": "save_loan_simulation"
+        },
+        {
+          "caller": "loan_direct",
+          "callee": "UUID"
+        },
+        {
+          "caller": "loan_direct",
+          "callee": "print"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "get_loan_history",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_loan_history",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_loan_history",
+          "callee": "execute"
+        },
+        {
+          "caller": "get_loan_history",
+          "callee": "limit"
+        },
+        {
+          "caller": "get_loan_history",
+          "callee": "order_by"
+        },
+        {
+          "caller": "get_loan_history",
+          "callee": "where"
+        },
+        {
+          "caller": "get_loan_history",
+          "callee": "select"
+        },
+        {
+          "caller": "get_loan_history",
+          "callee": "UUID"
+        },
+        {
+          "caller": "get_loan_history",
+          "callee": "desc"
+        },
+        {
+          "caller": "get_loan_history",
+          "callee": "all"
+        },
+        {
+          "caller": "get_loan_history",
+          "callee": "scalars"
+        },
+        {
+          "caller": "get_loan_history",
+          "callee": "isoformat"
+        },
+        {
+          "caller": "get_loan_history",
+          "callee": "len"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "execute"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "limit"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "order_by"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "where"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "select"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "UUID"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "desc"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "scalar_one_or_none"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "execute"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "limit"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "order_by"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "where"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "select"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "UUID"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "desc"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "scalar_one_or_none"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "execute"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "order_by"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "where"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "select"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "UUID"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "desc"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "all"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "scalars"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "isoformat"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "isoformat"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "len"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        }
+      ]
+    },
+    "chat_service/execution_engine.py": {
+      "file": "chat_service/execution_engine.py",
+      "imports": [
+        ".tool_executor"
+      ],
+      "functions": [
+        "execute_chain"
+      ],
+      "calls": [
+        {
+          "caller": "execute_chain",
+          "callee": "items"
+        },
+        {
+          "caller": "execute_chain",
+          "callee": "to_dict"
+        },
+        {
+          "caller": "execute_chain",
+          "callee": "execute_tool"
+        },
+        {
+          "caller": "execute_chain",
+          "callee": "update_from_tool"
+        }
+      ]
+    },
+    "chat_service/explanation_engine.py": {
+      "file": "chat_service/explanation_engine.py",
+      "imports": [],
+      "functions": [
+        "__init__",
+        "generate"
+      ],
+      "calls": [
+        {
+          "caller": "generate",
+          "callee": "nerate_text(p"
+        }
+      ]
+    },
+    "chat_service/financial_interpreter.py": {
+      "file": "chat_service/financial_interpreter.py",
+      "imports": [
+        "re",
+        "json"
+      ],
+      "functions": [
+        "rd_to_number(s",
+        "__init__",
+        "tract(s",
+        "tract_number_phrase(s"
+      ],
+      "calls": [
+        {
+          "caller": "rd_to_number(s",
+          "callee": "lit()"
+        },
+        {
+          "caller": "rd_to_number(s",
+          "callee": "wer()"
+        },
+        {
+          "caller": "rd_to_number(s",
+          "callee": "x(1"
+        },
+        {
+          "caller": "tract_number_phrase(s",
+          "callee": "arch(p"
+        },
+        {
+          "caller": "tract_number_phrase(s",
+          "callee": "rip()"
+        },
+        {
+          "caller": "tract_number_phrase(s",
+          "callee": "oup(1"
+        },
+        {
+          "caller": "tract_number_phrase(s",
+          "callee": "llmatch(r"
+        },
+        {
+          "caller": "tract_number_phrase(s",
+          "callee": "oat(v"
+        },
+        {
+          "caller": "tract_number_phrase(s",
+          "callee": "rd_to_number(v"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "tract_number_phrase(i"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "tract_number_phrase(e"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "tract_number_phrase(s"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "tract_number_phrase(e"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "tract_number_phrase(y"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "arch(r"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "ems()"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "n(m"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "in(["
+        },
+        {
+          "caller": "tract(s",
+          "callee": "t('"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "t('"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "json(prompt)"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "ce(llm_dat"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "m_dat"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "ce(llm_dat"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "lm_dat"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "n_a"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "n_y"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "n_i"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "n_e"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "ta[\"l"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "ta[\"l"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "ta[\"l"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "i, 2)"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "n_e"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "n_a"
+        },
+        {
+          "caller": "tract(s",
+          "callee": "_in"
+        }
+      ]
+    },
+    "chat_service/financial_sanity.py": {
+      "file": "chat_service/financial_sanity.py",
+      "imports": [],
+      "functions": [
+        "validate"
+      ],
+      "calls": [
+        {
+          "caller": "validate",
+          "callee": "end(\"M"
+        },
+        {
+          "caller": "validate",
+          "callee": "end(\"L"
+        },
+        {
+          "caller": "validate",
+          "callee": "end(\"S"
+        },
+        {
+          "caller": "validate",
+          "callee": "end(\"E"
+        },
+        {
+          "caller": "validate",
+          "callee": "end(\"L"
+        },
+        {
+          "caller": "validate",
+          "callee": "(\"You "
+        },
+        {
+          "caller": "validate",
+          "callee": "(\"Savi"
+        },
+        {
+          "caller": "validate",
+          "callee": "(\"EMI "
+        },
+        {
+          "caller": "validate",
+          "callee": "state"
+        },
+        {
+          "caller": "validate",
+          "callee": "(\"FIRE"
+        },
+        {
+          "caller": "validate",
+          "callee": "(\"Retu"
+        },
+        {
+          "caller": "validate",
+          "callee": "nusual"
+        },
+        {
+          "caller": "validate",
+          "callee": "avings"
+        },
+        {
+          "caller": "validate",
+          "callee": "w)\n\n    "
+        }
+      ]
+    },
+    "chat_service/financial_state.py": {
+      "file": "chat_service/financial_state.py",
+      "imports": [
+        "datetime",
+        "typing"
+      ],
+      "functions": [
+        "__init__",
+        "alidate_fire(se",
+        "ct[str,",
+        "(self, label",
+        "essage: ",
+        ": Dict[st",
+        "t(self)",
+        "om_tool(self, to"
+      ],
+      "calls": [
+        {
+          "caller": "__init__",
+          "callee": "isoformat"
+        },
+        {
+          "caller": "__init__",
+          "callee": "utcnow"
+        },
+        {
+          "caller": "alidate_fire(se",
+          "callee": "nt(\"🔥"
+        },
+        {
+          "caller": "om_tool(self, to",
+          "callee": "_nu"
+        },
+        {
+          "caller": "om_tool(self, to",
+          "callee": "_ye"
+        },
+        {
+          "caller": "om_tool(self, to",
+          "callee": "l_w"
+        },
+        {
+          "caller": "om_tool(self, to",
+          "callee": ")\n\n"
+        },
+        {
+          "caller": "om_tool(self, to",
+          "callee": "mme"
+        },
+        {
+          "caller": "om_tool(self, to",
+          "callee": "mal"
+        },
+        {
+          "caller": "om_tool(self, to",
+          "callee": "nci"
+        },
+        {
+          "caller": "om_tool(self, to",
+          "callee": "()\n\n    #"
+        },
+        {
+          "caller": "om_tool(self, to",
+          "callee": "isofor"
+        },
+        {
+          "caller": "(self, label",
+          "callee": "      "
+        },
+        {
+          "caller": "(self, label",
+          "callee": "        }"
+        },
+        {
+          "caller": "(self, label",
+          "callee": "format"
+        },
+        {
+          "caller": "essage: ",
+          "callee": "\n    #"
+        },
+        {
+          "caller": ": Dict[st",
+          "callee": "t(\""
+        },
+        {
+          "caller": ": Dict[st",
+          "callee": "   "
+        },
+        {
+          "caller": ": Dict[st",
+          "callee": "  retu"
+        }
+      ]
+    },
+    "chat_service/guardrails.py": {
+      "file": "chat_service/guardrails.py",
+      "imports": [],
+      "functions": [
+        "validate"
+      ],
+      "calls": [
+        {
+          "caller": "validate",
+          "callee": "ValueError"
+        },
+        {
+          "caller": "validate",
+          "callee": "ValueError"
+        },
+        {
+          "caller": "validate",
+          "callee": "ValueError"
+        },
+        {
+          "caller": "validate",
+          "callee": "getattr"
+        }
+      ]
+    },
+    "chat_service/llm_client.py": {
+      "file": "chat_service/llm_client.py",
+      "imports": [
+        "huggingface_hub",
+        "dotenv",
+        "asyncio",
+        "google.genai",
+        "os",
+        "re",
+        "google",
+        "json"
+      ],
+      "functions": [
+        "act_json(sel",
+        "__init__",
+        "_fallback_hf",
+        "xt(self, prom"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "load_dotenv"
+        },
+        {
+          "caller": "__init__",
+          "callee": "Client"
+        },
+        {
+          "caller": "__init__",
+          "callee": "getenv"
+        },
+        {
+          "caller": "__init__",
+          "callee": "getenv"
+        },
+        {
+          "caller": "__init__",
+          "callee": "AsyncInferenceClient"
+        },
+        {
+          "caller": "_fallback_hf",
+          "callee": "ValueError"
+        },
+        {
+          "caller": "_fallback_hf",
+          "callee": "chat_completion"
+        },
+        {
+          "caller": "_fallback_hf",
+          "callee": "strip"
+        },
+        {
+          "caller": "act_json(sel",
+          "callee": "rate_content(\n  "
+        },
+        {
+          "caller": "act_json(sel",
+          "callee": "rateContentConfig(\n  "
+        },
+        {
+          "caller": "act_json(sel",
+          "callee": "t(f\"G"
+        },
+        {
+          "caller": "act_json(sel",
+          "callee": "lback_hf(pro"
+        },
+        {
+          "caller": "act_json(sel",
+          "callee": "t(f\"F"
+        },
+        {
+          "caller": "act_json(sel",
+          "callee": "ith(\"```\")"
+        },
+        {
+          "caller": "act_json(sel",
+          "callee": "```"
+        },
+        {
+          "caller": "act_json(sel",
+          "callee": "```"
+        },
+        {
+          "caller": "act_json(sel",
+          "callee": "``$"
+        },
+        {
+          "caller": "act_json(sel",
+          "callee": "\n\n   "
+        },
+        {
+          "caller": "act_json(sel",
+          "callee": "ext)\n"
+        },
+        {
+          "caller": "xt(self, prom",
+          "callee": "ntent(\n         "
+        },
+        {
+          "caller": "xt(self, prom",
+          "callee": "tentConfig(\n         "
+        },
+        {
+          "caller": "xt(self, prom",
+          "callee": "ini t"
+        },
+        {
+          "caller": "xt(self, prom",
+          "callee": "f(prompt, te"
+        },
+        {
+          "caller": "xt(self, prom",
+          "callee": "lback"
+        }
+      ]
+    },
+    "chat_service/main.py": {
+      "file": "chat_service/main.py",
+      "imports": [
+        "shared.models.user",
+        ".orchestrator",
+        "shared.services.auth",
+        "sqlalchemy.ext.asyncio",
+        "pydantic",
+        ".llm_client",
+        "shared.services.dashboard_routes",
+        "typing",
+        "fastapi",
+        "shared.services.fire_service",
+        "sqlalchemy",
+        "shared.services.auth_routes",
+        "shared.models",
+        "shared.database"
+      ],
+      "functions": [
+        "chat_agent",
+        "db_health"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "APIRouter"
+        },
+        {
+          "caller": "<global>",
+          "callee": "LLMClient"
+        },
+        {
+          "caller": "<global>",
+          "callee": "FinancialOrchestrator"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "Depends"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "Depends"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "get"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "get"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "startswith"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "replace"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "print"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "dict"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "handle_request"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "print"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "get"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "get"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "get"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "get"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "save_fire_calculation"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "get"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "get"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "get"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "get"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "get"
+        },
+        {
+          "caller": "chat_agent",
+          "callee": "print"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "db_health",
+          "callee": "Depends"
+        },
+        {
+          "caller": "db_health",
+          "callee": "execute"
+        },
+        {
+          "caller": "db_health",
+          "callee": "text"
+        },
+        {
+          "caller": "db_health",
+          "callee": "scalar"
+        }
+      ]
+    },
+    "chat_service/mcp_router.py": {
+      "file": "chat_service/mcp_router.py",
+      "imports": [],
+      "functions": [
+        "route"
+      ],
+      "calls": [
+        {
+          "caller": "route",
+          "callee": "append"
+        },
+        {
+          "caller": "route",
+          "callee": "append"
+        },
+        {
+          "caller": "route",
+          "callee": "append"
+        }
+      ]
+    },
+    "chat_service/memory.py": {
+      "file": "chat_service/memory.py",
+      "imports": [
+        ".state"
+      ],
+      "functions": [
+        "__init__",
+        "save_state",
+        "get_state"
+      ],
+      "calls": [
+        {
+          "caller": "get_state",
+          "callee": "FinancialState"
+        }
+      ]
+    },
+    "chat_service/memory_redis.py": {
+      "file": "chat_service/memory_redis.py",
+      "imports": [
+        "redis",
+        "typing",
+        "os",
+        ".financial_state",
+        "json"
+      ],
+      "functions": [
+        "__init__",
+        "tate(self,",
+        "rsation(self, se",
+        "ersation(self, se",
+        "    "
+      ],
+      "calls": [
+        {
+          "caller": "__init__",
+          "callee": "env(\"R"
+        },
+        {
+          "caller": "__init__",
+          "callee": "(os"
+        },
+        {
+          "caller": "__init__",
+          "callee": "env(\"R"
+        },
+        {
+          "caller": "__init__",
+          "callee": "(os"
+        },
+        {
+          "caller": "__init__",
+          "callee": "env(\"R"
+        },
+        {
+          "caller": "__init__",
+          "callee": "(os"
+        },
+        {
+          "caller": "__init__",
+          "callee": "env(\"R"
+        },
+        {
+          "caller": "__init__",
+          "callee": "is(\n "
+        },
+        {
+          "caller": "tate(self,",
+          "callee": "   "
+        },
+        {
+          "caller": "tate(self,",
+          "callee": "state"
+        },
+        {
+          "caller": "tate(self,",
+          "callee": "t()),\n "
+        },
+        {
+          "caller": "tate(self,",
+          "callee": "y)\n"
+        },
+        {
+          "caller": "tate(self,",
+          "callee": "data)"
+        },
+        {
+          "caller": "tate(self,",
+          "callee": "ict(state"
+        },
+        {
+          "caller": "ersation(self, se",
+          "callee": ", jso"
+        },
+        {
+          "caller": "ersation(self, se",
+          "callee": "sage)"
+        },
+        {
+          "caller": "ersation(self, se",
+          "callee": ", 0, "
+        },
+        {
+          "caller": "ersation(self, se",
+          "callee": "y, sel"
+        },
+        {
+          "caller": "rsation(self, se",
+          "callee": "y, 0, "
+        },
+        {
+          "caller": "rsation(self, se",
+          "callee": "for m"
+        }
+      ]
+    },
+    "chat_service/models.py": {
+      "file": "chat_service/models.py",
+      "imports": [
+        "pydantic"
+      ],
+      "functions": [],
+      "calls": []
+    },
+    "chat_service/orchestrator.py": {
+      "file": "chat_service/orchestrator.py",
+      "imports": [
+        ".guardrails",
+        ".financial_interpreter",
+        ".execution_engine",
+        ".planner",
+        ".financial_state",
+        ".financial_sanity",
+        ".explanation_engine"
+      ],
+      "functions": [
+        "__init__",
+        "handle_request"
+      ],
+      "calls": [
+        {
+          "caller": "__init__",
+          "callee": "FinancialInterpreter"
+        },
+        {
+          "caller": "__init__",
+          "callee": "Planner"
+        },
+        {
+          "caller": "__init__",
+          "callee": "ExecutionEngine"
+        },
+        {
+          "caller": "__init__",
+          "callee": "ExplanationEngine"
+        },
+        {
+          "caller": "__init__",
+          "callee": "Guardrails"
+        },
+        {
+          "caller": "__init__",
+          "callee": "FinancialSanityEngine"
+        },
+        {
+          "caller": "handle_request",
+          "callee": "ncialState()\n "
+        },
+        {
+          "caller": "handle_request",
+          "callee": "s() i"
+        },
+        {
+          "caller": "handle_request",
+          "callee": "te(cle"
+        },
+        {
+          "caller": "handle_request",
+          "callee": "message"
+        },
+        {
+          "caller": "handle_request",
+          "callee": "     "
+        },
+        {
+          "caller": "handle_request",
+          "callee": "e, k, v"
+        },
+        {
+          "caller": "handle_request",
+          "callee": "      # "
+        },
+        {
+          "caller": "handle_request",
+          "callee": "proxim"
+        },
+        {
+          "caller": "handle_request",
+          "callee": "t are "
+        },
+        {
+          "caller": "handle_request",
+          "callee": "tell m"
+        },
+        {
+          "caller": "handle_request",
+          "callee": "y have"
+        },
+        {
+          "caller": "handle_request",
+          "callee": "    \"to"
+        },
+        {
+          "caller": "handle_request",
+          "callee": "  if not"
+        },
+        {
+          "caller": "handle_request",
+          "callee": "back so"
+        },
+        {
+          "caller": "handle_request",
+          "callee": " tool_resul"
+        },
+        {
+          "caller": "handle_request",
+          "callee": "tools_to_run,"
+        },
+        {
+          "caller": "handle_request",
+          "callee": "        "
+        },
+        {
+          "caller": "handle_request",
+          "callee": ": tools"
+        }
+      ]
+    },
+    "chat_service/pipeline/chat_prompt_builder.py": {
+      "file": "chat_service/pipeline/chat_prompt_builder.py",
+      "imports": [],
+      "functions": [
+        "build_chat_prompt"
+      ],
+      "calls": []
+    },
+    "chat_service/planner.py": {
+      "file": "chat_service/planner.py",
+      "imports": [],
+      "functions": [
+        "__init__",
+        "create_plan"
+      ],
+      "calls": [
+        {
+          "caller": "create_plan",
+          "callee": "nd(\"ca"
+        },
+        {
+          "caller": "create_plan",
+          "callee": "calcul"
+        }
+      ]
+    },
+    "chat_service/scenario_engine.py": {
+      "file": "chat_service/scenario_engine.py",
+      "imports": [
+        ".execution_engine",
+        "copy"
+      ],
+      "functions": [
+        "__init__",
+        "simulate"
+      ],
+      "calls": [
+        {
+          "caller": "__init__",
+          "callee": "ExecutionEngine"
+        },
+        {
+          "caller": "simulate",
+          "callee": "deepcopy"
+        },
+        {
+          "caller": "simulate",
+          "callee": "items"
+        },
+        {
+          "caller": "simulate",
+          "callee": "setattr"
+        },
+        {
+          "caller": "simulate",
+          "callee": "invalidate_fire"
+        },
+        {
+          "caller": "simulate",
+          "callee": "execute_plan"
+        }
+      ]
+    },
+    "chat_service/state.py": {
+      "file": "chat_service/state.py",
+      "imports": [
+        "pydantic",
+        "typing"
+      ],
+      "functions": [],
+      "calls": []
+    },
+    "chat_service/tool_executor.py": {
+      "file": "chat_service/tool_executor.py",
+      "imports": [
+        "logging",
+        "fire_service.fire_engine",
+        "loan_optimzer_service.loan_engine",
+        "health_service.financial_health_score"
+      ],
+      "functions": [
+        "execute_tool"
+      ],
+      "calls": [
+        {
+          "caller": "execute_tool",
+          "callee": "lower"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "str"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "bool"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "calculate_fire_plan"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "lower"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "str"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "calculate_financial_health_score"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "get"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "normalize_interest_rate"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "calculate_emi"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "generate_amortization_schedule"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "suggest_optimal_emi"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "error"
+        },
+        {
+          "caller": "execute_tool",
+          "callee": "str"
+        }
+      ]
+    },
+    "chat_service/tools.py": {
+      "file": "chat_service/tools.py",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "docs/DATABASE_ARCHITECTURE.md": {
+      "file": "docs/DATABASE_ARCHITECTURE.md",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "explain_service/main.py": {
+      "file": "explain_service/main.py",
+      "imports": [
+        "shutil",
+        ".pipeline.retrieval",
+        ".pipeline.vectordb",
+        "shared.services.service_auth",
+        "pydantic",
+        ".pipeline.prompt_builder",
+        ".pipeline.llm_client",
+        "typing",
+        ".pipeline.ingestion",
+        "os",
+        "fastapi"
+      ],
+      "functions": [
+        "verify_admin",
+        "admin_delete",
+        "protected_endpoint",
+        "admin_upload",
+        "ask_question",
+        "health_check",
+        "verify_user_or_admin",
+        "explain_strategy"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "APIRouter"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "makedirs"
+        },
+        {
+          "caller": "verify_admin",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "verify_user_or_admin",
+          "callee": "Header"
+        },
+        {
+          "caller": "verify_user_or_admin",
+          "callee": "Header"
+        },
+        {
+          "caller": "verify_user_or_admin",
+          "callee": "verify_admin"
+        },
+        {
+          "caller": "verify_user_or_admin",
+          "callee": "CurrentUser"
+        },
+        {
+          "caller": "verify_user_or_admin",
+          "callee": "replace"
+        },
+        {
+          "caller": "verify_user_or_admin",
+          "callee": "decode_token"
+        },
+        {
+          "caller": "verify_user_or_admin",
+          "callee": "CurrentUser"
+        },
+        {
+          "caller": "verify_user_or_admin",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "explain_strategy",
+          "callee": "Depends"
+        },
+        {
+          "caller": "explain_strategy",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "explain_strategy",
+          "callee": "retrieve"
+        },
+        {
+          "caller": "explain_strategy",
+          "callee": "build_prompt"
+        },
+        {
+          "caller": "explain_strategy",
+          "callee": "generate_explanation"
+        },
+        {
+          "caller": "explain_strategy",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "explain_strategy",
+          "callee": "str"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "ask_question",
+          "callee": "Depends"
+        },
+        {
+          "caller": "ask_question",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "ask_question",
+          "callee": "retrieve"
+        },
+        {
+          "caller": "ask_question",
+          "callee": "build_qa_prompt"
+        },
+        {
+          "caller": "ask_question",
+          "callee": "generate_raw_text"
+        },
+        {
+          "caller": "ask_question",
+          "callee": "print"
+        },
+        {
+          "caller": "ask_question",
+          "callee": "print"
+        },
+        {
+          "caller": "ask_question",
+          "callee": "print"
+        },
+        {
+          "caller": "ask_question",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "ask_question",
+          "callee": "str"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "admin_upload",
+          "callee": "File"
+        },
+        {
+          "caller": "admin_upload",
+          "callee": "Depends"
+        },
+        {
+          "caller": "admin_upload",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "admin_upload",
+          "callee": "join"
+        },
+        {
+          "caller": "admin_upload",
+          "callee": "open"
+        },
+        {
+          "caller": "admin_upload",
+          "callee": "copyfileobj"
+        },
+        {
+          "caller": "admin_upload",
+          "callee": "ingest_file"
+        },
+        {
+          "caller": "<global>",
+          "callee": "delete"
+        },
+        {
+          "caller": "admin_delete",
+          "callee": "Depends"
+        },
+        {
+          "caller": "admin_delete",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "admin_delete",
+          "callee": "delete"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "protected_endpoint",
+          "callee": "Depends"
+        }
+      ]
+    },
+    "explain_service/pipeline/chunker.py": {
+      "file": "explain_service/pipeline/chunker.py",
+      "imports": [],
+      "functions": [
+        "chunk_text"
+      ],
+      "calls": [
+        {
+          "caller": "chunk_text",
+          "callee": "split"
+        },
+        {
+          "caller": "chunk_text",
+          "callee": "len"
+        },
+        {
+          "caller": "chunk_text",
+          "callee": "len"
+        },
+        {
+          "caller": "chunk_text",
+          "callee": "append"
+        },
+        {
+          "caller": "chunk_text",
+          "callee": "strip"
+        },
+        {
+          "caller": "chunk_text",
+          "callee": "append"
+        },
+        {
+          "caller": "chunk_text",
+          "callee": "strip"
+        }
+      ]
+    },
+    "explain_service/pipeline/embedder.py": {
+      "file": "explain_service/pipeline/embedder.py",
+      "imports": [
+        ".vectordb"
+      ],
+      "functions": [
+        "embed_text"
+      ],
+      "calls": [
+        {
+          "caller": "embed_text",
+          "callee": "embed"
+        }
+      ]
+    },
+    "explain_service/pipeline/file_parser.py": {
+      "file": "explain_service/pipeline/file_parser.py",
+      "imports": [
+        "docx",
+        "pypdf",
+        "pandas",
+        "os",
+        "json"
+      ],
+      "functions": [
+        "extract_text_from_file"
+      ],
+      "calls": [
+        {
+          "caller": "extract_text_from_file",
+          "callee": "lower"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "splitext"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "open"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "read"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "PdfReader"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "join"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "extract_text"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "Document"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "join"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "read_csv"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "to_string"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "open"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "load"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "dumps"
+        },
+        {
+          "caller": "extract_text_from_file",
+          "callee": "ValueError"
+        }
+      ]
+    },
+    "explain_service/pipeline/ingestion.py": {
+      "file": "explain_service/pipeline/ingestion.py",
+      "imports": [
+        ".validator",
+        ".metadata",
+        ".file_parser",
+        ".chunker",
+        ".versioning",
+        ".vectordb",
+        "uuid",
+        ".embedder"
+      ],
+      "functions": [
+        "ingest_file"
+      ],
+      "calls": [
+        {
+          "caller": "ingest_file",
+          "callee": "extract_text_from_file"
+        },
+        {
+          "caller": "ingest_file",
+          "callee": "validate_text"
+        },
+        {
+          "caller": "ingest_file",
+          "callee": "chunk_text"
+        },
+        {
+          "caller": "ingest_file",
+          "callee": "embed_text"
+        },
+        {
+          "caller": "ingest_file",
+          "callee": "get_next_version"
+        },
+        {
+          "caller": "ingest_file",
+          "callee": "generate_metadata"
+        },
+        {
+          "caller": "ingest_file",
+          "callee": "enumerate"
+        },
+        {
+          "caller": "ingest_file",
+          "callee": "str"
+        },
+        {
+          "caller": "ingest_file",
+          "callee": "uuid4"
+        },
+        {
+          "caller": "ingest_file",
+          "callee": "copy"
+        },
+        {
+          "caller": "ingest_file",
+          "callee": "append"
+        },
+        {
+          "caller": "ingest_file",
+          "callee": "upsert"
+        },
+        {
+          "caller": "ingest_file",
+          "callee": "len"
+        }
+      ]
+    },
+    "explain_service/pipeline/llm_client.py": {
+      "file": "explain_service/pipeline/llm_client.py",
+      "imports": [
+        "huggingface_hub",
+        "dotenv",
+        "asyncio",
+        "google.genai",
+        "os",
+        "re",
+        "google",
+        "hashlib",
+        "json"
+      ],
+      "functions": [
+        "_fallback_response",
+        "generate_raw_text",
+        "generate_explanation",
+        "_fallback_generate"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "load_dotenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "_fallback_generate",
+          "callee": "ValueError"
+        },
+        {
+          "caller": "_fallback_generate",
+          "callee": "AsyncInferenceClient"
+        },
+        {
+          "caller": "_fallback_generate",
+          "callee": "chat_completion"
+        },
+        {
+          "caller": "_fallback_generate",
+          "callee": "strip"
+        },
+        {
+          "caller": "_fallback_generate",
+          "callee": "print"
+        },
+        {
+          "caller": "_fallback_generate",
+          "callee": "str"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "hexdigest"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "sha256"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "encode"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "Client"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "generate_content"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "GenerateContentConfig"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "strip"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "print"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "str"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "_fallback_generate"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "print"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "str"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "_fallback_response"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "startswith"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "sub"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "sub"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "sub"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "strip"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "loads"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "print"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "setdefault"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "setdefault"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "setdefault"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "get"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "get"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "strip"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "append"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "append"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "str"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "get"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "get"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "strip"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "str"
+        },
+        {
+          "caller": "generate_explanation",
+          "callee": "str"
+        },
+        {
+          "caller": "generate_raw_text",
+          "callee": "Client"
+        },
+        {
+          "caller": "generate_raw_text",
+          "callee": "generate_content"
+        },
+        {
+          "caller": "generate_raw_text",
+          "callee": "strip"
+        },
+        {
+          "caller": "generate_raw_text",
+          "callee": "print"
+        },
+        {
+          "caller": "generate_raw_text",
+          "callee": "str"
+        },
+        {
+          "caller": "generate_raw_text",
+          "callee": "_fallback_generate"
+        },
+        {
+          "caller": "generate_raw_text",
+          "callee": "print"
+        },
+        {
+          "caller": "generate_raw_text",
+          "callee": "str"
+        }
+      ]
+    },
+    "explain_service/pipeline/metadata.py": {
+      "file": "explain_service/pipeline/metadata.py",
+      "imports": [
+        "datetime"
+      ],
+      "functions": [
+        "generate_metadata"
+      ],
+      "calls": [
+        {
+          "caller": "generate_metadata",
+          "callee": "str"
+        },
+        {
+          "caller": "generate_metadata",
+          "callee": "now"
+        }
+      ]
+    },
+    "explain_service/pipeline/prompt_builder.py": {
+      "file": "explain_service/pipeline/prompt_builder.py",
+      "imports": [],
+      "functions": [
+        "build_qa_prompt",
+        "build_prompt"
+      ],
+      "calls": []
+    },
+    "explain_service/pipeline/retrieval.py": {
+      "file": "explain_service/pipeline/retrieval.py",
+      "imports": [
+        ".vectordb",
+        "typing"
+      ],
+      "functions": [
+        "retrieve"
+      ],
+      "calls": [
+        {
+          "caller": "retrieve",
+          "callee": "embed"
+        },
+        {
+          "caller": "retrieve",
+          "callee": "query"
+        },
+        {
+          "caller": "retrieve",
+          "callee": "set"
+        },
+        {
+          "caller": "retrieve",
+          "callee": "append"
+        },
+        {
+          "caller": "retrieve",
+          "callee": "add"
+        },
+        {
+          "caller": "retrieve",
+          "callee": "append"
+        },
+        {
+          "caller": "retrieve",
+          "callee": "join"
+        },
+        {
+          "caller": "retrieve",
+          "callee": "list"
+        },
+        {
+          "caller": "retrieve",
+          "callee": "len"
+        },
+        {
+          "caller": "retrieve",
+          "callee": "sum"
+        },
+        {
+          "caller": "retrieve",
+          "callee": "len"
+        },
+        {
+          "caller": "retrieve",
+          "callee": "round"
+        },
+        {
+          "caller": "retrieve",
+          "callee": "max"
+        }
+      ]
+    },
+    "explain_service/pipeline/validator.py": {
+      "file": "explain_service/pipeline/validator.py",
+      "imports": [],
+      "functions": [
+        "validate_text"
+      ],
+      "calls": [
+        {
+          "caller": "validate_text",
+          "callee": "len"
+        },
+        {
+          "caller": "validate_text",
+          "callee": "strip"
+        },
+        {
+          "caller": "validate_text",
+          "callee": "ValueError"
+        },
+        {
+          "caller": "validate_text",
+          "callee": "strip"
+        }
+      ]
+    },
+    "explain_service/pipeline/vectordb.py": {
+      "file": "explain_service/pipeline/vectordb.py",
+      "imports": [
+        "os",
+        "dotenv",
+        "pinecone"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "load_dotenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Pinecone"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Index"
+        }
+      ]
+    },
+    "explain_service/pipeline/versioning.py": {
+      "file": "explain_service/pipeline/versioning.py",
+      "imports": [],
+      "functions": [
+        "get_next_version"
+      ],
+      "calls": [
+        {
+          "caller": "get_next_version",
+          "callee": "query"
+        },
+        {
+          "caller": "get_next_version",
+          "callee": "append"
+        },
+        {
+          "caller": "get_next_version",
+          "callee": "int"
+        },
+        {
+          "caller": "get_next_version",
+          "callee": "max"
+        }
+      ]
+    },
+    "fire_service/fire_engine.py": {
+      "file": "fire_service/fire_engine.py",
+      "imports": [],
+      "functions": [
+        "calculate_fire_plan"
+      ],
+      "calls": [
+        {
+          "caller": "calculate_fire_plan",
+          "callee": "und(c"
+        },
+        {
+          "caller": "calculate_fire_plan",
+          "callee": "und(w"
+        }
+      ]
+    },
+    "fire_service/main.py": {
+      "file": "fire_service/main.py",
+      "imports": [
+        ".fire_engine",
+        "shared.services.service_auth",
+        "pydantic",
+        "typing",
+        "fastapi",
+        "uuid"
+      ],
+      "functions": [
+        "health_check",
+        "calculate_fire",
+        "protected_endpoint"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "FastAPI"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "Depends"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "calculate_fire_plan"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "isinstance"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "FireResponse"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "get"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "get"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "FireResponse"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "get"
+        },
+        {
+          "caller": "calculate_fire",
+          "callee": "get"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "protected_endpoint",
+          "callee": "Depends"
+        }
+      ]
+    },
+    "health_service/financial_health_score.py": {
+      "file": "health_service/financial_health_score.py",
+      "imports": [],
+      "functions": [
+        "calculate_debt_score",
+        "calculate_financial_health_score",
+        "calculate_fire_progress_score",
+        "calculate_insurance_score",
+        "calculate_savings_score"
+      ],
+      "calls": [
+        {
+          "caller": "calculate_financial_health_score",
+          "callee": "calculate_savings_score"
+        },
+        {
+          "caller": "calculate_financial_health_score",
+          "callee": "calculate_debt_score"
+        },
+        {
+          "caller": "calculate_financial_health_score",
+          "callee": "calculate_fire_progress_score"
+        },
+        {
+          "caller": "calculate_financial_health_score",
+          "callee": "calculate_insurance_score"
+        }
+      ]
+    },
+    "health_service/main.py": {
+      "file": "health_service/main.py",
+      "imports": [
+        "pydantic",
+        "fastapi",
+        "shared.services.service_auth",
+        ".financial_health_score"
+      ],
+      "functions": [
+        "health_check",
+        "protected_endpoint",
+        "calculate_health"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "FastAPI"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "calculate_health",
+          "callee": "Depends"
+        },
+        {
+          "caller": "calculate_health",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "calculate_health",
+          "callee": "calculate_financial_health_score"
+        },
+        {
+          "caller": "calculate_health",
+          "callee": "HealthResponse"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "protected_endpoint",
+          "callee": "Depends"
+        }
+      ]
+    },
+    "loan_optimzer_service/exceptions.py": {
+      "file": "loan_optimzer_service/exceptions.py",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "loan_optimzer_service/loan_engine.py": {
+      "file": "loan_optimzer_service/loan_engine.py",
+      "imports": [
+        ".exceptions",
+        "math",
+        "typing"
+      ],
+      "functions": [
+        "validate_loan_inputs",
+        "suggest_optimal_emi",
+        "generate_amortization_schedule",
+        "normalize_interest_rate",
+        "calculate_emi"
+      ],
+      "calls": [
+        {
+          "caller": "validate_loan_inputs",
+          "callee": "InvalidLoanInputError"
+        },
+        {
+          "caller": "validate_loan_inputs",
+          "callee": "InvalidInterestRateError"
+        },
+        {
+          "caller": "validate_loan_inputs",
+          "callee": "InvalidLoanInputError"
+        },
+        {
+          "caller": "normalize_interest_rate",
+          "callee": "InvalidInterestRateError"
+        },
+        {
+          "caller": "normalize_interest_rate",
+          "callee": "InvalidInterestRateError"
+        },
+        {
+          "caller": "calculate_emi",
+          "callee": "validate_loan_inputs"
+        },
+        {
+          "caller": "calculate_emi",
+          "callee": "round"
+        },
+        {
+          "caller": "generate_amortization_schedule",
+          "callee": "EMIValidationError"
+        },
+        {
+          "caller": "generate_amortization_schedule",
+          "callee": "EMIValidationError"
+        },
+        {
+          "caller": "generate_amortization_schedule",
+          "callee": "round"
+        },
+        {
+          "caller": "generate_amortization_schedule",
+          "callee": "EMIValidationError"
+        },
+        {
+          "caller": "generate_amortization_schedule",
+          "callee": "EMIValidationError"
+        },
+        {
+          "caller": "generate_amortization_schedule",
+          "callee": "append"
+        },
+        {
+          "caller": "generate_amortization_schedule",
+          "callee": "round"
+        },
+        {
+          "caller": "generate_amortization_schedule",
+          "callee": "round"
+        },
+        {
+          "caller": "generate_amortization_schedule",
+          "callee": "round"
+        },
+        {
+          "caller": "generate_amortization_schedule",
+          "callee": "EMIValidationError"
+        },
+        {
+          "caller": "generate_amortization_schedule",
+          "callee": "round"
+        },
+        {
+          "caller": "suggest_optimal_emi",
+          "callee": "calculate_emi"
+        },
+        {
+          "caller": "suggest_optimal_emi",
+          "callee": "generate_amortization_schedule"
+        },
+        {
+          "caller": "suggest_optimal_emi",
+          "callee": "append"
+        },
+        {
+          "caller": "suggest_optimal_emi",
+          "callee": "round"
+        }
+      ]
+    },
+    "loan_optimzer_service/main.py": {
+      "file": "loan_optimzer_service/main.py",
+      "imports": [
+        "shared.services.service_auth",
+        ".loan_engine",
+        "pydantic",
+        "jose",
+        "typing",
+        "fastapi"
+      ],
+      "functions": [
+        "analyze_loan",
+        "verify_internal_api_key",
+        "get_current_user_from_token",
+        "protected_endpoint",
+        "health_check"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "FastAPI"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Field"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Field"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Field"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Field"
+        },
+        {
+          "caller": "verify_internal_api_key",
+          "callee": "Header"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "Header"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "Header"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "replace"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "get_current_user_from_token"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "CurrentUser"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "normalize_interest_rate"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "calculate_emi"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "generate_amortization_schedule"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "suggest_optimal_emi"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "EMIOption"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "EMIOption"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "LoanResponse"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "OptimizationResult"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "analyze_loan",
+          "callee": "str"
+        },
+        {
+          "caller": "get_current_user_from_token",
+          "callee": "decode"
+        },
+        {
+          "caller": "get_current_user_from_token",
+          "callee": "get"
+        },
+        {
+          "caller": "get_current_user_from_token",
+          "callee": "get"
+        },
+        {
+          "caller": "get_current_user_from_token",
+          "callee": "get"
+        },
+        {
+          "caller": "get_current_user_from_token",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "get_current_user_from_token",
+          "callee": "CurrentUser"
+        },
+        {
+          "caller": "get_current_user_from_token",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "protected_endpoint",
+          "callee": "Header"
+        },
+        {
+          "caller": "protected_endpoint",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "protected_endpoint",
+          "callee": "get_current_user_from_token"
+        },
+        {
+          "caller": "protected_endpoint",
+          "callee": "replace"
+        }
+      ]
+    },
+    "migrations/docker-compose.yml": {
+      "file": "migrations/docker-compose.yml",
+      "imports": [],
+      "functions": [],
+      "calls": []
+    },
+    "scratch/list_models.py": {
+      "file": "scratch/list_models.py",
+      "imports": [
+        "os",
+        "google",
+        "dotenv"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "load_dotenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Client"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "<global>",
+          "callee": "list"
+        },
+        {
+          "caller": "<global>",
+          "callee": "print"
+        },
+        {
+          "caller": "<global>",
+          "callee": "print"
+        }
+      ]
+    },
+    "scratch/test_fallback.py": {
+      "file": "scratch/test_fallback.py",
+      "imports": [
+        "os",
+        "huggingface_hub",
+        "dotenv",
+        "asyncio"
+      ],
+      "functions": [
+        "test_hf"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "load_dotenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "test_hf",
+          "callee": "print"
+        },
+        {
+          "caller": "test_hf",
+          "callee": "AsyncInferenceClient"
+        },
+        {
+          "caller": "test_hf",
+          "callee": "chat_completion"
+        },
+        {
+          "caller": "test_hf",
+          "callee": "print"
+        },
+        {
+          "caller": "test_hf",
+          "callee": "print"
+        },
+        {
+          "caller": "test_hf",
+          "callee": "print"
+        },
+        {
+          "caller": "<global>",
+          "callee": "run"
+        },
+        {
+          "caller": "<global>",
+          "callee": "test_hf"
+        }
+      ]
+    },
+    "shared/__init__.py": {
+      "file": "shared/__init__.py",
+      "imports": [
+        "shared.models"
+      ],
+      "functions": [],
+      "calls": []
+    },
+    "shared/database.py": {
+      "file": "shared/database.py",
+      "imports": [
+        "os",
+        "sqlalchemy.ext.asyncio",
+        "dotenv",
+        "sqlalchemy.orm"
+      ],
+      "functions": [
+        "get_db"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "load_dotenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ValueError"
+        },
+        {
+          "caller": "<global>",
+          "callee": "int"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "int"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "int"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "int"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "create_async_engine"
+        },
+        {
+          "caller": "<global>",
+          "callee": "lower"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "async_sessionmaker"
+        },
+        {
+          "caller": "<global>",
+          "callee": "declarative_base"
+        },
+        {
+          "caller": "get_db",
+          "callee": "AsyncSessionLocal"
+        },
+        {
+          "caller": "get_db",
+          "callee": "close"
+        }
+      ]
+    },
+    "shared/database_enterprise.py": {
+      "file": "shared/database_enterprise.py",
+      "imports": [
+        "dotenv",
+        "sqlalchemy.ext.asyncio",
+        "typing",
+        "sqlalchemy_utils",
+        "os",
+        "sqlalchemy.orm",
+        "sqlalchemy.dialects.postgresql",
+        "contextlib",
+        "sqlalchemy.pool",
+        "sqlalchemy"
+      ],
+      "functions": [
+        "bulk_update",
+        "get_primary_engine",
+        "bulk_insert",
+        "create_enterprise_engine",
+        "get_sync_database_url",
+        "set_tenant_id",
+        "drop_db",
+        "clear",
+        "get_session_factory",
+        "get_database_url",
+        "with_transaction",
+        "get_db",
+        "get_db_context",
+        "init_db",
+        "with_savepoint",
+        "get_replica_engine",
+        "__init__",
+        "check_database_connection",
+        "get_tenant_id"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "load_dotenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "lower"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "get_database_url",
+          "callee": "getenv"
+        },
+        {
+          "caller": "get_sync_database_url",
+          "callee": "get_database_url"
+        },
+        {
+          "caller": "get_sync_database_url",
+          "callee": "replace"
+        },
+        {
+          "caller": "create_enterprise_engine",
+          "callee": "get_database_url"
+        },
+        {
+          "caller": "create_enterprise_engine",
+          "callee": "EnterpriseDatabaseConfig"
+        },
+        {
+          "caller": "create_enterprise_engine",
+          "callee": "create_async_engine"
+        },
+        {
+          "caller": "<global>",
+          "callee": "create_enterprise_engine"
+        },
+        {
+          "caller": "<global>",
+          "callee": "async_sessionmaker"
+        },
+        {
+          "caller": "<global>",
+          "callee": "declarative_base"
+        },
+        {
+          "caller": "get_db",
+          "callee": "AsyncSessionLocal"
+        },
+        {
+          "caller": "get_db",
+          "callee": "close"
+        },
+        {
+          "caller": "get_db_context",
+          "callee": "AsyncSessionLocal"
+        },
+        {
+          "caller": "get_db_context",
+          "callee": "commit"
+        },
+        {
+          "caller": "get_db_context",
+          "callee": "rollback"
+        },
+        {
+          "caller": "get_db_context",
+          "callee": "close"
+        },
+        {
+          "caller": "init_db",
+          "callee": "begin"
+        },
+        {
+          "caller": "init_db",
+          "callee": "run_sync"
+        },
+        {
+          "caller": "drop_db",
+          "callee": "begin"
+        },
+        {
+          "caller": "drop_db",
+          "callee": "run_sync"
+        },
+        {
+          "caller": "check_database_connection",
+          "callee": "connect"
+        },
+        {
+          "caller": "check_database_connection",
+          "callee": "execute"
+        },
+        {
+          "caller": "__init__",
+          "callee": "get_database_url"
+        },
+        {
+          "caller": "__init__",
+          "callee": "getenv"
+        },
+        {
+          "caller": "__init__",
+          "callee": "append"
+        },
+        {
+          "caller": "get_primary_engine",
+          "callee": "create_enterprise_engine"
+        },
+        {
+          "caller": "get_replica_engine",
+          "callee": "get_primary_engine"
+        },
+        {
+          "caller": "get_replica_engine",
+          "callee": "len"
+        },
+        {
+          "caller": "get_replica_engine",
+          "callee": "create_enterprise_engine"
+        },
+        {
+          "caller": "get_session_factory",
+          "callee": "get_replica_engine"
+        },
+        {
+          "caller": "get_session_factory",
+          "callee": "get_primary_engine"
+        },
+        {
+          "caller": "get_session_factory",
+          "callee": "async_sessionmaker"
+        },
+        {
+          "caller": "<global>",
+          "callee": "DatabaseCluster"
+        },
+        {
+          "caller": "get_tenant_id",
+          "callee": "get"
+        },
+        {
+          "caller": "clear",
+          "callee": "clear"
+        },
+        {
+          "caller": "with_transaction",
+          "callee": "begin"
+        },
+        {
+          "caller": "with_transaction",
+          "callee": "func"
+        },
+        {
+          "caller": "with_savepoint",
+          "callee": "begin_nested"
+        },
+        {
+          "caller": "with_savepoint",
+          "callee": "func"
+        },
+        {
+          "caller": "bulk_insert",
+          "callee": "range"
+        },
+        {
+          "caller": "bulk_insert",
+          "callee": "len"
+        },
+        {
+          "caller": "bulk_insert",
+          "callee": "values"
+        },
+        {
+          "caller": "bulk_insert",
+          "callee": "insert"
+        },
+        {
+          "caller": "bulk_insert",
+          "callee": "execute"
+        },
+        {
+          "caller": "bulk_insert",
+          "callee": "commit"
+        },
+        {
+          "caller": "bulk_update",
+          "callee": "range"
+        },
+        {
+          "caller": "bulk_update",
+          "callee": "len"
+        },
+        {
+          "caller": "bulk_update",
+          "callee": "execute"
+        },
+        {
+          "caller": "bulk_update",
+          "callee": "values"
+        },
+        {
+          "caller": "bulk_update",
+          "callee": "where"
+        },
+        {
+          "caller": "bulk_update",
+          "callee": "update"
+        },
+        {
+          "caller": "bulk_update",
+          "callee": "items"
+        },
+        {
+          "caller": "bulk_update",
+          "callee": "commit"
+        }
+      ]
+    },
+    "shared/models/__init__.py": {
+      "file": "shared/models/__init__.py",
+      "imports": [
+        ".loan",
+        ".fire",
+        ".chat",
+        ".financial_profile",
+        ".user",
+        ".health"
+      ],
+      "functions": [],
+      "calls": []
+    },
+    "shared/models/chat.py": {
+      "file": "shared/models/chat.py",
+      "imports": [
+        "datetime",
+        "sqlalchemy.dialects.postgresql",
+        "sqlalchemy.orm",
+        "uuid",
+        "sqlalchemy",
+        "shared.database"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        }
+      ]
+    },
+    "shared/models/enterprise_models.py": {
+      "file": "shared/models/enterprise_models.py",
+      "imports": [
+        "datetime",
+        "decimal",
+        "enum",
+        "typing",
+        "sqlalchemy.dialects.postgresql",
+        "sqlalchemy.orm",
+        "sqlalchemy.ext.hybrid",
+        "uuid",
+        "sqlalchemy"
+      ],
+      "functions": [
+        "get_partition_statements",
+        "create_indexes"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "declarative_base"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Enum"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Enum"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UniqueConstraint"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UniqueConstraint"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ARRAY"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Enum"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Enum"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Enum"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Enum"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Enum"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Enum"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Enum"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Enum"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Decimal"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Decimal"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Decimal"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Index"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Enum"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Index"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Index"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ARRAY"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ARRAY"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ARRAY"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Index"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Enum"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Index"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Index"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Index"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Enum"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Index"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Index"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Index"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ARRAY"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Index"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ARRAY"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "String"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UniqueConstraint"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ARRAY"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UniqueConstraint"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Numeric"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UniqueConstraint"
+        }
+      ]
+    },
+    "shared/models/financial_profile.py": {
+      "file": "shared/models/financial_profile.py",
+      "imports": [
+        "datetime",
+        "sqlalchemy.dialects.postgresql",
+        "sqlalchemy.orm",
+        "uuid",
+        "sqlalchemy",
+        "shared.database"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        }
+      ]
+    },
+    "shared/models/fire.py": {
+      "file": "shared/models/fire.py",
+      "imports": [
+        "datetime",
+        "sqlalchemy.dialects.postgresql",
+        "sqlalchemy.orm",
+        "uuid",
+        "sqlalchemy",
+        "shared.database"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        }
+      ]
+    },
+    "shared/models/health.py": {
+      "file": "shared/models/health.py",
+      "imports": [
+        "datetime",
+        "sqlalchemy.dialects.postgresql",
+        "sqlalchemy.orm",
+        "uuid",
+        "sqlalchemy",
+        "shared.database"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        }
+      ]
+    },
+    "shared/models/loan.py": {
+      "file": "shared/models/loan.py",
+      "imports": [
+        "datetime",
+        "sqlalchemy.dialects.postgresql",
+        "sqlalchemy.orm",
+        "uuid",
+        "sqlalchemy",
+        "shared.database"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        }
+      ]
+    },
+    "shared/models/user.py": {
+      "file": "shared/models/user.py",
+      "imports": [
+        "datetime",
+        "sqlalchemy.dialects.postgresql",
+        "sqlalchemy.orm",
+        "uuid",
+        "sqlalchemy",
+        "shared.database"
+      ],
+      "functions": [],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "UUID"
+        },
+        {
+          "caller": "<global>",
+          "callee": "ForeignKey"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "Column"
+        },
+        {
+          "caller": "<global>",
+          "callee": "relationship"
+        }
+      ]
+    },
+    "shared/services/auth.py": {
+      "file": "shared/services/auth.py",
+      "imports": [
+        "shared.models.user",
+        "fastapi.security",
+        "sqlalchemy.ext.asyncio",
+        "jose",
+        "typing",
+        "os",
+        "fastapi",
+        "pwdlib",
+        "datetime",
+        "sqlalchemy",
+        "shared.database"
+      ],
+      "functions": [
+        "hash_password",
+        "verify_password",
+        "create_access_token",
+        "get_current_user"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "int"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "OAuth2PasswordBearer"
+        },
+        {
+          "caller": "<global>",
+          "callee": "recommended"
+        },
+        {
+          "caller": "hash_password",
+          "callee": "hash"
+        },
+        {
+          "caller": "verify_password",
+          "callee": "verify"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "copy"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "utcnow"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "timedelta"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "update"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "encode"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "decode"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "get"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "execute"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "where"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "select"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "scalar_one_or_none"
+        }
+      ]
+    },
+    "shared/services/auth_routes.py": {
+      "file": "shared/services/auth_routes.py",
+      "imports": [
+        "shared.models.user",
+        "fastapi.security",
+        "shared.services.auth",
+        "sqlalchemy.ext.asyncio",
+        "pydantic",
+        "re",
+        "shared.services.email_service",
+        "os",
+        "fastapi",
+        "datetime",
+        "sqlalchemy",
+        "secrets",
+        "shared.database"
+      ],
+      "functions": [
+        "generate_otp",
+        "logout",
+        "validate_email_format",
+        "login",
+        "reset_password",
+        "resend_otp",
+        "verify_email",
+        "forgot_password",
+        "register"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "APIRouter"
+        },
+        {
+          "caller": "<global>",
+          "callee": "field_validator"
+        },
+        {
+          "caller": "validate_email_format",
+          "callee": "match"
+        },
+        {
+          "caller": "validate_email_format",
+          "callee": "ValueError"
+        },
+        {
+          "caller": "generate_otp",
+          "callee": "join"
+        },
+        {
+          "caller": "generate_otp",
+          "callee": "str"
+        },
+        {
+          "caller": "generate_otp",
+          "callee": "randbelow"
+        },
+        {
+          "caller": "generate_otp",
+          "callee": "range"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "register",
+          "callee": "Depends"
+        },
+        {
+          "caller": "register",
+          "callee": "execute"
+        },
+        {
+          "caller": "register",
+          "callee": "where"
+        },
+        {
+          "caller": "register",
+          "callee": "select"
+        },
+        {
+          "caller": "register",
+          "callee": "all"
+        },
+        {
+          "caller": "register",
+          "callee": "scalars"
+        },
+        {
+          "caller": "register",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "register",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "register",
+          "callee": "User"
+        },
+        {
+          "caller": "register",
+          "callee": "hash_password"
+        },
+        {
+          "caller": "register",
+          "callee": "add"
+        },
+        {
+          "caller": "register",
+          "callee": "flush"
+        },
+        {
+          "caller": "register",
+          "callee": "generate_otp"
+        },
+        {
+          "caller": "register",
+          "callee": "EmailVerificationOTP"
+        },
+        {
+          "caller": "register",
+          "callee": "hash_password"
+        },
+        {
+          "caller": "register",
+          "callee": "utcnow"
+        },
+        {
+          "caller": "register",
+          "callee": "timedelta"
+        },
+        {
+          "caller": "register",
+          "callee": "add"
+        },
+        {
+          "caller": "register",
+          "callee": "commit"
+        },
+        {
+          "caller": "register",
+          "callee": "add_task"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "Depends"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "execute"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "where"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "select"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "scalar_one_or_none"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "execute"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "where"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "select"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "scalar_one_or_none"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "utcnow"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "delete"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "commit"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "delete"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "commit"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "verify_password"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "commit"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "delete"
+        },
+        {
+          "caller": "verify_email",
+          "callee": "commit"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "Depends"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "execute"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "where"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "select"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "scalar_one_or_none"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "execute"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "where"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "delete"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "generate_otp"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "EmailVerificationOTP"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "hash_password"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "utcnow"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "timedelta"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "add"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "commit"
+        },
+        {
+          "caller": "resend_otp",
+          "callee": "add_task"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "login",
+          "callee": "Depends"
+        },
+        {
+          "caller": "login",
+          "callee": "Depends"
+        },
+        {
+          "caller": "login",
+          "callee": "execute"
+        },
+        {
+          "caller": "login",
+          "callee": "where"
+        },
+        {
+          "caller": "login",
+          "callee": "select"
+        },
+        {
+          "caller": "login",
+          "callee": "scalar_one_or_none"
+        },
+        {
+          "caller": "login",
+          "callee": "verify_password"
+        },
+        {
+          "caller": "login",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "login",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "login",
+          "callee": "create_access_token"
+        },
+        {
+          "caller": "login",
+          "callee": "str"
+        },
+        {
+          "caller": "login",
+          "callee": "set_cookie"
+        },
+        {
+          "caller": "login",
+          "callee": "str"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "Depends"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "execute"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "where"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "select"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "scalar_one_or_none"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "execute"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "where"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "delete"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "token_urlsafe"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "PasswordResetToken"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "hash_password"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "utcnow"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "timedelta"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "add"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "commit"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "rstrip"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "get"
+        },
+        {
+          "caller": "forgot_password",
+          "callee": "add_task"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "Depends"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "ValueError"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "split"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "execute"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "where"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "select"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "scalar_one_or_none"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "utcnow"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "delete"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "commit"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "verify_password"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "execute"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "where"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "select"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "scalar_one"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "hash_password"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "delete"
+        },
+        {
+          "caller": "reset_password",
+          "callee": "commit"
+        },
+        {
+          "caller": "<global>",
+          "callee": "post"
+        },
+        {
+          "caller": "logout",
+          "callee": "delete_cookie"
+        }
+      ]
+    },
+    "shared/services/dashboard_routes.py": {
+      "file": "shared/services/dashboard_routes.py",
+      "imports": [
+        "shared.models.fire",
+        "shared.models.health",
+        "shared.models.user",
+        "sqlalchemy.future",
+        "shared.services.auth",
+        "sqlalchemy.ext.asyncio",
+        "fastapi",
+        "sqlalchemy",
+        "shared.models.loan",
+        "shared.database"
+      ],
+      "functions": [
+        "get_dashboard"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "APIRouter"
+        },
+        {
+          "caller": "<global>",
+          "callee": "get"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "ute(\n  "
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "t(1)\n"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "r_by(des"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "e(Fir"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "ct(Fir"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "(Fir"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "ar_one_or_none()\n\n"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "\n      "
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "\n    "
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "(desc(He"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "althS"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "ealthS"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "lthS"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "ne_or_none()\n\n    "
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "     se"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "c(LoanSi"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "mulat"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "imulat"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "ulat"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "etu"
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "l()\n\n  "
+        },
+        {
+          "caller": "get_dashboard",
+          "callee": "use"
+        }
+      ]
+    },
+    "shared/services/email_service.py": {
+      "file": "shared/services/email_service.py",
+      "imports": [
+        "dotenv",
+        "asyncio",
+        "os",
+        "logging",
+        "email.message",
+        "base64",
+        "httpx"
+      ],
+      "functions": [
+        "send_email_async",
+        "send_with_resend",
+        "get_access_token"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "basicConfig"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getLogger"
+        },
+        {
+          "caller": "<global>",
+          "callee": "load_dotenv"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "strip"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "get"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "strip"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "get"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "strip"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "get"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "all"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "error"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "AsyncClient"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "post"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "get"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "json"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "error"
+        },
+        {
+          "caller": "get_access_token",
+          "callee": "error"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "get_access_token"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "strip"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "get"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "info"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "send_with_resend"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "EmailMessage"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "get"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "set_content"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "add_alternative"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "decode"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "urlsafe_b64encode"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "as_bytes"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "AsyncClient"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "post"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "info"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "error"
+        },
+        {
+          "caller": "send_email_async",
+          "callee": "error"
+        },
+        {
+          "caller": "send_with_resend",
+          "callee": "strip"
+        },
+        {
+          "caller": "send_with_resend",
+          "callee": "get"
+        },
+        {
+          "caller": "send_with_resend",
+          "callee": "strip"
+        },
+        {
+          "caller": "send_with_resend",
+          "callee": "get"
+        },
+        {
+          "caller": "send_with_resend",
+          "callee": "AsyncClient"
+        },
+        {
+          "caller": "send_with_resend",
+          "callee": "post"
+        }
+      ]
+    },
+    "shared/services/fire_service.py": {
+      "file": "shared/services/fire_service.py",
+      "imports": [
+        "shared.models",
+        "uuid",
+        "datetime",
+        "sqlalchemy.ext.asyncio"
+      ],
+      "functions": [
+        "save_fire_calculation"
+      ],
+      "calls": [
+        {
+          "caller": "save_fire_calculation",
+          "callee": "FireCalculation"
+        },
+        {
+          "caller": "save_fire_calculation",
+          "callee": "uuid4"
+        },
+        {
+          "caller": "save_fire_calculation",
+          "callee": "utcnow"
+        },
+        {
+          "caller": "save_fire_calculation",
+          "callee": "add"
+        },
+        {
+          "caller": "save_fire_calculation",
+          "callee": "commit"
+        },
+        {
+          "caller": "save_fire_calculation",
+          "callee": "refresh"
+        }
+      ]
+    },
+    "shared/services/health_service.py": {
+      "file": "shared/services/health_service.py",
+      "imports": [
+        "shared.models",
+        "uuid",
+        "datetime",
+        "sqlalchemy.ext.asyncio"
+      ],
+      "functions": [
+        "save_health_score"
+      ],
+      "calls": [
+        {
+          "caller": "save_health_score",
+          "callee": "HealthScore"
+        },
+        {
+          "caller": "save_health_score",
+          "callee": "uuid4"
+        },
+        {
+          "caller": "save_health_score",
+          "callee": "utcnow"
+        },
+        {
+          "caller": "save_health_score",
+          "callee": "add"
+        },
+        {
+          "caller": "save_health_score",
+          "callee": "commit"
+        },
+        {
+          "caller": "save_health_score",
+          "callee": "refresh"
+        }
+      ]
+    },
+    "shared/services/loan_service.py": {
+      "file": "shared/services/loan_service.py",
+      "imports": [
+        "shared.models",
+        "uuid",
+        "datetime",
+        "sqlalchemy.ext.asyncio"
+      ],
+      "functions": [
+        "save_loan_simulation"
+      ],
+      "calls": [
+        {
+          "caller": "save_loan_simulation",
+          "callee": "LoanSimulation"
+        },
+        {
+          "caller": "save_loan_simulation",
+          "callee": "uuid4"
+        },
+        {
+          "caller": "save_loan_simulation",
+          "callee": "utcnow"
+        },
+        {
+          "caller": "save_loan_simulation",
+          "callee": "add"
+        },
+        {
+          "caller": "save_loan_simulation",
+          "callee": "commit"
+        },
+        {
+          "caller": "save_loan_simulation",
+          "callee": "refresh"
+        }
+      ]
+    },
+    "shared/services/service_auth.py": {
+      "file": "shared/services/service_auth.py",
+      "imports": [
+        "datetime",
+        "fastapi.security",
+        "pydantic",
+        "jose",
+        "typing",
+        "functools",
+        "os",
+        "fastapi",
+        "time",
+        "uuid"
+      ],
+      "functions": [
+        "verifier",
+        "check_rate_limit",
+        "get_current_verified_user",
+        "require_verified",
+        "get_service_user",
+        "decode_token",
+        "create_access_token",
+        "require_role",
+        "get_current_active_user",
+        "role_checker",
+        "get_current_user"
+      ],
+      "calls": [
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "int"
+        },
+        {
+          "caller": "<global>",
+          "callee": "getenv"
+        },
+        {
+          "caller": "<global>",
+          "callee": "OAuth2PasswordBearer"
+        },
+        {
+          "caller": "<global>",
+          "callee": "HTTPBearer"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "copy"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "utcnow"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "timedelta"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "update"
+        },
+        {
+          "caller": "create_access_token",
+          "callee": "encode"
+        },
+        {
+          "caller": "decode_token",
+          "callee": "decode"
+        },
+        {
+          "caller": "decode_token",
+          "callee": "get"
+        },
+        {
+          "caller": "decode_token",
+          "callee": "get"
+        },
+        {
+          "caller": "decode_token",
+          "callee": "get"
+        },
+        {
+          "caller": "decode_token",
+          "callee": "get"
+        },
+        {
+          "caller": "decode_token",
+          "callee": "get"
+        },
+        {
+          "caller": "decode_token",
+          "callee": "get"
+        },
+        {
+          "caller": "decode_token",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "decode_token",
+          "callee": "TokenData"
+        },
+        {
+          "caller": "decode_token",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "decode_token",
+          "callee": "str"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "decode_token"
+        },
+        {
+          "caller": "get_current_user",
+          "callee": "CurrentUser"
+        },
+        {
+          "caller": "get_current_active_user",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_current_active_user",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "get_current_verified_user",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_current_verified_user",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "role_checker",
+          "callee": "Depends"
+        },
+        {
+          "caller": "role_checker",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "verifier",
+          "callee": "Depends"
+        },
+        {
+          "caller": "check_rate_limit",
+          "callee": "time"
+        },
+        {
+          "caller": "check_rate_limit",
+          "callee": "len"
+        },
+        {
+          "caller": "check_rate_limit",
+          "callee": "HTTPException"
+        },
+        {
+          "caller": "check_rate_limit",
+          "callee": "append"
+        },
+        {
+          "caller": "get_service_user",
+          "callee": "Depends"
+        },
+        {
+          "caller": "get_service_user",
+          "callee": "get_current_user"
+        },
+        {
+          "caller": "get_service_user",
+          "callee": "get"
+        },
+        {
+          "caller": "get_service_user",
+          "callee": "CurrentUser"
+        },
+        {
+          "caller": "get_service_user",
+          "callee": "HTTPException"
+        }
+      ]
+    }
+  }
+}
