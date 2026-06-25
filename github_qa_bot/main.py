@@ -38,3 +38,8 @@ app.add_middleware(
 app.include_router(auth_router)
 app.include_router(router)
 
+@app.get("/")
+def read_root():
+    return {"message": "GitHub QA Bot API is running. Go to /docs for API documentation."}
+
+
