@@ -11,6 +11,12 @@ from utils.auth import get_current_user
 router = APIRouter()
 
 
+@router.get("/health")
+def health_check():
+    """Simple health check endpoint for monitoring uptime and deployments."""
+    return {"status": "healthy"}
+
+
 @router.post("/query", response_model=QueryResponse)
 def query_repo(
     request: QueryRequest,

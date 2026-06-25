@@ -1,0 +1,38 @@
+name: Deploy to Render
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Trigger Render Deployments
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Backend Deployment
+        run: |
+          echo "Triggering Render backend deployment..."
+          curl -f -X POST "${{ secrets.RENDER_BACKEND_DEPLOY_HOOK }}"
+
+      - name: Wait for Backend to become Healthy
+        run: |
+          echo "Waiting for backend to become healthy at ${{ secrets.RENDER_BACKEND_HOST }}/health..."
+          # Poll the health check endpoint up to 30 times (5 minutes max)
+          for i in {1..30}; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://${{ secrets.RENDER_BACKEND_HOST }}/health" || echo "000")
+            if [ "$STATUS" -eq 200 ]; then
+              echo "Backend is healthy!"
+              exit 0
+            fi
+            echo "Backend returned HTTP $STATUS. Retrying in 10 seconds... ($i/30)"
+            sleep 10
+          done
+          echo "Error: Backend did not report healthy status within 5 minutes."
+          exit 1
+
+      - name: Trigger Frontend Deployment
+        run: |
+          echo "Triggering Render frontend deployment..."
+          curl -f -X POST "${{ secrets.RENDER_FRONTEND_DEPLOY_HOOK }}"
+
