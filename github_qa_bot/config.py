@@ -20,10 +20,13 @@ JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
 # Restrict allowed origins for CORS in production
 allowed_origins_raw = os.getenv("ALLOWED_ORIGINS")
 if allowed_origins_raw:
-    ALLOWED_ORIGINS = [origin.strip() for origin in allowed_origins_raw.split(",") if origin.strip()]
+    ALLOWED_ORIGINS = [origin.strip().rstrip("/") for origin in allowed_origins_raw.split(",") if origin.strip()]
 else:
     # Fallback to local development endpoints and wildcard
     ALLOWED_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:8000", "http://127.0.0.1:8000"]
+
+print(f"[CORS] Allowed Origins: {ALLOWED_ORIGINS}")
+
 
 # Ensure JWT_SECRET_KEY is specified in production
 if ENVIRONMENT == "production":
