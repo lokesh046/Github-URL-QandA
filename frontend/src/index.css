@@ -52,6 +52,7 @@ body {
 #root {
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -286,6 +287,7 @@ label {
   display: flex;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   padding: 16px;
   gap: 16px;
@@ -372,7 +374,7 @@ label {
   border-radius: 12px;
   box-shadow: var(--shadow-lg), var(--shadow-glow);
   cursor: pointer;
-  z-index: 100;
+  z-index: 200;
   transition: all 0.25s ease;
   animation: fadeIn 0.3s ease-out;
 }
@@ -465,17 +467,26 @@ label {
 
 .chat-header-info {
   text-align: left;
+  min-width: 0;
+  flex-grow: 1;
+  margin-right: 12px;
 }
 
 .chat-header-title {
   font-size: 16px;
   font-weight: 600;
   color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .chat-header-repo {
   font-size: 13px;
   color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .messages-list {

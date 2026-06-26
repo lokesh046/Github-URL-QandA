@@ -262,6 +262,10 @@ function App() {
       return;
     }
 
+    if (window.innerWidth <= 1024) {
+      setIsSidebarCollapsed(true);
+    }
+
     const userMessage = question;
     setQuestion("");
     setMessages((prev) => [...prev, { sender: "user", text: userMessage }]);
