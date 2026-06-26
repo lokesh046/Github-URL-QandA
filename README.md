@@ -86,7 +86,7 @@ graph TD
    GEMINI_API_KEY=your-gemini-key
    
    # Optional: S3 Object Storage (e.g. Backblaze B2)
-   S3_ENDPOINT_URL=https://s3.your-region.backblazeb2.com
+   S3_ENDPOINT_URL=https://s3.region.backblazeb2.com
    R2_ACCESS_KEY_ID=your-keyID
    R2_SECRET_ACCESS_KEY=your-applicationKey
    R2_BUCKET_NAME=your-bucket-name
@@ -129,4 +129,4 @@ Deploy the `frontend/` directory directly to **Vercel**:
 * **Root Directory**: `frontend`
 * **Build Command**: `npm run build`
 * **Output Directory**: `dist`
-* **Environment Variables**: Set `VITE_API_URL` to your production backend URL (e.g., `https://github-url-qanda.onrender.com`).
+* **Environment Variables**: Set `VITE_API_URL` to your production backend URL.
