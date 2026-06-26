@@ -158,6 +158,9 @@ function App() {
   const handleAskAboutFile = () => {
     if (!selectedFilePath) return;
     setQuestion(`Explain this file inside the repository: ${selectedFilePath}\n\n`);
+    if (window.innerWidth <= 1024) {
+      setShowInspector(false);
+    }
   };
 
   const fileTree = useMemo(() => buildFileTree(filesList), [filesList]);
@@ -402,6 +405,13 @@ function App() {
   // Render Main Chat Interface Dashboard
   return (
     <div className={`main-layout ${isDragging ? "is-dragging" : ""}`}>
+      {/* Sidebar Backdrop Overlay for Mobile/Tablet */}
+      {!isSidebarCollapsed && (
+        <div 
+          className="sidebar-backdrop" 
+          onClick={() => setIsSidebarCollapsed(true)}
+        />
+      )}
       {/* Left Sidebar */}
       <div 
         className={`sidebar glass-panel ${isSidebarCollapsed ? "collapsed" : ""}`}
@@ -508,7 +518,7 @@ function App() {
       )}
 
       {/* Main Chat Area */}
-      <div className="chat-area glass-panel" style={showInspector ? { borderRadius: '16px 0 0 16px', borderRight: 'none' } : {}}>
+      <div className={`chat-area glass-panel ${showInspector ? "inspector-open" : ""}`}>
         <div className="chat-header" style={{ paddingLeft: isSidebarCollapsed ? "68px" : "24px" }}>
           <div className="chat-header-info">
             <div className="chat-header-title">Repository Chat Assistant</div>
@@ -602,7 +612,7 @@ function App() {
 
       {/* Right Panel / Code Inspector */}
       {showInspector && (
-        <div className="code-inspector-panel glass-panel" style={{ borderRadius: '0 16px 16px 0', borderLeft: 'none' }}>
+        <div className="code-inspector-panel glass-panel">
           <div className="inspector-header">
             <div className="inspector-title">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" width="18" height="18">
