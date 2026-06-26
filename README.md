@@ -61,6 +61,25 @@ graph TD
 
 ---
 
+## 📸 App Screenshots
+
+### 1. Chat Interface & Repository Indexing
+![Chat Interface](assets/chat_interface.png)
+
+### 2. Code Inspector Tree
+The Code Inspector lets you explore the file tree layout of your repo on the right-hand panel.
+![Code Inspector](assets/code_inspector.png)
+
+### 3. Integrated Code Viewer
+View any source file directly inside the browser and ask specific questions about it.
+![Code Viewer](assets/code_viewer.png)
+
+### 4. Maximized Chat View (Collapsed Sidebar)
+Collapse the configuration panel to get a wider view of the conversation stream.
+![Maximized Chat View](assets/chat_collapsed_view.png)
+
+---
+
 ## 🚀 Local Setup Guide
 
 ### 1. Backend Configuration
