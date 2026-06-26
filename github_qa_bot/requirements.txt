@@ -15,7 +15,6 @@ pinecone
 pydantic
 pygithub
 python-dotenv
-sentence-transformers
 tiktoken
 tree-sitter
 tree-sitter-language-pack
